@@ -31,26 +31,12 @@
 //	POSSIBILITY OF SUCH DAMAGE.
 
 #import "BGHUDTabView.h"
-#import "BGHUDSegmentedCell.h"
-
-@interface NSTabView (Private) 
-
-- (NSRect)_tabRectForTabViewItem:(id)arg1;
-- (void)_drawThemeBezelBorder:(id)arg1 inRect:(NSRect)arg2;
-- (NSRect)_legacy__tabRectForTabViewItem:(id)arg1;
-- (NSRect)_themeContentRect;
-- (NSRect)_themeTabAndBarArea;
-- (NSRect)_titleRectForTabViewItem:(id)arg1;
-- (id)_tabsCell;
-- (void)_setTabsCell:(id)arg1;
-
-@end
 
 @implementation BGHUDTabView
 
 @synthesize themeKey;
 
-/*-(id)initWithCoder:(NSCoder *)aDecoder {
+-(id)initWithCoder:(NSCoder *)aDecoder {
 	
 	self = [super initWithCoder: aDecoder];
 	
@@ -65,76 +51,69 @@
 		}
 	}
 	
-	return self;
-}*/
-
--(id)initWithCoder:(NSCoder *) aDecoder {
-	
-	BOOL isSubclass = YES;
-	
-	isSubclass = isSubclass && [aDecoder isKindOfClass: [NSKeyedUnarchiver class]]; // no support for 10.1 nibs
-	isSubclass = isSubclass && ![self isMemberOfClass: [NSControl class]]; // no raw NSControls
-	isSubclass = isSubclass && [self class] != nil; // need to have something to substitute
-	isSubclass = isSubclass && [self class] != [self class]; // pointless if same
-	
-	if( !isSubclass )
-	{
-        NSLog(@"A");
-		self = [super initWithCoder: aDecoder]; 
-	}
-	else
-	{
-        
-        NSLog(@"B");
-		NSKeyedUnarchiver *modDecoder = (id)aDecoder;
-		
-		[modDecoder setClass: [BGHUDTabViewItem class] forClassName: @"NSTabViewItem"];
-		
-		self = [super initWithCoder: modDecoder];
-		
-		[modDecoder setClass: [NSTabViewItem class] forClassName: @"BGHUDTabViewItem"];
-		
-		if(self) {
-			
-			if([modDecoder containsValueForKey: @"themeKey"]) {
-				
-				self.themeKey = [modDecoder decodeObjectForKey: @"themeKey"];
-			} else {
-				
-				self.themeKey = @"gradientTheme";
-			}
-		}
-	}
-	
-    BGHUDSegmentedCell *myCell = [[BGHUDSegmentedCell alloc] init];
-    [myCell setSegmentStyle: NSSegmentStyleRounded];
-    
-    [self _setTabsCell: myCell];
-    [myCell release];
 	return self;
 }
 
+/*
+ -(id)initWithCoder:(NSCoder *) aDecoder {
+ 
+ BOOL isSubclass = YES;
+ 
+ isSubclass = isSubclass && [aDecoder isKindOfClass: [NSKeyedUnarchiver class]]; // no support for 10.1 nibs
+ isSubclass = isSubclass && ![self isMemberOfClass: [NSControl class]]; // no raw NSControls
+ isSubclass = isSubclass && [self class] != nil; // need to have something to substitute
+ isSubclass = isSubclass && [self class] != [self class]; // pointless if same
+ 
+ if( !isSubclass )
+ {
+ self = [super initWithCoder: aDecoder]; 
+ }
+ else
+ {
+ NSKeyedUnarchiver *modDecoder = (id)aDecoder;
+ 
+ [modDecoder setClass: [BGHUDTabViewItem class] forClassName: @"NSTabViewItem"];
+ 
+ self = [super initWithCoder: modDecoder];
+ 
+ [modDecoder setClass: [NSTabViewItem class] forClassName: @"BGHUDTabViewItem"];
+ 
+ if(self) {
+ 
+ if([modDecoder containsValueForKey: @"themeKey"]) {
+ 
+ self.themeKey = [modDecoder decodeObjectForKey: @"themeKey"];
+ } else {
+ 
+ self.themeKey = @"gradientTheme";
+ }
+ }
+ }
+ 
+ return self;
+ }
+ */
 
 /*-(id)initWithCoder:(NSCoder *) aDecoder {
-	
-	[NSKeyedUnarchiver setClass: [BGHUDTabViewItem class]  
-				   forClassName: @"NSTabViewItem"]; 
-	
-	self = [super initWithCoder: aDecoder];
-	
-	if(self) {
-		
-		if([aDecoder containsValueForKey: @"themeKey"]) {
-			
-			self.themeKey = [aDecoder decodeObjectForKey: @"themeKey"];
-		} else {
-			
-			self.themeKey = @"gradientTheme";
-		}
-	}
-	
-	return self;
-}*/
+ 
+ [NSKeyedUnarchiver setClass: [BGHUDTabViewItem class]  
+ forClassName: @"NSTabViewItem"]; 
+ 
+ self = [super initWithCoder: aDecoder];
+ 
+ if(self) {
+ 
+ if([aDecoder containsValueForKey: @"themeKey"]) {
+ 
+ self.themeKey = [aDecoder decodeObjectForKey: @"themeKey"];
+ } else {
+ 
+ self.themeKey = @"gradientTheme";
+ }
+ }
+ 
+ return self;
+ }*/
 
 -(void)encodeWithCoder: (NSCoder *)coder {
 	
@@ -143,10 +122,8 @@
 	[coder encodeObject: self.themeKey forKey: @"themeKey"];
 }
 
-/*-(void)_drawThemeTab:(id) tabItem withState:(NSUInteger) state inRect:(NSRect) aRect {
-
-    NSLog(@"_drawThemeTab");
-    
+-(void)_drawThemeTab:(id) tabItem withState:(NSUInteger) state inRect:(NSRect) aRect {
+	
 	NSInteger index = [self indexOfTabViewItem: tabItem];
 	int gradientAngle = 90;
 	NSBezierPath *path;
@@ -206,7 +183,7 @@
 			
 			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] highlightGradient] drawInBezierPath: path angle: gradientAngle];
 		}
-
+		
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
 		[path stroke];
 		
@@ -314,46 +291,6 @@
 		
 		[path release];
 	}
-}*/
-
-/*- (void)drawRect:(NSRect)arg1 {
- 
-    for(BGHUDTabViewItem *item in [self tabViewItems]) {
-        
-        [self _drawThemeTab: item withState: (item == [self selectedTabViewItem]) ? 0 : 1 inRect: [self _tabRectForTabViewItem: item]];
-    }
-}*/
-
-/*- (BOOL)_coreUIDrawTab:(id)arg1 withState:(unsigned long long)arg2 inRect:(struct CGRect)arg3 {
-    
-    return NO;
-}
-
-- (BOOL)_coreUIDrawBezelInRect:(struct CGRect)arg1 withClip:(struct CGRect)arg2 {
-    return NO;
-}
-
-- (BOOL)_shouldTryCoreUIDrawing {
-    
-    return NO;
-}*/
-
-/*- (void)_drawThemeBezelBorder:(id)arg1 inRect:(NSRect)arg2 {
-    
-}*/
-/*- (void)_drawBezelBorder:(id)arg1 inRect:(NSRect)arg2 {
-    
-}
-- (void)_drawBorder:(id)arg1 inRect:(NSRect)arg2 {
-    
-}
-- (void)_drawTabViewItem:(id)arg1 inRect:(NSRect)arg2 {
-    
-}*/
-
-- (BOOL)_allowAnimation {
-    
-    return NO;
 }
 
 -(void)dealloc {

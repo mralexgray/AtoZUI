@@ -49,12 +49,10 @@
 		self.themeKey = @"gradientTheme";
 		[self setTextColor: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor]];
 		
-		if([self drawsBackground]) {
-			
+		if([self drawsBackground] && [[[BGThemeManager keyedManager] themeForKey: self.themeKey] isOverrideFillColor]) {
 			fillsBackground = YES;
+			[self setDrawsBackground: NO];
 		}
-		
-		[self setDrawsBackground: NO];
 	}
 	
 	return self;
@@ -87,7 +85,7 @@
 }
 
 -(id)copyWithZone:(NSZone *) zone {
-
+	
 	BGHUDComboBoxCell *copy = [super copyWithZone: zone];
 	
 	copy->themeKey = nil;
@@ -136,9 +134,9 @@
 		if([super showsFirstResponder] && [[[self controlView] window] isKeyWindow] && 
 		   ([self focusRingType] == NSFocusRingTypeDefault ||
 			[self focusRingType] == NSFocusRingTypeExterior)) {
-			
-			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] focusRing] set];
-		}
+			   
+			   [[[[BGThemeManager keyedManager] themeForKey: self.themeKey] focusRing] set];
+		   }
 		
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
 		[path setLineWidth: 1.0f];
@@ -173,7 +171,7 @@
 	// Draw a 'button' around the arrow
 	// TODO: Get this behaviour to work...
 	//if ([self isBordered]) 
-
+	
 	{
 		[self drawButtonInRect: cellFrame];
 	}
@@ -194,15 +192,15 @@
 		[dict setObject:[NSColor darkGrayColor] forKey:NSBackgroundColorAttributeName];
 		
 		[view setTextColor: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor]];
-
+		
 	}
 	else
 	{
 		[view setTextColor:[NSColor blackColor] range:[view selectedRange]];
 	}
-		
+	
 	[view setSelectedTextAttributes:dict];
-
+	
 	// draw the text field.
 	[super drawInteriorWithFrame: frame inView: controlView];
 }
@@ -224,14 +222,14 @@
 			
 			frame.origin.x += (frame.size.width -17);
 			frame.size.width = 17;
-				
+			
 			break;
 			
 		case NSMiniControlSize:
 			
 			frame.origin.x += (frame.size.width - 14);
 			frame.size.width = 14;
-
+			
 			break;
 	}
 	
@@ -242,7 +240,7 @@
 	[path appendBezierPathWithRect:rect];
 	
 	[path closePath];
-
+	
 	[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] normalGradient] drawInBezierPath: path angle: 90];
 	
 	[path release];
@@ -250,7 +248,7 @@
 
 -(void)drawArrowsInRect:(NSRect) frame {
 	
-
+	
 	
 	CGFloat arrowWidth;
 	CGFloat arrowHeight;
@@ -286,7 +284,7 @@
 			arrowHeight = 1.5f;
 			break;
 	}
-
+	
 	NSBezierPath *arrow = [[NSBezierPath alloc] init];
 	
 	NSPoint points[3];
@@ -306,7 +304,7 @@
 	[arrow fill];
 	
 	[arrow release];
-		
+	
 }
 
 #pragma mark -
