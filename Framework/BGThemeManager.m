@@ -15,67 +15,69 @@ static BGThemeManager *sharedThemeManager = nil;
 
 + (BGThemeManager *)keyedManager;
 {
-    if (sharedThemeManager == nil) {
-        sharedThemeManager = [[super allocWithZone:NULL] init];
-		[sharedThemeManager initDefaultThemes];
+    if (sharedThemeManager == nil) { sharedThemeManager = [[super allocWithZone:NULL] init];
+													      [sharedThemeManager initDefaultThemes];
     }
     return sharedThemeManager;
 }
 
 + (id)allocWithZone:(NSZone *)zone;
 {
-    return [[self keyedManager] retain];
+    return [self keyedManager];
 }
 
 -(void)initDefaultThemes {
 	
 	//Init our Dictionary for 2 defaults
-	themes = [[NSMutableDictionary alloc] initWithCapacity: 2];
-	
+//	self.themes = [NSMutableDictionary dictionary];
+
 	//Add the default Flat and Gradient themes
-	[themes setObject: [[[BGTheme alloc] init] autorelease] forKey: @"flatTheme"];
-	[themes setObject: [[[BGGradientTheme alloc] init] autorelease] forKey: @"gradientTheme"];
+//	[themes setObject: [[BGTheme alloc] init] forKey: @"flatTheme"];
+//	[themes setObject: [[BGTheme alloc] init] forKey: @"azFlatTheme"];
+//	[themes setObject: [[BGTheme alloc] init] forKey: @"gradientTheme"];
+
+	BGTheme *ag = [AZFlatTheme new];
+	self. themes = @{ @"flatTheme":ag, @"azFlatTheme":ag, @"gradientTheme":ag}.mutableCopy;
+	//themes setObject: [[AZFlatTheme alloc] init] forKey: @"azFlatTheme"];
+//	themes setObject:  forKey: @"gradientTheme"];
+
+//	[themes setObject: [[BGGradientTheme alloc] init] forKey: @"gradientTheme"];
+//	[themes setObject: [[BGGradientTheme alloc] init] forKey: @"gradientTheme"];
+//	[themes setObject: [[BGGradientTheme alloc] init] forKey: @"flatTheme"];
 }
 
 - (BGTheme *)themeForKey:(NSString *)key {
 
 	//Make sure the key exists before we try to
 	//return it
-	if([themes objectForKey: key]) {
-
-		return [themes objectForKey: key];
-	} else {
-
-		//Return the default gradient key
-		return [themes objectForKey: @"gradientTheme"];
-	}
-	
+		return [self.themes objectForKey:key] ? self.themes[key] : self.themes[@"gradientTheme"];
 	
 }
 
-- (void)setTheme:(BGTheme *)theme forKey:(NSString *)key {
-	
-	[themes setObject: theme forKey: key];
-}
+//- (void)setTheme:(BGTheme*)theme forKey:(NSString *)key {
+//	
+//	self.themes setObject: theme forKey: key];
+//}
 
-- (id)copyWithZone:(NSZone *)zone; {
-    return self;
-}
+//- (id)copyWithZone:(NSZone*)zone; {
+//    return self;
+//}
 
-- (id)retain; {
-    return self;
-}
-
-- (NSUInteger)retainCount; {
-    return NSUIntegerMax;  //denotes an object that cannot be released
-}
-
-- (void)release; {
-    //do nothing
-}
-
-- (id)autorelease; {
-    return self;
-}
+//- (id)retain; {
+//    return self;
+//}
+//
+//- (NSUInteger)retainCount; {
+//    return NSUIntegerMax;  //denotes an object that cannot be released
+//}
+//
+//- (void)release; {
+//    //do nothing
+//}
+//
+//- (id)autorelease; {
+//    return self;
+//}
 
 @end
+

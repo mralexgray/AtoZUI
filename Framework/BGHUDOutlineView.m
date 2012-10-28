@@ -40,7 +40,6 @@
 		[newHeader setFont: [[aColumn headerCell] font]];
 		
 		[aColumn setHeaderCell: newHeader];
-		[newHeader release];
 	}
 	
 	return self;
@@ -72,7 +71,6 @@
 			[newHeader setFont: [[aColumn headerCell] font]];
 			
 			[aColumn setHeaderCell: newHeader];
-			[newHeader release];
 		}
 	}
 	
@@ -119,11 +117,6 @@
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 -(void)awakeFromNib {
 

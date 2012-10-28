@@ -5,52 +5,14 @@
 //  Created by BinaryGod on 2/16/09.
 //  Copyright 2009 none. All rights reserved.
 //
-//  Redistribution and use in source and binary forms, with or without modification,
-//  are permitted provided that the following conditions are met:
-//
-//		Redistributions of source code must retain the above copyright notice, this
-//	list of conditions and the following disclaimer.
-//
-//		Redistributions in binary form must reproduce the above copyright notice,
-//	this list of conditions and the following disclaimer in the documentation and/or
-//	other materials provided with the distribution.
-//
-//		Neither the name of the BinaryMethod.com nor the names of its contributors
-//	may be used to endorse or promote products derived from this software without
-//	specific prior written permission.
-//
-//	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS AS IS AND
-//	ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-//	WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-//	IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-//	INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-//	BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
-//	OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-//	WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-//	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-//	POSSIBILITY OF SUCH DAMAGE.
+
 
 #import "BGHUDBox.h"
 
 
 @implementation BGHUDBox
 
-@synthesize flipGradient;
-@synthesize drawTopBorder;
-@synthesize drawBottomBorder;
-@synthesize drawLeftBorder;
-@synthesize drawRightBorder;
-@synthesize borderColor;
-@synthesize drawTopShadow;
-@synthesize drawBottomShadow;
-@synthesize drawLeftShadow;
-@synthesize drawRightShadow;
-@synthesize shadowColor;
-@synthesize customGradient;
-@synthesize themeKey;
-@synthesize useTheme;
-@synthesize color1;
-@synthesize color2;
+@synthesize flipGradient, drawTopBorder, drawBottomBorder, drawLeftBorder, drawRightBorder, borderColor, drawTopShadow, drawBottomShadow, drawLeftShadow, drawRightShadow, shadowColor, customGradient, themeKey, useTheme, color1, color2;
 
 -(id)init {
 	
@@ -61,10 +23,10 @@
 		self.themeKey = @"gradientTheme";
 		self.useTheme = YES;
 		self.flipGradient = NO;
-		self.borderColor = [[NSColor blackColor] retain];
-		self.shadowColor = [[NSColor blackColor] retain];
-		self.color1 = [[NSColor blackColor] retain];
-		self.color2 = [[NSColor whiteColor] retain];
+		self.borderColor = [NSColor blackColor];
+		self.shadowColor = [NSColor blackColor];
+		self.color1 = [NSColor blackColor];
+		self.color2 = [NSColor whiteColor];
 	}
 	
 	return self;
@@ -79,10 +41,10 @@
 		self.themeKey = @"gradientTheme";
 		self.useTheme = YES;
 		self.flipGradient = NO;
-		self.borderColor = [[NSColor blackColor] retain];
-		self.shadowColor = [[NSColor blackColor] retain];
-		self.color1 = [[NSColor blackColor] retain];
-		self.color2 = [[NSColor whiteColor] retain];
+		self.borderColor = [NSColor blackColor];
+		self.shadowColor = [NSColor blackColor];
+		self.color1 = [NSColor blackColor];
+		self.color2 = [NSColor whiteColor];
 	}
 	
 	return self;
@@ -186,7 +148,7 @@
 			
 			if(customGradient != nil) {
 				
-				gradient = [customGradient retain];
+				gradient = customGradient;
 			} else {
 				
 				gradient = [[NSGradient alloc] initWithStartingColor: self.color1 endingColor: self.color2];
@@ -211,7 +173,6 @@
 					[gradient drawInBezierPath: path angle: 90];
 				}
 				
-				[gradient release];
 				
 				if([self borderType] != NSNoBorder) {
 					
@@ -246,7 +207,6 @@
 					}
 				}
 				
-				[gradient release];
 				
 				[[NSGraphicsContext currentContext] setShouldAntialias: NO];
 				
@@ -315,7 +275,6 @@
 					[NSGraphicsContext restoreGraphicsState];
 				}
 				
-				[dropShadow release];
 			}
 		}
 	} else {
@@ -324,17 +283,6 @@
 	}
 }
 
--(void)dealloc {
-	
-	 
-	[color1 release];
-	[color2 release];
-	[customGradient release];
-	[borderColor release];
-	[shadowColor release];
-	[themeKey release];
-	[super dealloc];
-}
 
 @end
 

@@ -134,7 +134,6 @@
 			knobRect.size.width -= 2;
 			knobRect.size.height -= 2;
 			
-			[knob release];
 			knob = [[NSBezierPath alloc] init];
 			
 			[knob appendBezierPathWithArcWithCenter: NSMakePoint(knobRect.origin.x + ((knobRect.size.width - .5f) /2), (knobRect.origin.y + ((knobRect.size.width -2) /2)))
@@ -149,7 +148,6 @@
 			
 			[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerKnobGradient] drawInBezierPath: knob angle: 0];
 			
-			[knob release];
 		} else {
 			
 			//Draw Knob
@@ -173,7 +171,6 @@
 			knobRect.size.width -= 2;
 			knobRect.size.height -= 2;
 			
-			[knob release];
 			knob = [[NSBezierPath alloc] init];
 			
 			[knob appendBezierPathWithArcWithCenter: NSMakePoint(knobRect.origin.x + ((knobRect.size.height - .5f) /2), (knobRect.origin.y + ((knobRect.size.height -1) /2)))
@@ -188,7 +185,6 @@
 			
 			[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerKnobGradient] drawInBezierPath: knob angle: 270];
 			
-			[knob release];
 		}
 	}
 }
@@ -250,7 +246,6 @@
 			
 			[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerArrowNormalGradient] drawInBezierPath: path angle: 0];
 			
-			[path release];
 		} else if([arrowPosition isEqualToString: @"None"]) {
 			
 			//Adjust rect height for top base
@@ -276,7 +271,6 @@
 			
 			[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerArrowNormalGradient] drawInBezierPath: path angle: 0];
 			
-			[path release];
 			
 			//Draw Decrement Button
 			NSRect bottomRect = rect;
@@ -301,7 +295,6 @@
 			[path appendBezierPathWithPoints: basePoints count: 4];
 			
 			[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerArrowNormalGradient] drawInBezierPath: path angle: 0];
-			[path release];
 		}
 	} else {
 		
@@ -332,7 +325,6 @@
 			
 			[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerArrowNormalGradient] drawInBezierPath: path angle: 0];
 			
-			[path release];
 		} else if([arrowPosition isEqualToString: @"None"]) {
 			
 			//Adjust rect height for top base
@@ -358,7 +350,6 @@
 			
 			[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerArrowNormalGradient] drawInBezierPath: path angle: 0];
 			
-			[path release];
 			
 			// Bottom Base
 			//Draw Decrement Button
@@ -384,7 +375,6 @@
 			[path appendBezierPathWithPoints: basePoints count: 4];
 			
 			[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerArrowNormalGradient] drawInBezierPath: path angle: 90];
-			[path release];
 		}
 	}
 }
@@ -444,8 +434,6 @@
 				[NSBezierPath strokeLineFromPoint: NSMakePoint(0, (rect.origin.y + rect.size.height) +.5f)
 										  toPoint: NSMakePoint(rect.size.width, (rect.origin.y + rect.size.height) +.5f)];
 				
-				[path release];
-				[arrow release];
 				
 			} else if([arrowPosition isEqualToString: @"Single"]) {
 				
@@ -487,8 +475,6 @@
 				[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerStroke] set];
 				[arrow fill];
 				
-				[path release];
-				[arrow release];
 			}
 		} else {
 			
@@ -541,8 +527,6 @@
 				[NSBezierPath strokeLineFromPoint: NSMakePoint(rect.origin.x + rect.size.width -.5f, rect.origin.y)
 										  toPoint: NSMakePoint(rect.origin.x + rect.size.width -.5f, rect.origin.y + rect.size.height)];
 				
-				[path release];
-				[arrow release];
 				
 			} else if([arrowPosition isEqualToString: @"Single"]) {
 				
@@ -584,8 +568,6 @@
 				[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerStroke] set];
 				[arrow fill];
 				
-				[path release];
-				[arrow release];
 			}
 		}
 	}
@@ -620,7 +602,6 @@
 				[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerStroke] set];
 				[arrow fill];
 				
-				[arrow release];
 			} else if([arrowPosition isEqualToString: @"Single"]) {
 				
 				//Draw Decrement Button
@@ -664,8 +645,6 @@
 				[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerStroke] set];
 				[arrow fill];
 				
-				[path release];
-				[arrow release];
 			}
 		} else {
 			
@@ -693,7 +672,6 @@
 				[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerStroke] set];
 				[arrow fill];
 				
-				[arrow release];
 			} else if([arrowPosition isEqualToString: @"Single"]) {
 				
 				//Draw Decrement Button
@@ -737,18 +715,11 @@
 				[[[[BGThemeManager keyedManager] themeForKey: [self themeKey]] scrollerStroke] set];
 				[arrow fill];
 				
-				[path release];
-				[arrow release];
 			}
 		}
 	}
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 #pragma mark Helper Methods

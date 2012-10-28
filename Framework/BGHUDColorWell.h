@@ -16,7 +16,7 @@
 	BOOL isBeingDecoded;
 }
 
-@property (retain) NSString *themeKey;
+@property (strong) NSString *themeKey;
 
 - (BOOL)useTransparentWell;
 - (void)setUseTransparentWell:(BOOL) flag;

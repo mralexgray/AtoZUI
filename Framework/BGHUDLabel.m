@@ -70,10 +70,5 @@
 	[super drawRect: rect];
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 @end

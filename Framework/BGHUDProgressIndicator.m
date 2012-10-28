@@ -10,9 +10,179 @@
 
 #import <objc/runtime.h>
 
-@implementation BGHUDProgressIndicator
 
-@synthesize themeKey;
+
+#define DEFAULT_radius 10
+#define DEFAULT_angle 30
+
+#define DEFAULT_inset 2
+#define DEFAULT_stripeWidth 7
+
+#define DEFAULT_barColor [NSColor colorWithCalibratedRed:25.0/255.0 green:29.0/255.0 blue:33.0/255.0 alpha:1.0]
+#define DEFAULT_lighterProgressColor [NSColor colorWithCalibratedRed:223.0/255.0 green:237.0/255.0 blue:180.0/255.0 alpha:1.0]
+#define DEFAULT_darkerProgressColor [NSColor colorWithCalibratedRed:156.0/255.0 green:200.0/255.0 blue:84.0/255.0 alpha:1.0]
+#define DEFAULT_lighterStripeColor [NSColor colorWithCalibratedRed:182.0/255.0 green:216.0/255.0 blue:86.0/255.0 alpha:1.0]
+#define DEFAULT_darkerStripeColor [NSColor colorWithCalibratedRed:126.0/255.0 green:187.0/255.0 blue:55.0/255.0 alpha:1.0]
+#define DEFAULT_shadowColor [NSColor colorWithCalibratedRed:223.0/255.0 green:238.0/255.0 blue:181.0/255.0 alpha:1.0]
+
+
+
+//@interface  BGHUDProgressIndicator ()
+//@property (nonatomic,retain) NSThread 	   *spinningAnimationThread;
+//@property (nonatomic,retain) NSTimer	   *spinningAnimationTimer;
+//@property (nonatomic,retain) NSBezierPath  *progressPath;
+//@property (nonatomic,assign) NSInteger		spinningAnimationIndex;
+//@property (nonatomic,assign) BOOL 			isAnimating;
+//
+//@end
+
+@implementation BGHUDProgressIndicator
+@synthesize progressOffset, animator;
+
+#pragma mark Accessors
+
+-(void)setDoubleValue:(double)value {
+    [super setDoubleValue:value];
+    if (![self isDisplayedWhenStopped] && value == [self maxValue]) {
+        [self stopAnimation:self];
+    }
+}
+
+
+#pragma mark Initialization
+
+-(id)initWithFrame:(NSRect)frameRect {
+    self = [super initWithFrame:frameRect];
+    if (self) {
+        self.progressOffset = 0;
+        self.animator = nil;
+    }
+    return self;
+}
+
+#pragma mark -
+#pragma mark Memory
+
+-(void)dealloc {
+    self.progressOffset = 0;
+    self.animator = nil;
+}
+
+#pragma mark -
+#pragma mark Drawing
+
+-(void)drawShadowInBounds:(NSRect)bounds {
+    [DEFAULT_shadowColor set];
+    
+    NSBezierPath* shadow = [NSBezierPath bezierPath];
+    
+    [shadow moveToPoint:NSMakePoint(0, 2)];
+    [shadow lineToPoint:NSMakePoint(NSWidth(bounds), 2)];
+    
+    [shadow stroke];
+}
+
+-(NSBezierPath*)stripeWithOrigin:(NSPoint)origin bounds:(NSRect)frame {
+    
+    float height = frame.size.height;
+    
+    NSBezierPath* rect = [[NSBezierPath alloc] init];
+    
+    [rect moveToPoint:origin];
+    [rect lineToPoint:NSMakePoint(origin.x+DEFAULT_stripeWidth, origin.y)];
+    [rect lineToPoint:NSMakePoint(origin.x+DEFAULT_stripeWidth-8, origin.y+height)];
+    [rect lineToPoint:NSMakePoint(origin.x-8, origin.y+height)];
+    [rect lineToPoint:origin];
+    
+    return rect;
+}
+
+-(void)drawStripesInBounds:(NSRect)frame {
+    NSGradient* gradient = [[NSGradient alloc] initWithStartingColor:DEFAULT_lighterStripeColor endingColor:DEFAULT_darkerStripeColor];
+    NSBezierPath* allStripes = [[NSBezierPath alloc] init];
+    
+    for (int i = 0; i <= frame.size.width/(2*DEFAULT_stripeWidth)+(2*DEFAULT_stripeWidth); i++) {
+        NSBezierPath* stripe = [self stripeWithOrigin:NSMakePoint(i*2*DEFAULT_stripeWidth+self.progressOffset, DEFAULT_inset) bounds:frame];
+        [allStripes appendBezierPath:stripe];
+    }
+    
+    //clip
+    NSBezierPath* clipPath = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:DEFAULT_radius yRadius:DEFAULT_radius];
+    [clipPath addClip];
+    [clipPath setClip];
+    
+    [gradient drawInBezierPath:allStripes angle:90];
+    
+}
+
+-(void)drawBezel {
+    CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
+    CGContextSaveGState(context);
+    CGFloat maxX = NSMaxX(self.bounds);
+    //white shadow
+    NSBezierPath* shadow = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0.5, 0, self.bounds.size.width-1, self.bounds.size.height-1) xRadius:DEFAULT_radius yRadius:DEFAULT_radius];
+    [NSBezierPath clipRect:NSMakeRect(0, self.bounds.size.height/2, self.bounds.size.width, self.bounds.size.height/2)];
+    [[NSColor colorWithCalibratedWhite:1.0 alpha:0.2] set];
+    [shadow stroke];
+    CGContextRestoreGState(context);
+    //rounded rect
+    NSBezierPath* roundedRect = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0, 0, self.bounds.size.width, self.bounds.size.height-1) xRadius:DEFAULT_radius yRadius:DEFAULT_radius];
+    [DEFAULT_barColor set];
+    [roundedRect fill];
+    
+    //inner glow
+    CGMutablePathRef glow = CGPathCreateMutable();
+    CGPathMoveToPoint(glow, NULL, DEFAULT_radius, 0);
+    CGPathAddLineToPoint(glow, NULL, maxX-DEFAULT_radius, 0);
+    
+    [[NSColor colorWithCalibratedRed:17.0/255.0 green:20.0/255.0 blue:23.0/255.0 alpha:1.0] set];
+    CGContextAddPath(context, glow);
+    CGContextDrawPath(context, kCGPathStroke);
+    CGPathRelease(glow);
+}
+
+-(void)drawProgressWithBounds:(NSRect)frame {
+    NSBezierPath* bounds = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:DEFAULT_radius yRadius:DEFAULT_radius];
+    NSGradient* gradient = [[NSGradient alloc] initWithStartingColor:DEFAULT_lighterProgressColor endingColor:DEFAULT_darkerProgressColor];
+    [gradient drawInBezierPath:bounds angle:90];
+}
+
+-(void)drawRect:(NSRect)dirtyRect {
+    
+    self.progressOffset = (self.progressOffset > (2*DEFAULT_stripeWidth)-1) ? 0 : ++self.progressOffset;
+    float distance = [self maxValue]-[self minValue];
+    float value = ([self doubleValue]) ? [self doubleValue]/distance : 0;
+    [self drawBezel];
+    if (value) {
+        NSRect bounds = NSMakeRect(DEFAULT_inset, DEFAULT_inset, self.frame.size.width*value-2*DEFAULT_inset, (self.frame.size.height-2*DEFAULT_inset)-1);
+        
+        [self drawProgressWithBounds:bounds];
+        [self drawStripesInBounds:bounds];
+        [self drawShadowInBounds:bounds];
+    }
+}
+
+#pragma mark -
+#pragma mark Actions
+
+-(void)startAnimation:(id)sender {
+    if (!self.animator) {
+        self.animator = [NSTimer scheduledTimerWithTimeInterval:1.0/30 target:self selector:@selector(activateAnimation:) userInfo:nil repeats:YES];
+    }
+}
+
+-(void)stopAnimation:(id)sender {
+	[self.animator invalidate];
+    self.animator = nil;
+}
+
+-(void)activateAnimation:(NSTimer*)timer {
+    [self setNeedsDisplay:YES];}
+
+@end
+
+/*
+@synthesize themeKey, spinningAnimationIndex, spinningAnimationThread, progressPath, spinningAnimationTimer, isAnimating;
 
 #pragma mark Drawing Functions
 
@@ -82,8 +252,8 @@
 		
 		NSPoint position = NSMakePoint(frame.origin.x + 1, frame.origin.y + 1);
 		
-		if(progressPath) {[progressPath release];}
-		progressPath = [[NSBezierPath alloc] init];
+//		if(progressPath) { [progressPath release];}
+		progressPath = progressPath ?: [[NSBezierPath alloc] init];
 		
 		CGFloat step = (frame.size.height / 4)*4;
 		CGFloat double_step = step * 2;
@@ -126,10 +296,12 @@
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] normalGradient] drawInRect: frame angle: 90];
 		
 		//Get the animation index (private)
-		int animationIndex = 0;
-		object_getInstanceVariable( self, "_animationIndex", (void **)&animationIndex );
+		unsigned int animationIndex = 0;
+		animationIndex = (unsigned int)object_getIvar(self, _animationIndex);
+//		animationIndex = [[self valueForKey:@"animationIndex"]intValue];
+//		Ivar u = object_getIvar( self, _animationIndex);//, (void **)&animationIndex );
 		animationIndex %= 32;
-		
+
 		//Create XFormation
 		NSAffineTransform *trans = [NSAffineTransform transform];
 		[trans translateXBy:animationIndex - 16 yBy: 0];
@@ -180,7 +352,7 @@
             CGContextRotateCTM(currentContext, -M_PI * 2.0f/NUM_FINS);
             alpha -= 1.0/NUM_FINS;
         }
-        [path release];
+//        [path release];
     }
     else {
         float lineWidth = 1 + (0.01 * theMaxSize);
@@ -191,12 +363,12 @@
         [path setLineWidth:lineWidth];
         [path appendBezierPathWithOvalInRect:NSMakeRect(-circleRadius, -circleRadius, circleRadius*2, circleRadius*2)];
         [path stroke];
-        [path release];
+//        [path release];
         path = [[NSBezierPath alloc] init];
         [path appendBezierPathWithArcWithCenter:circleCenter radius:circleRadius startAngle:90 endAngle:90-(360*([self doubleValue]/[self maxValue])) clockwise:YES];
         [path lineToPoint:circleCenter] ;
         [path fill];
-        [path release];
+//        [path release];
     }
 	
     [NSGraphicsContext restoreGraphicsState];
@@ -215,12 +387,12 @@
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[progressPath release];
-	[super dealloc];
-}
+//-(void)dealloc {
+//	
+//	[themeKey release];
+//	[progressPath release];
+//	[super dealloc];
+//}
 
 #pragma mark -
 
@@ -246,8 +418,9 @@
 
 - (void)animateInBackgroundThread
 {
-	NSAutoreleasePool *animationPool = [[NSAutoreleasePool alloc] init];
-	
+//	NSAutoreleasePool *animationPool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
+
 	// Set up the animation speed to subtly change with size > 32.
 	// int animationDelay = 38000 + (2000 * ([self bounds].size.height / 32));
     
@@ -261,13 +434,15 @@
 		usleep(animationDelay);
 		poolFlushCounter++;
 		if (poolFlushCounter > 256) {
-			[animationPool drain];
-			animationPool = [[NSAutoreleasePool alloc] init];
+			}//[animationPool drain];
+			@autoreleasepool {
+
+//			animationPool = [[NSAutoreleasePool alloc] init];
 			poolFlushCounter = 0;
 		}
 	} while (![[NSThread currentThread] isCancelled]); 
-    
-	[animationPool release];
+    }
+//	[animationPool release];
 }
 
 - (void)actuallyStopAnimation
@@ -278,13 +453,13 @@
 		if (![spinningAnimationThread isFinished]) {
 			[[NSRunLoop currentRunLoop] runMode:NSModalPanelRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.05]];
 		}
-		[spinningAnimationThread release];
+//		[spinningAnimationThread release];
         spinningAnimationThread = nil;
 	}
     else if (spinningAnimationTimer) {
         // we were using timer-based animation
         [spinningAnimationTimer invalidate];
-        [spinningAnimationTimer release];
+//        [spinningAnimationTimer release];
         spinningAnimationTimer = nil;
     }
     [self setNeedsDisplay:YES];
@@ -302,11 +477,11 @@
             [spinningAnimationThread start];
         }
         else {
-            spinningAnimationTimer = [[NSTimer timerWithTimeInterval:(NSTimeInterval)0.05
+            spinningAnimationTimer = [NSTimer timerWithTimeInterval:(NSTimeInterval)0.05
 															  target:self
 															selector:@selector(updateFrame:)
 															userInfo:nil
-															 repeats:YES] retain];
+															 repeats:YES];// retain];
             
             [[NSRunLoop currentRunLoop] addTimer:spinningAnimationTimer forMode:NSRunLoopCommonModes];
             [[NSRunLoop currentRunLoop] addTimer:spinningAnimationTimer forMode:NSDefaultRunLoopMode];
@@ -345,5 +520,5 @@
 		[super startAnimation:sender];
 	}
 }
-
 @end
+*/

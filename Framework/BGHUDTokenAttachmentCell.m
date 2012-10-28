@@ -11,9 +11,7 @@
 
 @implementation BGHUDTokenAttachmentCell
 
-@synthesize tokenFillNormal;
-@synthesize tokenFillHighlight;
-@synthesize tokenBorder;
+@synthesize tokenFillNormal, tokenFillHighlight, tokenBorder;
 
 - (id)tokenForegroundColor {
 
@@ -88,7 +86,6 @@
 		[newTitle drawInRect: textRect];
 	}
 	
-	[newTitle release];
 }
 
 @end

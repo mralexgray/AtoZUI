@@ -118,7 +118,6 @@
 	[border stroke];
 	[NSGraphicsContext restoreGraphicsState];
 	
-	[border release];
 	
 	//Draw Background (used as dividers)
 	NSBezierPath *shadowPath = [[NSBezierPath alloc] init];
@@ -136,7 +135,6 @@
 	}
 	[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
 	[shadowPath fill];
-	[shadowPath release];
 	
 	//Draw Segments
 	[NSGraphicsContext saveGraphicsState];
@@ -226,7 +224,6 @@
 	}
 	
 	[gradient drawInBezierPath: fillPath angle: 90];
-	[fillPath release];
 	
 	[self drawInteriorForSegment: segment withFrame: fillRect];
 }
@@ -261,7 +258,6 @@
 		newTitle = [[NSAttributedString alloc] initWithString: @"" attributes: textAttributes];
 	}
 	
-	[textAttributes release];
 	//}
 	
 	NSRect textRect = rect;
@@ -317,7 +313,6 @@
 		[newTitle drawInRect: textRect];
 	}
 	
-	[newTitle release];
 }
 
 -(BOOL)hasText {
@@ -337,10 +332,5 @@
 	return flag;
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 @end

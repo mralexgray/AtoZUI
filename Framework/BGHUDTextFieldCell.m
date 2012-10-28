@@ -120,7 +120,7 @@
 	cellFrame = NSInsetRect(cellFrame, 0.5f, 0.5f);
 	
 	//Create Path
-	NSBezierPath *path = [[NSBezierPath new] autorelease];
+	NSBezierPath *path = [NSBezierPath new];
 	
 	if([self bezelStyle] == NSTextFieldRoundedBezel) {
 		
@@ -187,7 +187,7 @@
 	}
 	
 	//Get Attributes of the selected text
-	NSMutableDictionary *dict = [[[view selectedTextAttributes] mutableCopy] autorelease];	
+	NSMutableDictionary *dict = [[view selectedTextAttributes] mutableCopy];	
 	
 	//If window/app is active draw the highlight/text in active colors
 	if([self showsFirstResponder] && [[[self controlView] window] isKeyWindow]) {
@@ -223,10 +223,9 @@
 								 [[[BGThemeManager keyedManager] themeForKey: self.themeKey] placeholderTextColor] , NSForegroundColorAttributeName, 
 								 style, NSParagraphStyleAttributeName, nil];
 		
-		[style release];
 		
 		//Set it
-		[self setPlaceholderAttributedString: [[[NSAttributedString alloc] initWithString: [self placeholderString] attributes: [attribs autorelease]] autorelease]];
+		[self setPlaceholderAttributedString: [[NSAttributedString alloc] initWithString: [self placeholderString] attributes: attribs]];
 	} else if([self placeholderAttributedString] && [[self placeholderAttributedString] length] > 0) {
 		
 		// Check to see if the proper styles have been applied
@@ -247,8 +246,6 @@
 			[self setPlaceholderAttributedString: adjPlaceholder];
 			
 			// Cleanup
-			[style release];
-			[adjPlaceholder release];
 		}
 	}
 	
@@ -299,11 +296,6 @@
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 

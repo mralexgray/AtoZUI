@@ -57,11 +57,6 @@
 	[coder encodeBool: [self useTransparentWell] forKey: @"useTransparentWell"];
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 #pragma mark Drawing Methods

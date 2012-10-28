@@ -275,7 +275,6 @@
 		[self drawImage: [self image] withFrame: imageFrame inView: controlView];
 	}
 	
-	[aTitle release];
 }
 
 - (void)drawImage:(NSImage *)image withFrame:(NSRect)frame inView:(NSView *)controlView {
@@ -459,7 +458,6 @@
 		
 		[arrow fill];
 		
-		[arrow release];
 		
 	} else {
 		
@@ -527,19 +525,12 @@
 		}
 		[bottomArrow fill];
 		
-		[topArrow release];
-		[bottomArrow release];
 	}
 }
 
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release]; 
-	[super dealloc];
-}
 
 #pragma mark -
 

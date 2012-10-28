@@ -11,11 +11,14 @@
 
 @interface bghudtestAppDelegate : NSObject <NSApplicationDelegate> {
 @private
-    NSWindow *window;
-    BGHUDTabView *tabView;
+    NSWindow *__weak window;
+    BGHUDTabView *__weak tabView;
 }
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet BGHUDTabView *tabView;
+@property (weak) IBOutlet NSWindow *window;
+@property (weak) IBOutlet BGHUDTabView *tabView;
+@property (weak) IBOutlet NSProgressIndicator *bar, *spinner;
+
+-(IBAction)doSegmentStuff:(id)sender;
 
 @end

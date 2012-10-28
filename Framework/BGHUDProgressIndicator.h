@@ -9,16 +9,19 @@
 #import <Cocoa/Cocoa.h>
 #import "BGThemeManager.h"
 
-@interface BGHUDProgressIndicator : NSProgressIndicator {
-	NSBezierPath *progressPath;
-	NSString *themeKey;
-@private
-    NSTimer *spinningAnimationTimer;
-    int spinningAnimationIndex;
-    NSThread *spinningAnimationThread;
-    BOOL isAnimating;
+@interface BGHUDProgressIndicator :NSProgressIndicator
+{
 }
 
-@property (retain) NSString *themeKey;
+@property (readwrite, retain) NSTimer* animator;
+@property (readwrite) double progressOffset;
+
+-(void)drawBezel;
+-(void)drawProgressWithBounds:(NSRect)bounds;
+-(void)drawStripesInBounds:(NSRect)bounds;
+-(void)drawShadowInBounds:(NSRect)bounds;
+-(NSBezierPath*)stripeWithOrigin:(NSPoint)origin bounds:(NSRect)frame;
+
+//@property (strong) NSString *themeKey;
 
 @end

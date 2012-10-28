@@ -5,52 +5,14 @@
 //  Created by BinaryGod on 2/15/09.
 //  Copyright 2009 none. All rights reserved.
 //
-//  Redistribution and use in source and binary forms, with or without modification,
-//  are permitted provided that the following conditions are met:
-//
-//		Redistributions of source code must retain the above copyright notice, this
-//	list of conditions and the following disclaimer.
-//
-//		Redistributions in binary form must reproduce the above copyright notice,
-//	this list of conditions and the following disclaimer in the documentation and/or
-//	other materials provided with the distribution.
-//
-//		Neither the name of the BinaryMethod.com nor the names of its contributors
-//	may be used to endorse or promote products derived from this software without
-//	specific prior written permission.
-//
-//	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS AS IS AND
-//	ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-//	WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-//	IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-//	INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-//	BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
-//	OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-//	WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-//	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-//	POSSIBILITY OF SUCH DAMAGE.
+
 
 #import "BGHUDView.h"
 
 
 @implementation BGHUDView
 
-@synthesize flipGradient;
-@synthesize drawTopBorder;
-@synthesize drawBottomBorder;
-@synthesize drawLeftBorder;
-@synthesize drawRightBorder;
-@synthesize borderColor;
-@synthesize drawTopShadow;
-@synthesize drawBottomShadow;
-@synthesize drawLeftShadow;
-@synthesize drawRightShadow;
-@synthesize shadowColor;
-@synthesize customGradient;
-@synthesize themeKey;
-@synthesize useTheme;
-@synthesize color1;
-@synthesize color2;
+@synthesize flipGradient, drawTopBorder, drawBottomBorder, drawLeftBorder, drawRightBorder, borderColor, drawTopShadow, drawBottomShadow, drawLeftShadow, drawRightShadow, shadowColor, customGradient, themeKey, useTheme, color1, color2;
 
 -(id)init {
 	
@@ -60,11 +22,11 @@
 		
 		self.themeKey = @"gradientTheme";
 		self.useTheme = YES;
-		self.flipGradient = NO;
-		self.borderColor = [[NSColor blackColor] retain];
-		self.shadowColor = [[NSColor blackColor] retain];
-		self.color1 = [[NSColor blackColor] retain];
-		self.color2 = [[NSColor whiteColor] retain];
+		self.flipGradient = YES;
+		self.borderColor = [NSColor blackColor];
+		self.shadowColor = [NSColor blackColor];
+		self.color1 = [NSColor blackColor];
+		self.color2 = [NSColor redColor];
 	}
 	
 	return self;
@@ -78,11 +40,11 @@
 		
 		self.themeKey = @"gradientTheme";
 		self.useTheme = YES;
-		self.flipGradient = NO;
-		self.borderColor = [[NSColor blackColor] retain];
-		self.shadowColor = [[NSColor blackColor] retain];
-		self.color1 = [[NSColor blackColor] retain];
-		self.color2 = [[NSColor whiteColor] retain];
+		self.flipGradient = YES;
+		self.borderColor = [NSColor blackColor];
+		self.shadowColor = [NSColor blackColor];
+		self.color1 = [NSColor blackColor];
+		self.color2 = [NSColor colorWithCalibratedRed:0.253 green:0.478 blue:0.761 alpha:1.000];
 	}
 	
 	return self;
@@ -92,16 +54,12 @@
 	
 	self = [super initWithCoder: aDecoder];
 	
-	if(self) {
+	if(self) { NSLog(@"initwithCoder");
 		
-		if([aDecoder containsValueForKey: @"themeKey"]) {
-			
-			self.themeKey = [aDecoder decodeObjectForKey: @"themeKey"];
-		} else {
-			
-			self.themeKey = @"gradientTheme";
-		}
-		
+		self.themeKey = [aDecoder containsValueForKey: @"themeKey"] ? [aDecoder decodeObjectForKey: @"themeKey"]
+																	: @"gradientTheme";
+		self.useTheme = YES;//[aDecoder containsValueForKey:@"useTheme"]  ? [aDecoder decodeBoolForKey: @"useTheme"]
+							//										: YES;
 		self.useTheme = [aDecoder decodeBoolForKey: @"useTheme"];
 		self.flipGradient = [aDecoder decodeBoolForKey: @"flipGradient"];
 		self.drawTopBorder = [aDecoder decodeBoolForKey: @"drawTopBorder"];
@@ -135,7 +93,7 @@
 		if([aDecoder containsValueForKey: @"color2"]) {
 			self.color2 = [aDecoder decodeObjectForKey: @"color2"];
 		} else {
-			self.color2 = [NSColor whiteColor];
+			self.color2 = [NSColor colorWithCalibratedRed:0.851 green:0.723 blue:0.268 alpha:1.000];
 		}
 	}
 	
@@ -167,18 +125,18 @@
 	
 	rect = [self bounds];
 	
-	if(self.useTheme) {
+//	if(self.useTheme) { NSLog(@"indeed using theme");
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] normalGradient] drawInRect: rect angle: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] gradientAngle]];
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
 		NSFrameRect(rect);
 		
-	} else {
+/*	} else {
 		
 		NSGradient *gradient;
 		
 		if(customGradient != nil) {
 			
-			gradient = [customGradient retain];
+			gradient = customGradient;
 		} else {
 			
 			gradient = [[NSGradient alloc] initWithStartingColor: self.color1 endingColor: self.color2];
@@ -197,7 +155,6 @@
 			[gradient drawInRect: rect angle: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] gradientAngle]];
 		}
 		
-		[gradient release];
 		
 		[[NSGraphicsContext currentContext] setShouldAntialias: NO];
 		
@@ -265,20 +222,9 @@
 			
 			[NSGraphicsContext restoreGraphicsState];
 		}
-		
-		[dropShadow release];
-	}
+
+	}*/
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[color1 release];
-	[color2 release];
-	[customGradient release];
-	[borderColor release];
-	[shadowColor release];
-	[super dealloc];
-}
 
 @end

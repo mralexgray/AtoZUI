@@ -88,7 +88,7 @@
 	cellFrame = NSInsetRect(cellFrame, 0.5f, 0.5f);
 	
 	//Create Path
-	NSBezierPath *path = [[NSBezierPath new] autorelease];
+	NSBezierPath *path = [NSBezierPath new];
 	
 	if([self bezelStyle] == NSTextFieldRoundedBezel) {
 		
@@ -155,7 +155,7 @@
 	}
 	
 	//Get Attributes of the selected text
-	NSMutableDictionary *dict = [[[view selectedTextAttributes] mutableCopy] autorelease];	
+	NSMutableDictionary *dict = [[view selectedTextAttributes] mutableCopy];	
 	
 	//If window/app is active draw the highlight/text in active colors
 	if([self showsFirstResponder] && [[[self controlView] window] isKeyWindow]) {
@@ -186,7 +186,7 @@
 								 [[[BGThemeManager keyedManager] themeForKey: self.themeKey] placeholderTextColor] , NSForegroundColorAttributeName, nil];
 		
 		//Set it
-		[self setPlaceholderAttributedString: [[[NSAttributedString alloc] initWithString: [self placeholderString] attributes: [attribs autorelease]] autorelease]];
+		[self setPlaceholderAttributedString: [[NSAttributedString alloc] initWithString: [self placeholderString] attributes: attribs]];
 	}
 	
 	//Adjust Frame so Text Draws correctly
@@ -231,11 +231,6 @@
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 

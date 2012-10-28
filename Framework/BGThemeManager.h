@@ -9,11 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "BGTheme.h"
 #import "BGGradientTheme.h"
+#import "AZFlatTheme.h"
 
-@interface BGThemeManager : NSObject {
 
-	NSMutableDictionary *themes;
-}
+@interface BGThemeManager : NSObject <NSCopying>
+
+@property (nonatomic, retain) NSMutableDictionary *themes;
 
 + (BGThemeManager*) keyedManager;
 - (void) 			initDefaultThemes;
