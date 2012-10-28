@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "BGTheme.h"
 
-@interface BGGradientTheme : BGTheme {
+@interface AZFlatTheme : BGTheme {
 
 }
 

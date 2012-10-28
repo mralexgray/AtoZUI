@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
+		7BFB9893163DCEAB00254DCF /* AZFlatTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */; };
+		7BFB9896163DCEC700254DCF /* AZFlatTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BFB9895163DCEC700254DCF /* AZFlatTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7050815104AD68D00F2212D /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = E7050814104AD68D00F2212D /* README.textile */; };
 		E706FE7B0E12DE180017E470 /* BGHUDOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = E706FE790E12DE180017E470 /* BGHUDOutlineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E706FE7C0E12DE180017E470 /* BGHUDOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E706FE7A0E12DE180017E470 /* BGHUDOutlineView.m */; };
@@ -89,6 +91,8 @@
 		13F8B88A07B434F6008AE28D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BGHUDAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DF68FE067E5B5A0090B5B0 /* BGHUDAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BGHUDAppKitFramework-Info.plist"; sourceTree = "<group>"; };
+		7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZFlatTheme.m; path = Framework/AZFlatTheme.m; sourceTree = "<group>"; };
+		7BFB9895163DCEC700254DCF /* AZFlatTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = AZFlatTheme.h; path = Framework/AZFlatTheme.h; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		8D1AC97B0486D23100FE50C9 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C0D069550A49DF9100C95564 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = /Developer/Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = "<absolute>"; };
@@ -424,6 +428,8 @@
 			children = (
 				E71317D40E10667D00885A23 /* BGGradientTheme.h */,
 				E71317D50E10667D00885A23 /* BGGradientTheme.m */,
+				7BFB9895163DCEC700254DCF /* AZFlatTheme.h */,
+				7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */,
 				E71317D90E10667D00885A23 /* BGTheme.h */,
 				E71317DA0E10667D00885A23 /* BGTheme.m */,
 				E71317DB0E10667D00885A23 /* BGThemeManager.h */,
@@ -520,6 +526,7 @@
 				F62F7C290EC7DC1400343989 /* BGHUDComboBoxCell.h in Headers */,
 				E7E069650F48A68B0000BDAB /* BGHUDView.h in Headers */,
 				E7CEE1CC0F49D8FB00F5DABB /* BGHUDBox.h in Headers */,
+				7BFB9896163DCEC700254DCF /* AZFlatTheme.h in Headers */,
 				E782C7600F8A25F8002657B1 /* BGHUDStepperCell.h in Headers */,
 				E70CA2BD0FB6F89D0073E3DF /* BGHUDTabViewItem.h in Headers */,
 				E70CA2C20FB6FFBB0073E3DF /* BGHUDTabView.h in Headers */,
@@ -620,6 +627,7 @@
 				E70CA2BE0FB6F89D0073E3DF /* BGHUDTabViewItem.m in Sources */,
 				E70CA2C30FB6FFBB0073E3DF /* BGHUDTabView.m in Sources */,
 				E758DF9013F1EEF7006B3549 /* BGHUDCommon.m in Sources */,
+				7BFB9893163DCEAB00254DCF /* AZFlatTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,7 +648,7 @@
 		C056398008A954F8003078D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -673,16 +681,16 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "BGHUDAppKitFramework-Info.plist";
 				INSTALL_PATH = "@rpath";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = BGHUDAppKit;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		C056398108A954F8003078D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -695,10 +703,10 @@
 				INFOPLIST_FILE = "BGHUDAppKitFramework-Info.plist";
 				INSTALL_PATH = "@rpath";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = BGHUDAppKit;
 				SEPARATE_STRIP = YES;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 			};
 			name = Release;

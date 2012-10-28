@@ -7,15 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BFB988C163DC34D00254DCF /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFB987D163DC28100254DCF /* BGHUDAppKit.framework */; };
+		7BFB988D163DC35300254DCF /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7BFB987D163DC28100254DCF /* BGHUDAppKit.framework */; };
 		E70E5C811354CBB900BAA5B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70E5C801354CBB900BAA5B0 /* Cocoa.framework */; };
 		E70E5C8B1354CBB900BAA5B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E70E5C891354CBB900BAA5B0 /* InfoPlist.strings */; };
 		E70E5C8E1354CBB900BAA5B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E5C8D1354CBB900BAA5B0 /* main.m */; };
 		E70E5C911354CBB900BAA5B0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E70E5C8F1354CBB900BAA5B0 /* Credits.rtf */; };
 		E70E5C941354CBB900BAA5B0 /* bghudtestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E5C931354CBB900BAA5B0 /* bghudtestAppDelegate.m */; };
 		E70E5C971354CBB900BAA5B0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70E5C951354CBB900BAA5B0 /* MainMenu.xib */; };
-		E73CD0C61354CE5F006D4D89 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73CD0C51354CE5F006D4D89 /* BGHUDAppKit.framework */; };
-		E73CD0C91354CE90006D4D89 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E73CD0C51354CE5F006D4D89 /* BGHUDAppKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7BFB987C163DC28100254DCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BFB9875163DC28000254DCF /* BGHUDAppKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53DF68FD067E5B5A0090B5B0;
+			remoteInfo = BGHUDAppKit;
+		};
+		7BFB988A163DC34000254DCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BFB9875163DC28000254DCF /* BGHUDAppKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 53DF68FC067E5B5A0090B5B0;
+			remoteInfo = BGHUDAppKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E73CD0C81354CE88006D4D89 /* CopyFiles */ = {
@@ -24,13 +41,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E73CD0C91354CE90006D4D89 /* BGHUDAppKit.framework in CopyFiles */,
+				7BFB988D163DC35300254DCF /* BGHUDAppKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7BFB9875163DC28000254DCF /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = ../BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
 		E70E5C7C1354CBB900BAA5B0 /* bghudtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bghudtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70E5C801354CBB900BAA5B0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E70E5C831354CBB900BAA5B0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -52,17 +70,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73CD0C61354CE5F006D4D89 /* BGHUDAppKit.framework in Frameworks */,
 				E70E5C811354CBB900BAA5B0 /* Cocoa.framework in Frameworks */,
+				7BFB988C163DC34D00254DCF /* BGHUDAppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BFB9876163DC28000254DCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BFB987D163DC28100254DCF /* BGHUDAppKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E70E5C711354CBB800BAA5B0 = {
 			isa = PBXGroup;
 			children = (
+				7BFB9875163DC28000254DCF /* BGHUDAppKit.xcodeproj */,
 				E70E5C861354CBB900BAA5B0 /* bghudtest */,
 				E70E5C7F1354CBB900BAA5B0 /* Frameworks */,
 				E70E5C7D1354CBB900BAA5B0 /* Products */,
@@ -135,6 +162,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7BFB988B163DC34000254DCF /* PBXTargetDependency */,
 			);
 			name = bghudtest;
 			productName = bghudtest;
@@ -159,12 +187,28 @@
 			mainGroup = E70E5C711354CBB800BAA5B0;
 			productRefGroup = E70E5C7D1354CBB900BAA5B0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7BFB9876163DC28000254DCF /* Products */;
+					ProjectRef = 7BFB9875163DC28000254DCF /* BGHUDAppKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E70E5C7B1354CBB900BAA5B0 /* bghudtest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7BFB987D163DC28100254DCF /* BGHUDAppKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BGHUDAppKit.framework;
+			remoteRef = 7BFB987C163DC28100254DCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E70E5C7A1354CBB900BAA5B0 /* Resources */ = {
@@ -190,6 +234,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7BFB988B163DC34000254DCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BGHUDAppKit;
+			targetProxy = 7BFB988A163DC34000254DCF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E70E5C891354CBB900BAA5B0 /* InfoPlist.strings */ = {

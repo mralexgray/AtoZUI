@@ -6,10 +6,10 @@
 //
 
 
-#import "BGGradientTheme.h"
+#import "AZFlatTheme.h"
 
 
-@implementation BGGradientTheme
+@implementation AZFlatTheme
 
 -(NSGradient *)normalGradient {
 	
