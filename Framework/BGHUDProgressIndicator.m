@@ -1,14 +1,12 @@
-//
-//  BGHUDProgressIndicator.m
-//  BGHUDAppKit
-//
-//  Created by BinaryGod on 6/6/08.
-//
 
-
-#import "BGHUDProgressIndicator.h"
-
-#import <objc/runtime.h>
+//@interface  BGHUDProgressIndicator ()
+//@property (nonatomic,retain) NSThread 	   *spinningAnimationThread;
+//@property (nonatomic,retain) NSTimer	   *spinningAnimationTimer;
+//@property (nonatomic,retain) NSBezierPath  *progressPath;
+//@property (nonatomic,assign) NSInteger		spinningAnimationIndex;
+//@property (nonatomic,assign) BOOL 			isAnimating;
+//
+//@end
 
 
 
@@ -24,20 +22,19 @@
 #define DEFAULT_lighterStripeColor [NSColor colorWithCalibratedRed:182.0/255.0 green:216.0/255.0 blue:86.0/255.0 alpha:1.0]
 #define DEFAULT_darkerStripeColor [NSColor colorWithCalibratedRed:126.0/255.0 green:187.0/255.0 blue:55.0/255.0 alpha:1.0]
 #define DEFAULT_shadowColor [NSColor colorWithCalibratedRed:223.0/255.0 green:238.0/255.0 blue:181.0/255.0 alpha:1.0]
+#import "BGHUDProgressIndicator.h"
 
-
-
-//@interface  BGHUDProgressIndicator ()
-//@property (nonatomic,retain) NSThread 	   *spinningAnimationThread;
-//@property (nonatomic,retain) NSTimer	   *spinningAnimationTimer;
-//@property (nonatomic,retain) NSBezierPath  *progressPath;
-//@property (nonatomic,assign) NSInteger		spinningAnimationIndex;
-//@property (nonatomic,assign) BOOL 			isAnimating;
-//
-//@end
+@interface BGHUDProgressIndicator ()
+-(void)drawBezel;
+-(void)drawProgressWithBounds:(NSRect)bounds;
+-(void)drawStripesInBounds:(NSRect)bounds;
+-(void)drawShadowInBounds:(NSRect)bounds;
+-(NSBezierPath*)stripeWithOrigin:(NSPoint)origin bounds:(NSRect)frame;
+@end
 
 @implementation BGHUDProgressIndicator
-@synthesize progressOffset, animator;
+
+@synthesize progressOffset;
 
 #pragma mark Accessors
 
@@ -48,6 +45,16 @@
     }
 }
 
+-(NSTimer*)animator {
+    return animator;
+}
+
+-(void)setAnimator:(NSTimer *)value {
+    if (animator != value) {
+        [animator invalidate];
+        animator = value;
+    }
+}
 
 #pragma mark Initialization
 
@@ -66,6 +73,7 @@
 -(void)dealloc {
     self.progressOffset = 0;
     self.animator = nil;
+    
 }
 
 #pragma mark -
@@ -118,13 +126,17 @@
 -(void)drawBezel {
     CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
     CGContextSaveGState(context);
+    
     CGFloat maxX = NSMaxX(self.bounds);
+    
     //white shadow
     NSBezierPath* shadow = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0.5, 0, self.bounds.size.width-1, self.bounds.size.height-1) xRadius:DEFAULT_radius yRadius:DEFAULT_radius];
     [NSBezierPath clipRect:NSMakeRect(0, self.bounds.size.height/2, self.bounds.size.width, self.bounds.size.height/2)];
     [[NSColor colorWithCalibratedWhite:1.0 alpha:0.2] set];
     [shadow stroke];
+    
     CGContextRestoreGState(context);
+    
     //rounded rect
     NSBezierPath* roundedRect = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0, 0, self.bounds.size.width, self.bounds.size.height-1) xRadius:DEFAULT_radius yRadius:DEFAULT_radius];
     [DEFAULT_barColor set];
@@ -148,19 +160,56 @@
 }
 
 -(void)drawRect:(NSRect)dirtyRect {
-    
-    self.progressOffset = (self.progressOffset > (2*DEFAULT_stripeWidth)-1) ? 0 : ++self.progressOffset;
-    float distance = [self maxValue]-[self minValue];
-    float value = ([self doubleValue]) ? [self doubleValue]/distance : 0;
-    [self drawBezel];
-    if (value) {
-        NSRect bounds = NSMakeRect(DEFAULT_inset, DEFAULT_inset, self.frame.size.width*value-2*DEFAULT_inset, (self.frame.size.height-2*DEFAULT_inset)-1);
-        
-        [self drawProgressWithBounds:bounds];
-        [self drawStripesInBounds:bounds];
-        [self drawShadowInBounds:bounds];
-    }
+
+	if ([self style] == NSProgressIndicatorBarStyle)
+	{
+		self.progressOffset = (self.progressOffset > (2*DEFAULT_stripeWidth)-1) ? 0 : ++self.progressOffset;
+		
+		float distance = [self maxValue]-[self minValue];
+		float value = ([self doubleValue]) ? [self doubleValue]/distance : 0;
+		
+		[self drawBezel];
+		
+		if (value) {
+			NSRect bounds = NSMakeRect(DEFAULT_inset, DEFAULT_inset, self.frame.size.width*value-2*DEFAULT_inset, (self.frame.size.height-2*DEFAULT_inset)-1);
+			
+			[self drawProgressWithBounds:bounds];
+			[self drawStripesInBounds:bounds];
+			[self drawShadowInBounds:bounds];
+		}
+	}
+	else if ([self style] == NSProgressIndicatorSpinningStyle) {
+		[self drawSpinningStyleIndicator];
+	}
+
 }
+
+- (void) drawSpinningStyleIndicator
+{
+	[[NSColor whiteColor] set];
+
+	NSRect progressRect, rect; CGFloat radius;  NSBezierPath *bz;
+
+	rect 	 = NSInsetRect([self bounds], 1.0, 1.0);
+	radius 	 = rect.size.height / 2;
+	bz		 = [NSBezierPath bezierPathWithRoundedRect:rect xRadius:radius yRadius:radius];
+	[bz setLineWidth:2.0];
+	[bz stroke];
+
+	rect 	 = NSInsetRect(rect, 2.0, 2.0);
+	radius 	 = rect.size.height / 2;
+	bz	 	 = [NSBezierPath bezierPathWithRoundedRect:rect xRadius:radius yRadius:radius];
+	[bz setLineWidth:1.0];	[bz addClip];
+    
+  	progressRect = NSMakeRect(	rect.origin.x,
+								rect.origin.x,
+								floor(rect.size.width * ([self doubleValue] / [self maxValue])),
+								rect.size.height);
+    
+	NSRectFill(progressRect);
+
+}
+
 
 #pragma mark -
 #pragma mark Actions
@@ -172,14 +221,46 @@
 }
 
 -(void)stopAnimation:(id)sender {
-	[self.animator invalidate];
     self.animator = nil;
 }
 
 -(void)activateAnimation:(NSTimer*)timer {
-    [self setNeedsDisplay:YES];}
+    [self setNeedsDisplay:YES];
+}
+
+#pragma mark -
 
 @end
+
+
+
+/*
+- (void)drawRect:(NSRect)r
+{
+
+ 	[[NSColor whiteColor] set];
+
+	NSRect progressRect, rect; CGFloat radius;  NSBezierPath *bz;
+
+	rect 	 = NSInsetRect([self bounds], 1.0, 1.0);
+	radius 	 = rect.size.height / 2;
+	bz		 = [NSBezierPath bezierPathWithRoundedRect:rect xRadius:radius yRadius:radius];
+	[bz setLineWidth:2.0];
+	[bz stroke];
+
+	rect 	 = NSInsetRect(rect, 2.0, 2.0);
+	radius 	 = rect.size.height / 2;
+	bz	 	 = [NSBezierPath bezierPathWithRoundedRect:rect xRadius:radius yRadius:radius];
+	[bz setLineWidth:1.0];	[bz addClip];
+    
+  	progressRect = NSMakeRect(	rect.origin.x,
+								rect.origin.x,
+								floor(rect.size.width * ([self doubleValue] / [self maxValue])),
+								rect.size.height);
+    
+	NSRectFill(progressRect);
+}
+/*/
 
 /*
 @synthesize themeKey, spinningAnimationIndex, spinningAnimationThread, progressPath, spinningAnimationTimer, isAnimating;

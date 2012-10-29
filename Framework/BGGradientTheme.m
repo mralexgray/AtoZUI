@@ -6,7 +6,7 @@
 //
 
 
-#import "BGGradientTheme.h"
+#import "BGTheme.h"
 
 
 @implementation BGGradientTheme

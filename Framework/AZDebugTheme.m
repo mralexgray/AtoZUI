@@ -12,7 +12,7 @@
 
 #define GRADIENT_ANGLE 270
 
-@implementation AZFlatTheme
+@implementation AZDebugTheme
 
 
 #pragma mark General Theme
@@ -21,10 +21,8 @@
 
 -(NSGradient *)normalGradient  //BACKGROUND OF VIEWS
 {
-	return [[ NSGradient alloc] initWithStartingColor: [[NSColor colorWithCalibratedRed:0.421 green:0.630 blue:0.254 alpha:1.000]SELF_ALPHA]
+	return [[ NSGradient alloc] initWithStartingColor: [[NSColor colorWithCalibratedWhite:.35 alpha:1]SELF_ALPHA]
 										  endingColor: [[NSColor colorWithCalibratedWhite:0   alpha:1]SELF_ALPHA]];
-//	return [[ NSGradient alloc] initWithStartingColor: [[NSColor colorWithCalibratedWhite:.35 alpha:1]SELF_ALPHA]
-//										  endingColor: [[NSColor colorWithCalibratedWhite:0   alpha:1]SELF_ALPHA]];
 }
 
 -(NSColor *)strokeColor {

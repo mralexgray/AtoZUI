@@ -8,20 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BGThemeManager.h"
+#import <Foundation/Foundation.h>
 
-@interface BGHUDProgressIndicator :NSProgressIndicator
-{
+@interface BGHUDProgressIndicator :NSProgressIndicator {
+    double progressOffset;
+    NSTimer* animator;
 }
 
-@property (readwrite, retain) NSTimer* animator;
+@property (readwrite, strong) NSTimer* animator;
 @property (readwrite) double progressOffset;
+@property (strong) NSString *themeKey;
 
--(void)drawBezel;
--(void)drawProgressWithBounds:(NSRect)bounds;
--(void)drawStripesInBounds:(NSRect)bounds;
--(void)drawShadowInBounds:(NSRect)bounds;
--(NSBezierPath*)stripeWithOrigin:(NSPoint)origin bounds:(NSRect)frame;
-
-//@property (strong) NSString *themeKey;
 
 @end

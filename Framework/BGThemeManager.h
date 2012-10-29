@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BGTheme.h"
-#import "BGGradientTheme.h"
-#import "AZFlatTheme.h"
 
 
 @interface BGThemeManager : NSObject <NSCopying>

@@ -49,14 +49,14 @@
 
 /* Begin PBXFileReference section */
 		7BFB9875163DC28000254DCF /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = ../BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
-		E70E5C7C1354CBB900BAA5B0 /* bghudtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bghudtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70E5C7C1354CBB900BAA5B0 /* AtoZHUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtoZHUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70E5C801354CBB900BAA5B0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E70E5C831354CBB900BAA5B0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E70E5C841354CBB900BAA5B0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E70E5C851354CBB900BAA5B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E70E5C881354CBB900BAA5B0 /* bghudtest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bghudtest-Info.plist"; sourceTree = "<group>"; };
+		E70E5C881354CBB900BAA5B0 /* AtoZHUD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AtoZHUD-Info.plist"; sourceTree = "<group>"; };
 		E70E5C8A1354CBB900BAA5B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E70E5C8C1354CBB900BAA5B0 /* bghudtest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bghudtest-Prefix.pch"; sourceTree = "<group>"; };
+		E70E5C8C1354CBB900BAA5B0 /* AtoZHUD-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AtoZHUD-Prefix.pch"; sourceTree = "<group>"; };
 		E70E5C8D1354CBB900BAA5B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E70E5C901354CBB900BAA5B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		E70E5C921354CBB900BAA5B0 /* bghudtestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bghudtestAppDelegate.h; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		E70E5C7D1354CBB900BAA5B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E70E5C7C1354CBB900BAA5B0 /* bghudtest.app */,
+				E70E5C7C1354CBB900BAA5B0 /* AtoZHUD.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,9 +138,9 @@
 		E70E5C871354CBB900BAA5B0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E70E5C881354CBB900BAA5B0 /* bghudtest-Info.plist */,
+				E70E5C881354CBB900BAA5B0 /* AtoZHUD-Info.plist */,
 				E70E5C891354CBB900BAA5B0 /* InfoPlist.strings */,
-				E70E5C8C1354CBB900BAA5B0 /* bghudtest-Prefix.pch */,
+				E70E5C8C1354CBB900BAA5B0 /* AtoZHUD-Prefix.pch */,
 				E70E5C8D1354CBB900BAA5B0 /* main.m */,
 				E70E5C8F1354CBB900BAA5B0 /* Credits.rtf */,
 			);
@@ -150,9 +150,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E70E5C7B1354CBB900BAA5B0 /* bghudtest */ = {
+		E70E5C7B1354CBB900BAA5B0 /* AtoZHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E70E5C9A1354CBB900BAA5B0 /* Build configuration list for PBXNativeTarget "bghudtest" */;
+			buildConfigurationList = E70E5C9A1354CBB900BAA5B0 /* Build configuration list for PBXNativeTarget "AtoZHUD" */;
 			buildPhases = (
 				E70E5C781354CBB900BAA5B0 /* Sources */,
 				E70E5C791354CBB900BAA5B0 /* Frameworks */,
@@ -164,9 +164,9 @@
 			dependencies = (
 				7BFB988B163DC34000254DCF /* PBXTargetDependency */,
 			);
-			name = bghudtest;
+			name = AtoZHUD;
 			productName = bghudtest;
-			productReference = E70E5C7C1354CBB900BAA5B0 /* bghudtest.app */;
+			productReference = E70E5C7C1354CBB900BAA5B0 /* AtoZHUD.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -177,7 +177,7 @@
 			attributes = {
 				ORGANIZATIONNAME = none;
 			};
-			buildConfigurationList = E70E5C761354CBB800BAA5B0 /* Build configuration list for PBXProject "bghudtest" */;
+			buildConfigurationList = E70E5C761354CBB800BAA5B0 /* Build configuration list for PBXProject "AtoZHUD" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -195,7 +195,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E70E5C7B1354CBB900BAA5B0 /* bghudtest */,
+				E70E5C7B1354CBB900BAA5B0 /* AtoZHUD */,
 			);
 		};
 /* End PBXProject section */
@@ -317,10 +317,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bghudtest/bghudtest-Prefix.pch";
-				INFOPLIST_FILE = "bghudtest/bghudtest-Info.plist";
+				GCC_PREFIX_HEADER = "bghudtest/AtoZHUD-Prefix.pch";
+				INFOPLIST_FILE = "bghudtest/AtoZHUD-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AtoZHUD;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -339,10 +339,10 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bghudtest/bghudtest-Prefix.pch";
-				INFOPLIST_FILE = "bghudtest/bghudtest-Info.plist";
+				GCC_PREFIX_HEADER = "bghudtest/AtoZHUD-Prefix.pch";
+				INFOPLIST_FILE = "bghudtest/AtoZHUD-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AtoZHUD;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -350,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E70E5C761354CBB800BAA5B0 /* Build configuration list for PBXProject "bghudtest" */ = {
+		E70E5C761354CBB800BAA5B0 /* Build configuration list for PBXProject "AtoZHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E70E5C981354CBB900BAA5B0 /* Debug */,
@@ -359,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E70E5C9A1354CBB900BAA5B0 /* Build configuration list for PBXNativeTarget "bghudtest" */ = {
+		E70E5C9A1354CBB900BAA5B0 /* Build configuration list for PBXNativeTarget "AtoZHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E70E5C9B1354CBB900BAA5B0 /* Debug */,

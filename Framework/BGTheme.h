@@ -1,88 +1,89 @@
-//
-//  BGThemeManager.h
-//  BGHUDAppKit
-//
-//  Created by BinaryGod on 6/15/08.
-//
-
 
 #import <Cocoa/Cocoa.h>
 
 
-@interface BGTheme : NSObject {
-	
+@interface BGTheme : NSObject
+{
 	BOOL useAlpha;
 }
 
-//Scroller Theme
--(NSColor *)scrollerStroke;						//Color for Arrows/Knob Border
--(NSGradient *)scrollerKnobGradient;			//Gradient used to draw knob
--(NSGradient *)scrollerTrackGradient;			//Gradient used to draw knob track
--(NSGradient *)scrollerArrowNormalGradient;		//Gradient used on normal Arrow button
--(NSGradient *)scrollerArrowPushedGradient;		//Gradient used on pushed Arrow button
--(CGFloat)scrollerAlphaValue;
+//	General Theme
 
-//Slider Theme
--(NSColor *)sliderTrackColor;					//Color used to draw slider track
--(NSColor *)disabledSliderTrackColor;			//Color used to draw disabled slider track
--(NSGradient *)knobColor;						//Gradient used to draw the knob
--(NSGradient *)highlightKnobColor;				//Gradient used to draw highlighted knob
--(NSGradient *)disabledKnobColor;				//Gradient used to draw disabled knob
+//	Alphas used only if you want certain colors to be draw with the same	alpha value.
+@property (readonly) CGFloat 	 gradientAngle, alphaValue, disabledAlphaValue;
 
-//Text Based Theme
--(BOOL)isOverrideFillColor;
--(NSColor *)textFillColor;						//Color of background if drawbackground set to ON
--(NSColor *)selectionHighlightActiveColor;		//Background color of higlighted text (active app)
--(NSColor *)selectionHighlightInActiveColor;	//Background color of higlighted text (inactive app)
--(NSColor *)selectionTextActiveColor;			//Selection text color (active app)
--(NSColor *)selectionTextInActiveColor;			//Selection text color (inactive app)
--(NSColor *)placeholderTextColor;				//Placeholder text color
+//	Gradient used to draw standard and complex (4 tone) normal,  disabled,  pushed, and highlight background
+@property (readonly) NSGradient *normalGradient, *disabledNormalGradient, *highlightGradient, *pushedGradient,
+								*normalComplexGradient, *disabledNormalComplexGradient, *pushedComplexGradient, *highlightComplexGradient;;
 
-//Progress Theme
--(NSGradient *)progressTrackGradient;			//Gradient used to draw progress bar track
+//	Solid color used to draw normal, disabled, pushed, and highlight background.
+@property (readonly) NSColor 	*normalSolidFill, *disabledNormalSolidFill, *pushedSolidFill, *highlightSolidFill;
 
-//Token Theme
--(NSColor *)tokenFillNormal;					//Color used to fill normal token background
--(NSColor *)tokenFillHighlight;					//Color used to fill highlighted token background
--(NSColor *)tokenBorder;						//Color used to draw token border
--(NSColor *)tokenTextColor;						//Color used to draw token text
+//	Color used to draw borders, disabled brders, and dark shadow borders.
+@property (readonly) NSColor 	*strokeColor, *disabledStrokeColor, *darkStrokeColor;
 
-//Table Theme
--(NSColor *)cellHighlightColor;					//Color used to highlight selected row
--(NSArray *)cellAlternatingRowColors;			//NSArray with 2 Colors used to draw alternating rows
--(NSColor *)cellSelectedTextColor;				//Color used to draw text when row selected
--(NSColor *)cellEditingFillColor;				//Color used to draw background of editing cell
--(NSColor *)tableBackgroundColor;				//Color used to fill table background
--(NSColor *)tableHeaderCellBorderColor;			//Color used to draw border in column headers
--(NSGradient *)tableHeaderCellNormalFill;		//Gradient used to draw normal column header
--(NSGradient *)tableHeaderCellPushedFill;		//Gradient used to draw pushed column header
--(NSGradient *)tableHeaderCellSelectedFill;		//Gradient used to draw selected column header
+ // 	Color used to draw standard, hightlight text, disabled text
+@property (readonly) NSColor 	*textColor, *highlightTextColor, *disabledTextColor;
 
-//General Theme
--(CGFloat)gradientAngle;
--(NSGradient *)normalGradient;					//Gradient used to draw normal background
--(NSGradient *)disabledNormalGradient;			//Gradient used for disabled background
--(NSGradient *)pushedGradient;					//Gradient used to draw pushed background
--(NSGradient *)highlightGradient;				//Gradient used to draw highlight background
--(NSGradient *)normalComplexGradient;			//Gradient used to draw normal 4 tone gradient
--(NSGradient *)disabledNormalComplexGradient;	//Gradient used to draw disabled 4 tone gradient
--(NSGradient *)pushedComplexGradient;			//Gradient used to draw pushed 4 tone gradient
--(NSGradient *)highlightComplexGradient;		//Gradient used to draw highlight 4 tone gradient
--(NSColor *)normalSolidFill;					//Solid color used to draw normal background
--(NSColor *)disabledNormalSolidFill;			//Solid color used to draw disabled background
--(NSColor *)pushedSolidFill;					//Solid color used to draw pushed background
--(NSColor *)highlightSolidFill;					//Solid color used to draw highlight background
--(NSColor *)strokeColor;						//Color used to draw border
--(NSColor *)disabledStrokeColor;				//Color used for disabled border
--(NSColor *)darkStrokeColor;					//Color used to draw dark shadow border
--(NSColor *)textColor;							//Color used to draw text
--(NSColor *)highlightTextColor;
--(NSColor *)disabledTextColor;					//Color used to draw disabled text
--(NSShadow *)dropShadow;						//Drop shadow used on all controls
--(CGFloat)alphaValue;								//Alpha value that is an optional paremeter, used only
-												//if you want certain colors to be draw with the same
-												//alpha value.
--(CGFloat)disabledAlphaValue;						//Same as above but the disabled varient
--(NSShadow *)focusRing;							//Shadow used for the focus rings
+//	Drop shadow used on all controls   + Shadow used for the focus rings
+@property (readonly) NSShadow *dropShadow, *focusRing;
+
+//	Scroller Theme
+//	Color for Arrows/Knob Border
+@property (readonly) NSColor 	*scrollerStroke;
+//	Gradient used to draw knob, knob track, normal Arrow button, and pushed Arrow button
+@property (readonly) NSGradient	*scrollerKnobGradient, *scrollerTrackGradient, *scrollerArrowNormalGradient, *scrollerArrowPushedGradient;
+@property (readonly) CGFloat 	scrollerAlphaValue;
+
+													//	Slider Theme
+- (NSColor*)	sliderTrackColor;					//	Color used to draw          slider track
+- (NSColor*)	disabledSliderTrackColor; 			//	Color used to draw disabled slider track
+- (NSGradient*)	knobColor;							//	Gradient used to draw         the knob
+- (NSGradient*)	highlightKnobColor;					//	Gradient used to draw highlighted knob
+- (NSGradient*)	disabledKnobColor;					//	Gradient used to draw    disabled knob
+
+													//	Text Based Theme
+- (NSColor*)	textFillColor;						//	Color of background if drawbackground set to ON
+- (NSColor*)	selectionHighlightActiveColor;		//	Background color of higlighted text (active app)
+- (NSColor*)	selectionHighlightInActiveColor;	//	Background color of higlighted text (inactive app)
+- (NSColor*)	selectionTextActiveColor;			//	Selection text color (active app)
+- (NSColor*)	selectionTextInActiveColor;			//	Selection text color (inactive app)
+- (NSColor*)	placeholderTextColor;				//	Placeholder text color
+- (BOOL)		isOverrideFillColor;
+
+													//	Progress Theme
+- (NSGradient*)	progressTrackGradient;				//	Gradient used to draw progress bar track
+
+													//	Token Theme
+- (NSColor*)	tokenFillNormal;					//	Color used to fill      normal token background
+- (NSColor*)	tokenFillHighlight;					//	Color used to fill highlighted token background
+- (NSColor*)	tokenBorder;							//	Color used to draw token border
+- (NSColor*)	tokenTextColor;						//	Color used to draw token text
+
+													//	Table Theme
+- (NSColor*)	cellHighlightColor;					//	Color used to highlight selected row
+- (NSArray*)	cellAlternatingRowColors;			//	NSArray with 2 Colors used to draw alternating rows
+- (NSColor*)	cellSelectedTextColor;				//	Color used to draw text when row selected
+- (NSColor*)	cellEditingFillColor;				//	Color used to draw background of editing cell
+- (NSColor*)	tableBackgroundColor;				//	Color used to fill table background
+- (NSColor*)	tableHeaderCellBorderColor;			//	Color used to draw border in column headers
+
+- (NSGradient*)	tableHeaderCellNormalFill;			//	Gradient used to draw   normal column header
+- (NSGradient*)	tableHeaderCellPushedFill;			//	Gradient used to draw   pushed column header
+- (NSGradient*)	tableHeaderCellSelectedFill;		//	Gradient used to draw selected column header
+
+
 
 @end
+
+
+@interface BGGradientTheme : BGTheme
+@end
+
+@interface AZDebugTheme : BGTheme
+@end
+
+@interface AZFlatTheme : BGTheme
+@end
+
+
