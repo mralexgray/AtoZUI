@@ -20,7 +20,7 @@
 	NSString *themeKey;
 }
 
-@property (copy,getter=themeKey) NSString *themeKey;
+@property (copy,nonatomic) NSString *themeKey;
 
 - (void)drawDecrementArrow:(BOOL)highlighted;
 - (void)drawIncrementArrow:(BOOL)highlighted;

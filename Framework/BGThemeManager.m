@@ -56,10 +56,9 @@ static BGThemeManager *sharedThemeManager = nil;
 	
 }
 
-//- (void)setTheme:(BGTheme*)theme forKey:(NSString *)key {
-//	
-//	self.themes setObject: theme forKey: key];
-//}
+- (void)setTheme:(BGTheme*)theme forKey:(NSString *)key {
+	[self.themes setObject:theme forKey:key];
+}
 
 - (id)copyWithZone:(NSZone*)zone; {
     return self;

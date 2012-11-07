@@ -73,7 +73,7 @@
 -(void)dealloc {
     self.progressOffset = 0;
     self.animator = nil;
-    
+	[super dealloc];
 }
 
 #pragma mark -

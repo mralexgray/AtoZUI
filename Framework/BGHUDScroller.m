@@ -54,17 +54,9 @@
 	[coder encodeObject: self.themeKey forKey: @"themeKey"];
 }
 
--(NSString *)themeKey {
+- (NSString*)themeKey {
 	
-	if([self target]) {
-		
-		if([[self target] respondsToSelector: @selector(themeKey)]) {
-			
-			return [[self target] themeKey];
-		}
-	}
-	
-	return themeKey;
+	return [self target] && [[self target] respondsToSelector: @selector(themeKey)] ? [[self target] themeKey] : nil;
 }
 
 - (void)drawRect:(NSRect)rect {

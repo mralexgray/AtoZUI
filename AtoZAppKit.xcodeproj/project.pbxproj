@@ -10,7 +10,6 @@
 		13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
 		7BFB9893163DCEAB00254DCF /* AZFlatTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */; };
 		7BFB98A1163DFB5800254DCF /* AZDebugTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB98A0163DFB5700254DCF /* AZDebugTheme.m */; };
-		E7050815104AD68D00F2212D /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = E7050814104AD68D00F2212D /* README.textile */; };
 		E706FE7B0E12DE180017E470 /* BGHUDOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = E706FE790E12DE180017E470 /* BGHUDOutlineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E706FE7C0E12DE180017E470 /* BGHUDOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E706FE7A0E12DE180017E470 /* BGHUDOutlineView.m */; };
 		E70CA2BD0FB6F89D0073E3DF /* BGHUDTabViewItem.h in Headers */ = {isa = PBXBuildFile; fileRef = E70CA2BB0FB6F89D0073E3DF /* BGHUDTabViewItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,24 +71,12 @@
 		F62F7C2A0EC7DC1400343989 /* BGHUDComboBoxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F62F7C280EC7DC1400343989 /* BGHUDComboBoxCell.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E7B8A3040E171698006AC84C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Docs;
-			dstSubfolderSpec = 1;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		13F8B88807B434F6008AE28D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		13F8B88907B434F6008AE28D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		13F8B88A07B434F6008AE28D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BGHUDAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53DF68FE067E5B5A0090B5B0 /* BGHUDAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BGHUDAppKitFramework-Info.plist"; sourceTree = "<group>"; };
+		53DF68FD067E5B5A0090B5B0 /* AtoZAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AtoZAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53DF68FE067E5B5A0090B5B0 /* AtoZAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AtoZAppKitFramework-Info.plist"; sourceTree = "<group>"; };
 		7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZFlatTheme.m; path = Framework/AZFlatTheme.m; sourceTree = "<group>"; };
 		7BFB98A0163DFB5700254DCF /* AZDebugTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZDebugTheme.m; path = Framework/AZDebugTheme.m; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
@@ -173,7 +160,6 @@
 		0259C574FE90428111CA0C5A /* BGHUDAppKit */ = {
 			isa = PBXGroup;
 			children = (
-				E70E5C9D1354CC3F00BAA5B0 /* Test Project */,
 				54D33B2C06778E4400C9C163 /* Framework */,
 				0259C582FE90428111CA0C5A /* Resources */,
 				1ED78706FE9D4A0611CA0C5A /* Products */,
@@ -186,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1AC9730486D14A00FE50C9 /* Info.plist */,
-				53DF68FE067E5B5A0090B5B0 /* BGHUDAppKitFramework-Info.plist */,
+				53DF68FE067E5B5A0090B5B0 /* AtoZAppKitFramework-Info.plist */,
 				8D1AC97F0486D23B00FE50C9 /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -214,7 +200,7 @@
 		1ED78706FE9D4A0611CA0C5A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */,
+				53DF68FD067E5B5A0090B5B0 /* AtoZAppKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,13 +274,6 @@
 				E70CA2C10FB6FFBB0073E3DF /* BGHUDTabView.m */,
 			);
 			name = BGHUDTabView;
-			sourceTree = "<group>";
-		};
-		E70E5C9D1354CC3F00BAA5B0 /* Test Project */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Test Project";
 			sourceTree = "<group>";
 		};
 		E7631D730E4DE6740092074F /* BGHUDColorWell */ = {
@@ -495,7 +474,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71317DF0E10667D00885A23 /* BGHUDAppKit.h in Headers */,
 				E71317E00E10667D00885A23 /* BGHUDButtonCell.h in Headers */,
 				E71317E20E10667D00885A23 /* BGTheme.h in Headers */,
 				E71317E40E10667D00885A23 /* BGThemeManager.h in Headers */,
@@ -525,6 +503,7 @@
 				E782C7600F8A25F8002657B1 /* BGHUDStepperCell.h in Headers */,
 				E70CA2BD0FB6F89D0073E3DF /* BGHUDTabViewItem.h in Headers */,
 				E70CA2C20FB6FFBB0073E3DF /* BGHUDTabView.h in Headers */,
+				E71317DF0E10667D00885A23 /* BGHUDAppKit.h in Headers */,
 				E758DF8F13F1EEF7006B3549 /* BGHUDCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,23 +511,21 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		53DF68FC067E5B5A0090B5B0 /* BGHUDAppKit */ = {
+		53DF68FC067E5B5A0090B5B0 /* AtoZAppKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C056397F08A954F8003078D8 /* Build configuration list for PBXNativeTarget "BGHUDAppKit" */;
+			buildConfigurationList = C056397F08A954F8003078D8 /* Build configuration list for PBXNativeTarget "AtoZAppKit" */;
 			buildPhases = (
 				53DF68F8067E5B5A0090B5B0 /* Headers */,
-				53DF68F9067E5B5A0090B5B0 /* Resources */,
 				53DF68FA067E5B5A0090B5B0 /* Sources */,
 				53DF68FB067E5B5A0090B5B0 /* Frameworks */,
-				E7B8A3040E171698006AC84C /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BGHUDAppKit;
+			name = AtoZAppKit;
 			productName = BGHUDAppKit;
-			productReference = 53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */;
+			productReference = 53DF68FD067E5B5A0090B5B0 /* AtoZAppKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -557,9 +534,11 @@
 		0259C573FE90428111CA0C5A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				CLASSPREFIX = AZ;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = mrgray.com;
 			};
-			buildConfigurationList = C056398B08A954F8003078D8 /* Build configuration list for PBXProject "BGHUDAppKit" */;
+			buildConfigurationList = C056398B08A954F8003078D8 /* Build configuration list for PBXProject "AtoZAppKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -573,21 +552,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53DF68FC067E5B5A0090B5B0 /* BGHUDAppKit */,
+				53DF68FC067E5B5A0090B5B0 /* AtoZAppKit */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		53DF68F9067E5B5A0090B5B0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E7050815104AD68D00F2212D /* README.textile in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53DF68FA067E5B5A0090B5B0 /* Sources */ = {
@@ -646,12 +614,14 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -676,10 +646,15 @@
 				GCC_WARN_UNUSED_LABEL = NO;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
-				INFOPLIST_FILE = "BGHUDAppKitFramework-Info.plist";
+				INFOPLIST_FILE = "AtoZAppKitFramework-Info.plist";
 				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
-				PRODUCT_NAME = BGHUDAppKit;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = AtoZAppKit;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -689,20 +664,27 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "BGHUDAppKitFramework-Info.plist";
+				INFOPLIST_FILE = "AtoZAppKitFramework-Info.plist";
 				INSTALL_PATH = "@rpath";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
-				PRODUCT_NAME = BGHUDAppKit;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = AtoZAppKit;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SEPARATE_STRIP = YES;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
@@ -740,7 +722,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C056397F08A954F8003078D8 /* Build configuration list for PBXNativeTarget "BGHUDAppKit" */ = {
+		C056397F08A954F8003078D8 /* Build configuration list for PBXNativeTarget "AtoZAppKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C056398008A954F8003078D8 /* Debug */,
@@ -749,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C056398B08A954F8003078D8 /* Build configuration list for PBXProject "BGHUDAppKit" */ = {
+		C056398B08A954F8003078D8 /* Build configuration list for PBXProject "AtoZAppKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C056398C08A954F8003078D8 /* Debug */,

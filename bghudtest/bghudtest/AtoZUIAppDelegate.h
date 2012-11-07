@@ -7,18 +7,19 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <BGHUDAppKit/BGHUDAppKit.h>
+#import <AtoZUI/AtoZUI.h>
 
-@interface bghudtestAppDelegate : NSObject <NSApplicationDelegate> {
-@private
-    NSWindow *__weak window;
-    BGHUDTabView *__weak tabView;
-}
+@interface AtoZUIAppDelegate : NSObject <NSApplicationDelegate, AtoZGridViewDataSource, AtoZGridViewDelegate>
 
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet BGHUDTabView *tabView;
 @property (weak) IBOutlet NSProgressIndicator *bar, *spinner;
+@property (weak) IBOutlet AtoZGridView *gridView;
+@property (strong) IBOutlet NSSlider *itemSizeSlider;
+
+@property (strong) 		  NSMA *items;
 
 -(IBAction)doSegmentStuff:(id)sender;
+- (IBAction)itemSizeSliderAction:(id)sender;
 
 @end
