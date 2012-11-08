@@ -1,7 +1,6 @@
 
 #import "AtoZGridView.h"
-
-#import <AtoZ/AZSizer.h>
+#import <AtoZ/AtoZ.h>
 
 
 NSString *const reuseIdentifier = @"AtoZGridViewItem";
@@ -1060,6 +1059,7 @@ NSParagraphStyleAttributeName:	textStyle};
 
 @end
 
+@class AZSizer;
 @implementation  AtoZGridViewAuto
 
 -(void) viewDidMoveToSuperview {
@@ -1094,10 +1094,24 @@ NSParagraphStyleAttributeName:	textStyle};
 	_grid.scrollElasticity = NO;
 	[self setItemSize:(NSSize){65,65}];
 	__block AtoZGridView *grid = _grid;
-	[NSEVENTLOCALMASK: NSLeftMouseUp handler:^NSEvent *(NSEvent *e) {
-		if ( [e clickCount] == 3 ) {
-			grid.itemSize = [AZSizer forQuantity:_array.count inRect:self.bounds].size;
-			[grid reloadData];
+	[NSEVENTLOCALMASK: NSLeftMouseUpMask | NSScrollWheelMask handler:^NSEvent *(NSEvent *e) {
+
+		if ( e.type == NSLeftMouseUp && [e clickCount] == 3 ) {
+//			grid.itemSize = [AZSizer forQuantity:_array.count inRect:self.bounds].size;
+
+//			NSSize s = _grid.itemSize;
+//			s.width += 10;
+//			s.height += 10;
+//			_grid.itemSize = s;
+//			[grid reloadData];
+//		AZSizer *sizer = [AZSizer forQuantity: _array.count aroundRect:_grid.enclosingScrollView.contentView.frame];
+//		AZLOG(sizer.propertiesPlease);
+//		_grid.itemSize = sizer.size;
+		}
+		if (e.type == NSScrollWheelMask && ABS(e.deltaX) > 10) {
+			AZLOG(e);
+			NSSize s = _grid.itemSize;
+			s.height = s.width = .5 * e.deltaX;
 		}
 		return e;
 	}];

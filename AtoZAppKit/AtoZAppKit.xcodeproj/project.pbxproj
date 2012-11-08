@@ -77,72 +77,72 @@
 		13F8B88A07B434F6008AE28D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		53DF68FD067E5B5A0090B5B0 /* AtoZAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AtoZAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DF68FE067E5B5A0090B5B0 /* AtoZAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AtoZAppKitFramework-Info.plist"; sourceTree = "<group>"; };
-		7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZFlatTheme.m; path = Framework/AZFlatTheme.m; sourceTree = "<group>"; };
-		7BFB98A0163DFB5700254DCF /* AZDebugTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZDebugTheme.m; path = Framework/AZDebugTheme.m; sourceTree = "<group>"; };
+		7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZFlatTheme.m; sourceTree = "<group>"; };
+		7BFB98A0163DFB5700254DCF /* AZDebugTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDebugTheme.m; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		8D1AC97B0486D23100FE50C9 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C0D069550A49DF9100C95564 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = /Developer/Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = "<absolute>"; };
 		DD92D38A0106425D02CA0E72 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		E7050814104AD68D00F2212D /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
-		E706FE790E12DE180017E470 /* BGHUDOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDOutlineView.h; path = Framework/BGHUDOutlineView.h; sourceTree = "<group>"; };
-		E706FE7A0E12DE180017E470 /* BGHUDOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDOutlineView.m; path = Framework/BGHUDOutlineView.m; sourceTree = "<group>"; };
-		E70CA2BB0FB6F89D0073E3DF /* BGHUDTabViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTabViewItem.h; path = Framework/BGHUDTabViewItem.h; sourceTree = "<group>"; };
-		E70CA2BC0FB6F89D0073E3DF /* BGHUDTabViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTabViewItem.m; path = Framework/BGHUDTabViewItem.m; sourceTree = "<group>"; };
-		E70CA2C00FB6FFBB0073E3DF /* BGHUDTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTabView.h; path = Framework/BGHUDTabView.h; sourceTree = "<group>"; };
-		E70CA2C10FB6FFBB0073E3DF /* BGHUDTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTabView.m; path = Framework/BGHUDTabView.m; sourceTree = "<group>"; };
-		E70CE4FF0E188A61000139C1 /* BGHUDTableCornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTableCornerView.h; path = Framework/BGHUDTableCornerView.h; sourceTree = "<group>"; };
-		E70CE5000E188A61000139C1 /* BGHUDTableCornerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTableCornerView.m; path = Framework/BGHUDTableCornerView.m; sourceTree = "<group>"; };
-		E71317D50E10667D00885A23 /* BGGradientTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGGradientTheme.m; path = Framework/BGGradientTheme.m; sourceTree = "<group>"; };
-		E71317D60E10667D00885A23 /* BGHUDAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDAppKit.h; path = Framework/BGHUDAppKit.h; sourceTree = "<group>"; };
-		E71317D70E10667D00885A23 /* BGHUDButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDButtonCell.h; path = Framework/BGHUDButtonCell.h; sourceTree = "<group>"; };
-		E71317D80E10667D00885A23 /* BGHUDButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDButtonCell.m; path = Framework/BGHUDButtonCell.m; sourceTree = "<group>"; };
-		E71317D90E10667D00885A23 /* BGTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGTheme.h; path = Framework/BGTheme.h; sourceTree = "<group>"; };
-		E71317DA0E10667D00885A23 /* BGTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGTheme.m; path = Framework/BGTheme.m; sourceTree = "<group>"; };
-		E71317DB0E10667D00885A23 /* BGThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGThemeManager.h; path = Framework/BGThemeManager.h; sourceTree = "<group>"; };
-		E71317DC0E10667D00885A23 /* BGThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGThemeManager.m; path = Framework/BGThemeManager.m; sourceTree = "<group>"; };
-		E758DF8D13F1EEF7006B3549 /* BGHUDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDCommon.h; path = Framework/BGHUDCommon.h; sourceTree = "<group>"; };
-		E758DF8E13F1EEF7006B3549 /* BGHUDCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDCommon.m; path = Framework/BGHUDCommon.m; sourceTree = "<group>"; };
-		E7631D740E4DE6940092074F /* BGHUDColorWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDColorWell.h; path = Framework/BGHUDColorWell.h; sourceTree = "<group>"; };
-		E7631D750E4DE6940092074F /* BGHUDColorWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDColorWell.m; path = Framework/BGHUDColorWell.m; sourceTree = "<group>"; };
-		E7649D0C0E1AC55B001F7E20 /* BGHUDSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDSegmentedCell.h; path = Framework/BGHUDSegmentedCell.h; sourceTree = "<group>"; };
-		E7649D0D0E1AC55B001F7E20 /* BGHUDSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDSegmentedCell.m; path = Framework/BGHUDSegmentedCell.m; sourceTree = "<group>"; };
-		E782C75E0F8A25F8002657B1 /* BGHUDStepperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDStepperCell.h; path = Framework/BGHUDStepperCell.h; sourceTree = "<group>"; };
-		E782C75F0F8A25F8002657B1 /* BGHUDStepperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDStepperCell.m; path = Framework/BGHUDStepperCell.m; sourceTree = "<group>"; };
-		E7894D830E12978C00D28139 /* BGHUDPopUpButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDPopUpButtonCell.h; path = Framework/BGHUDPopUpButtonCell.h; sourceTree = "<group>"; };
-		E7894D840E12978C00D28139 /* BGHUDPopUpButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDPopUpButtonCell.m; path = Framework/BGHUDPopUpButtonCell.m; sourceTree = "<group>"; };
-		E7894DC00E12A03300D28139 /* BGHUDSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDSliderCell.h; path = Framework/BGHUDSliderCell.h; sourceTree = "<group>"; };
-		E7894DC10E12A03300D28139 /* BGHUDSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDSliderCell.m; path = Framework/BGHUDSliderCell.m; sourceTree = "<group>"; };
-		E7894E2E0E12A7F100D28139 /* BGHUDScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDScroller.h; path = Framework/BGHUDScroller.h; sourceTree = "<group>"; };
-		E7894E2F0E12A7F100D28139 /* BGHUDScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDScroller.m; path = Framework/BGHUDScroller.m; sourceTree = "<group>"; };
-		E7894E3B0E12A9E700D28139 /* BGHUDScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDScrollView.h; path = Framework/BGHUDScrollView.h; sourceTree = "<group>"; };
-		E7894E3C0E12A9E700D28139 /* BGHUDScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDScrollView.m; path = Framework/BGHUDScrollView.m; sourceTree = "<group>"; };
-		E78DB0310E34E3C100AF4E06 /* BGHUDSearchFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDSearchFieldCell.h; path = Framework/BGHUDSearchFieldCell.h; sourceTree = "<group>"; };
-		E78DB0320E34E3C100AF4E06 /* BGHUDSearchFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDSearchFieldCell.m; path = Framework/BGHUDSearchFieldCell.m; sourceTree = "<group>"; };
-		E7981E640E128FF90081E937 /* BGHUDProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDProgressIndicator.h; path = Framework/BGHUDProgressIndicator.h; sourceTree = "<group>"; };
-		E7981E650E128FF90081E937 /* BGHUDProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDProgressIndicator.m; path = Framework/BGHUDProgressIndicator.m; sourceTree = "<group>"; };
-		E7981EAF0E12CF100081E937 /* BGHUDSecureTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDSecureTextFieldCell.h; path = Framework/BGHUDSecureTextFieldCell.h; sourceTree = "<group>"; };
-		E7981EB00E12CF100081E937 /* BGHUDSecureTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDSecureTextFieldCell.m; path = Framework/BGHUDSecureTextFieldCell.m; sourceTree = "<group>"; };
-		E7981ECB0E12D3390081E937 /* BGHUDTokenAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTokenAttachmentCell.h; path = Framework/BGHUDTokenAttachmentCell.h; sourceTree = "<group>"; };
-		E7981ECC0E12D3390081E937 /* BGHUDTokenAttachmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTokenAttachmentCell.m; path = Framework/BGHUDTokenAttachmentCell.m; sourceTree = "<group>"; };
-		E7981ECD0E12D3390081E937 /* BGHUDTokenFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTokenFieldCell.h; path = Framework/BGHUDTokenFieldCell.h; sourceTree = "<group>"; };
-		E7981ECE0E12D3390081E937 /* BGHUDTokenFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTokenFieldCell.m; path = Framework/BGHUDTokenFieldCell.m; sourceTree = "<group>"; };
-		E7981ED30E12D3460081E937 /* NSTokenAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSTokenAttachment.h; path = Framework/NSTokenAttachment.h; sourceTree = "<group>"; };
-		E7981ED40E12D3460081E937 /* NSTokenAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSTokenAttachmentCell.h; path = Framework/NSTokenAttachmentCell.h; sourceTree = "<group>"; };
-		E7981EF10E12D6AA0081E937 /* BGHUDTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTableView.h; path = Framework/BGHUDTableView.h; sourceTree = "<group>"; };
-		E7981EF20E12D6AA0081E937 /* BGHUDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTableView.m; path = Framework/BGHUDTableView.m; sourceTree = "<group>"; };
-		E7981EF30E12D6AA0081E937 /* BGHUDTableViewHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTableViewHeaderCell.h; path = Framework/BGHUDTableViewHeaderCell.h; sourceTree = "<group>"; };
-		E7981EF40E12D6AA0081E937 /* BGHUDTableViewHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTableViewHeaderCell.m; path = Framework/BGHUDTableViewHeaderCell.m; sourceTree = "<group>"; };
-		E79C25CE0E109BB500742AF4 /* BGHUDTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTextFieldCell.h; path = Framework/BGHUDTextFieldCell.h; sourceTree = "<group>"; };
-		E79C25CF0E109BB500742AF4 /* BGHUDTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTextFieldCell.m; path = Framework/BGHUDTextFieldCell.m; sourceTree = "<group>"; };
-		E7C104940E8C476D00A96E1A /* BGHUDGeometry.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BGHUDGeometry.h; path = Framework/BGHUDGeometry.h; sourceTree = "<group>"; };
-		E7CEE1CA0F49D8FB00F5DABB /* BGHUDBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDBox.h; path = Framework/BGHUDBox.h; sourceTree = "<group>"; };
-		E7CEE1CB0F49D8FB00F5DABB /* BGHUDBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDBox.m; path = Framework/BGHUDBox.m; sourceTree = "<group>"; };
-		E7DAC65B0E60729B00549353 /* BGHUDLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDLabel.h; path = Framework/BGHUDLabel.h; sourceTree = "<group>"; };
-		E7DAC65C0E60729B00549353 /* BGHUDLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDLabel.m; path = Framework/BGHUDLabel.m; sourceTree = "<group>"; };
-		E7E069630F48A68B0000BDAB /* BGHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDView.h; path = Framework/BGHUDView.h; sourceTree = "<group>"; };
-		E7E069640F48A68B0000BDAB /* BGHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDView.m; path = Framework/BGHUDView.m; sourceTree = "<group>"; };
-		F62F7C270EC7DC1400343989 /* BGHUDComboBoxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDComboBoxCell.h; path = Framework/BGHUDComboBoxCell.h; sourceTree = "<group>"; };
-		F62F7C280EC7DC1400343989 /* BGHUDComboBoxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDComboBoxCell.m; path = Framework/BGHUDComboBoxCell.m; sourceTree = "<group>"; };
+		E7050814104AD68D00F2212D /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.textile; path = ../../README.textile; sourceTree = "<group>"; };
+		E706FE790E12DE180017E470 /* BGHUDOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDOutlineView.h; sourceTree = "<group>"; };
+		E706FE7A0E12DE180017E470 /* BGHUDOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDOutlineView.m; sourceTree = "<group>"; };
+		E70CA2BB0FB6F89D0073E3DF /* BGHUDTabViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDTabViewItem.h; sourceTree = "<group>"; };
+		E70CA2BC0FB6F89D0073E3DF /* BGHUDTabViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDTabViewItem.m; sourceTree = "<group>"; };
+		E70CA2C00FB6FFBB0073E3DF /* BGHUDTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDTabView.h; sourceTree = "<group>"; };
+		E70CA2C10FB6FFBB0073E3DF /* BGHUDTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDTabView.m; sourceTree = "<group>"; };
+		E70CE4FF0E188A61000139C1 /* BGHUDTableCornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDTableCornerView.h; sourceTree = "<group>"; };
+		E70CE5000E188A61000139C1 /* BGHUDTableCornerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDTableCornerView.m; sourceTree = "<group>"; };
+		E71317D50E10667D00885A23 /* BGGradientTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGradientTheme.m; sourceTree = "<group>"; };
+		E71317D60E10667D00885A23 /* BGHUDAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDAppKit.h; sourceTree = "<group>"; };
+		E71317D70E10667D00885A23 /* BGHUDButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDButtonCell.h; sourceTree = "<group>"; };
+		E71317D80E10667D00885A23 /* BGHUDButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDButtonCell.m; sourceTree = "<group>"; };
+		E71317D90E10667D00885A23 /* BGTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTheme.h; sourceTree = "<group>"; };
+		E71317DA0E10667D00885A23 /* BGTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTheme.m; sourceTree = "<group>"; };
+		E71317DB0E10667D00885A23 /* BGThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGThemeManager.h; sourceTree = "<group>"; };
+		E71317DC0E10667D00885A23 /* BGThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGThemeManager.m; sourceTree = "<group>"; };
+		E758DF8D13F1EEF7006B3549 /* BGHUDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDCommon.h; sourceTree = "<group>"; };
+		E758DF8E13F1EEF7006B3549 /* BGHUDCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDCommon.m; sourceTree = "<group>"; };
+		E7631D740E4DE6940092074F /* BGHUDColorWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDColorWell.h; sourceTree = "<group>"; };
+		E7631D750E4DE6940092074F /* BGHUDColorWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDColorWell.m; sourceTree = "<group>"; };
+		E7649D0C0E1AC55B001F7E20 /* BGHUDSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDSegmentedCell.h; sourceTree = "<group>"; };
+		E7649D0D0E1AC55B001F7E20 /* BGHUDSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDSegmentedCell.m; sourceTree = "<group>"; };
+		E782C75E0F8A25F8002657B1 /* BGHUDStepperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDStepperCell.h; sourceTree = "<group>"; };
+		E782C75F0F8A25F8002657B1 /* BGHUDStepperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDStepperCell.m; sourceTree = "<group>"; };
+		E7894D830E12978C00D28139 /* BGHUDPopUpButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDPopUpButtonCell.h; sourceTree = "<group>"; };
+		E7894D840E12978C00D28139 /* BGHUDPopUpButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDPopUpButtonCell.m; sourceTree = "<group>"; };
+		E7894DC00E12A03300D28139 /* BGHUDSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDSliderCell.h; sourceTree = "<group>"; };
+		E7894DC10E12A03300D28139 /* BGHUDSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDSliderCell.m; sourceTree = "<group>"; };
+		E7894E2E0E12A7F100D28139 /* BGHUDScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDScroller.h; sourceTree = "<group>"; };
+		E7894E2F0E12A7F100D28139 /* BGHUDScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDScroller.m; sourceTree = "<group>"; };
+		E7894E3B0E12A9E700D28139 /* BGHUDScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDScrollView.h; sourceTree = "<group>"; };
+		E7894E3C0E12A9E700D28139 /* BGHUDScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDScrollView.m; sourceTree = "<group>"; };
+		E78DB0310E34E3C100AF4E06 /* BGHUDSearchFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDSearchFieldCell.h; sourceTree = "<group>"; };
+		E78DB0320E34E3C100AF4E06 /* BGHUDSearchFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDSearchFieldCell.m; sourceTree = "<group>"; };
+		E7981E640E128FF90081E937 /* BGHUDProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDProgressIndicator.h; sourceTree = "<group>"; };
+		E7981E650E128FF90081E937 /* BGHUDProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDProgressIndicator.m; sourceTree = "<group>"; };
+		E7981EAF0E12CF100081E937 /* BGHUDSecureTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDSecureTextFieldCell.h; sourceTree = "<group>"; };
+		E7981EB00E12CF100081E937 /* BGHUDSecureTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDSecureTextFieldCell.m; sourceTree = "<group>"; };
+		E7981ECB0E12D3390081E937 /* BGHUDTokenAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDTokenAttachmentCell.h; sourceTree = "<group>"; };
+		E7981ECC0E12D3390081E937 /* BGHUDTokenAttachmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDTokenAttachmentCell.m; sourceTree = "<group>"; };
+		E7981ECD0E12D3390081E937 /* BGHUDTokenFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDTokenFieldCell.h; sourceTree = "<group>"; };
+		E7981ECE0E12D3390081E937 /* BGHUDTokenFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDTokenFieldCell.m; sourceTree = "<group>"; };
+		E7981ED30E12D3460081E937 /* NSTokenAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTokenAttachment.h; sourceTree = "<group>"; };
+		E7981ED40E12D3460081E937 /* NSTokenAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTokenAttachmentCell.h; sourceTree = "<group>"; };
+		E7981EF10E12D6AA0081E937 /* BGHUDTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDTableView.h; sourceTree = "<group>"; };
+		E7981EF20E12D6AA0081E937 /* BGHUDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDTableView.m; sourceTree = "<group>"; };
+		E7981EF30E12D6AA0081E937 /* BGHUDTableViewHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDTableViewHeaderCell.h; sourceTree = "<group>"; };
+		E7981EF40E12D6AA0081E937 /* BGHUDTableViewHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDTableViewHeaderCell.m; sourceTree = "<group>"; };
+		E79C25CE0E109BB500742AF4 /* BGHUDTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDTextFieldCell.h; sourceTree = "<group>"; };
+		E79C25CF0E109BB500742AF4 /* BGHUDTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDTextFieldCell.m; sourceTree = "<group>"; };
+		E7C104940E8C476D00A96E1A /* BGHUDGeometry.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = BGHUDGeometry.h; sourceTree = "<group>"; };
+		E7CEE1CA0F49D8FB00F5DABB /* BGHUDBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDBox.h; sourceTree = "<group>"; };
+		E7CEE1CB0F49D8FB00F5DABB /* BGHUDBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDBox.m; sourceTree = "<group>"; };
+		E7DAC65B0E60729B00549353 /* BGHUDLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDLabel.h; sourceTree = "<group>"; };
+		E7DAC65C0E60729B00549353 /* BGHUDLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDLabel.m; sourceTree = "<group>"; };
+		E7E069630F48A68B0000BDAB /* BGHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDView.h; sourceTree = "<group>"; };
+		E7E069640F48A68B0000BDAB /* BGHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDView.m; sourceTree = "<group>"; };
+		F62F7C270EC7DC1400343989 /* BGHUDComboBoxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDComboBoxCell.h; sourceTree = "<group>"; };
+		F62F7C280EC7DC1400343989 /* BGHUDComboBoxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHUDComboBoxCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +160,7 @@
 		0259C574FE90428111CA0C5A /* BGHUDAppKit */ = {
 			isa = PBXGroup;
 			children = (
-				54D33B2C06778E4400C9C163 /* Framework */,
+				54D33B2C06778E4400C9C163 /* AtoZAppKit */,
 				0259C582FE90428111CA0C5A /* Resources */,
 				1ED78706FE9D4A0611CA0C5A /* Products */,
 				2E58F364FFB232C311CA0CBA /* Frameworks */,
@@ -214,7 +214,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		54D33B2C06778E4400C9C163 /* Framework */ = {
+		54D33B2C06778E4400C9C163 /* AtoZAppKit */ = {
 			isa = PBXGroup;
 			children = (
 				E7CEE1C90F49D8DF00F5DABB /* BGHUDBox */,
@@ -244,14 +244,14 @@
 				E758DF8D13F1EEF7006B3549 /* BGHUDCommon.h */,
 				E758DF8E13F1EEF7006B3549 /* BGHUDCommon.m */,
 			);
-			name = Framework;
+			path = AtoZAppKit;
 			sourceTree = "<group>";
 		};
 		C0894DA40C32F4C100401507 /* BGHUDButtonCell */ = {
 			isa = PBXGroup;
 			children = (
-				E71317D70E10667D00885A23 /* BGHUDButtonCell.h */,
 				E71317D80E10667D00885A23 /* BGHUDButtonCell.m */,
+				E71317D70E10667D00885A23 /* BGHUDButtonCell.h */,
 			);
 			name = BGHUDButtonCell;
 			sourceTree = "<group>";
@@ -279,8 +279,8 @@
 		E7631D730E4DE6740092074F /* BGHUDColorWell */ = {
 			isa = PBXGroup;
 			children = (
-				E7631D740E4DE6940092074F /* BGHUDColorWell.h */,
 				E7631D750E4DE6940092074F /* BGHUDColorWell.m */,
+				E7631D740E4DE6940092074F /* BGHUDColorWell.h */,
 			);
 			name = BGHUDColorWell;
 			sourceTree = "<group>";
@@ -649,10 +649,7 @@
 				INFOPLIST_FILE = "AtoZAppKitFramework-Info.plist";
 				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = AtoZAppKit;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SKIP_INSTALL = YES;
@@ -679,10 +676,7 @@
 				INSTALL_PATH = "@rpath";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = AtoZAppKit;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SEPARATE_STRIP = YES;

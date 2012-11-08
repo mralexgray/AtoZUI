@@ -10,6 +10,18 @@
 #import "AtoZGridViewProtocols.h"
 
 
+@class AZGridView;
+@interface AtoZGridViewAuto : NSView <AtoZGridViewDataSource, AtoZGridViewDelegate>
+-(id)initWithArray:(NSArray*)array;// inView:(NSView*)view;
+@property (nonatomic, assign) NSSize itemSize;
+@property (weak) NSView* view;
+@property (strong, nonatomic) NSScrollView *scrollView;
+@property (strong, nonatomic) NSArray * array;
+@property (strong, nonatomic) AtoZGridView *grid;
+
+@end
+
+
 
 FOUNDATION_EXPORT NSString *const reuseIdentifier;
 typedef enum {
@@ -139,16 +151,5 @@ __unused static NSString *kAtoZGridViewItemClearSelectionNotification;
 #pragma mark - Selection and Hovering
 /** @name Selection and Hovering */
 @property (nonatomic, assign) BOOL isSelected, isSelectable, isHovered;
-@end
-
-
-@interface AtoZGridViewAuto : NSView <AtoZGridViewDataSource, AtoZGridViewDelegate>
--(id)initWithArray:(NSArray*)array;// inView:(NSView*)view;
-@property (nonatomic, assign) NSSize itemSize;
-@property (weak) NSView* view;
-@property (strong, nonatomic) NSScrollView *scrollView;
-@property (strong, nonatomic) NSArray * array;
-@property (strong, nonatomic) AtoZGridView *grid;
-
 @end
 

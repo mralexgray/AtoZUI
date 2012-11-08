@@ -1,6 +1,6 @@
 
 #import "AtoZColorWell.h"
-
+#import <AtoZ/AtoZ.h>
 
 @interface AtoZColorWell()
 - (void) colorPickerDidChoseRemoveColor:(id)sender;

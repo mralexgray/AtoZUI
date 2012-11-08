@@ -57,7 +57,7 @@
 	//    self.gridView.itemBackgroundColor 	 = [[NSColor redColor] colorWithAlphaComponent:0.42];
 	//    self.gridView.itemBackgroundColor = [NSColor colorWithCalibratedRed:0.195 green:0.807 blue:0.807 alpha:1.000];
     /// insert some content
-	_items = [[NSImage icons]map:^id(id obj) {
+	_items = [@[[NSImage imageNamed:NSImageNameActionTemplate], [NSImage imageNamed:NSImageNameAdvanced]]map:^id(id obj) {
 		return @{ kContentImageKey: obj, kContentTitleKey: [obj valueForKey:@"name"] ?: @"N/A"};
 		}].mutableCopy;
 

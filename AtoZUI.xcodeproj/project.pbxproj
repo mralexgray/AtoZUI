@@ -14,63 +14,25 @@
 		7B47D4061649689B00F33110 /* AtoZGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B47D4051649689600F33110 /* AtoZGridView.m */; };
 		7B47D407164968AB00F33110 /* AtoZGridView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B47D4031649689600F33110 /* AtoZGridView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B47D408164968AC00F33110 /* AtoZGridViewProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B47D4041649689600F33110 /* AtoZGridViewProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7B47D40B1649BBCC00F33110 /* AtoZUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B47D329164837DF00F33110 /* AtoZUI.framework */; };
 		7B47D4101649BEDD00F33110 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B47D40E1649BEDD00F33110 /* Quartz.framework */; };
 		7B47D4111649BEDD00F33110 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B47D40F1649BEDD00F33110 /* QuartzCore.framework */; };
-		7BDF41401649C754008B3240 /* AtoZUI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B47D329164837DF00F33110 /* AtoZUI.framework */; };
+		7B7ED9FC164B8F1900D8C6C6 /* AtoZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDF413E1649C625008B3240 /* AtoZ.framework */; };
+		7B8EEDA4164BEC6200710841 /* AtoZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDF413E1649C625008B3240 /* AtoZ.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7BDF41FA164B0D63008B3240 /* AtoZColorWell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BDF41F8164B0D63008B3240 /* AtoZColorWell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BDF41FB164B0D63008B3240 /* AtoZColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF41F9164B0D63008B3240 /* AtoZColorWell.m */; };
-		7BDF422F164B6D98008B3240 /* AtoZAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDF422B164B6D68008B3240 /* AtoZAppKit.framework */; };
-		7BDF4230164B6DAE008B3240 /* AtoZAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7BDF422B164B6D68008B3240 /* AtoZAppKit.framework */; };
+		7BDF4251164B763C008B3240 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70E5C951354CBB900BAA5B0 /* MainMenu.xib */; };
+		7BDF4256164B76ED008B3240 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF4255164B76ED008B3240 /* main.m */; };
+		7BDF4257164B76F5008B3240 /* AtoZUIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E5C931354CBB900BAA5B0 /* AtoZUIAppDelegate.m */; };
 		E70E5C811354CBB900BAA5B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70E5C801354CBB900BAA5B0 /* Cocoa.framework */; };
-		E70E5C8B1354CBB900BAA5B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E70E5C891354CBB900BAA5B0 /* InfoPlist.strings */; };
-		E70E5C8E1354CBB900BAA5B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E5C8D1354CBB900BAA5B0 /* main.m */; };
-		E70E5C941354CBB900BAA5B0 /* AtoZUIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E70E5C931354CBB900BAA5B0 /* AtoZUIAppDelegate.m */; };
-		E70E5C971354CBB900BAA5B0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70E5C951354CBB900BAA5B0 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7B47D4091649BBC100F33110 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E70E5C731354CBB800BAA5B0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B47D328164837DF00F33110;
-			remoteInfo = AtoZUI;
-		};
-		7BDF422A164B6D68008B3240 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BDF4223164B6D67008B3240 /* AtoZAppKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 53DF68FD067E5B5A0090B5B0;
-			remoteInfo = AtoZAppKit;
-		};
-		7BDF422C164B6D75008B3240 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BDF4223164B6D67008B3240 /* AtoZAppKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 53DF68FC067E5B5A0090B5B0;
-			remoteInfo = AtoZAppKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		7BDF422E164B6D83008B3240 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7BDF4230164B6DAE008B3240 /* AtoZAppKit.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E73CD0C81354CE88006D4D89 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7BDF41401649C754008B3240 /* AtoZUI.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,17 +53,16 @@
 		7BDF413E1649C625008B3240 /* AtoZ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtoZ.framework; path = /Library/Frameworks/AtoZ.framework; sourceTree = "<absolute>"; };
 		7BDF41F8164B0D63008B3240 /* AtoZColorWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AtoZColorWell.h; path = AtoZUI/AtoZColorWell.h; sourceTree = "<group>"; };
 		7BDF41F9164B0D63008B3240 /* AtoZColorWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AtoZColorWell.m; path = AtoZUI/AtoZColorWell.m; sourceTree = "<group>"; };
-		7BDF4223164B6D67008B3240 /* AtoZAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AtoZAppKit.xcodeproj; path = ../AtoZAppKit.xcodeproj; sourceTree = "<group>"; };
+		7BDF4255164B76ED008B3240 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E70E5C7C1354CBB900BAA5B0 /* AtoZUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtoZUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70E5C801354CBB900BAA5B0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E70E5C831354CBB900BAA5B0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E70E5C841354CBB900BAA5B0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E70E5C851354CBB900BAA5B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E70E5C881354CBB900BAA5B0 /* AtoZUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AtoZUI-Info.plist"; sourceTree = "<group>"; };
+		E70E5C881354CBB900BAA5B0 /* AtoZUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "AtoZUI-Info.plist"; path = "AtoZUITestApp/AtoZUI-Info.plist"; sourceTree = "<group>"; };
 		E70E5C8A1354CBB900BAA5B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E70E5C8C1354CBB900BAA5B0 /* AtoZUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AtoZUI-Prefix.pch"; sourceTree = "<group>"; };
-		E70E5C8D1354CBB900BAA5B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E70E5C921354CBB900BAA5B0 /* AtoZUIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = AtoZUIAppDelegate.h; sourceTree = "<group>"; };
+		E70E5C8C1354CBB900BAA5B0 /* AtoZUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AtoZUI-Prefix.pch"; path = "AtoZUITestApp/AtoZUI-Prefix.pch"; sourceTree = "<group>"; };
+		E70E5C921354CBB900BAA5B0 /* AtoZUIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtoZUIAppDelegate.h; sourceTree = "<group>"; };
 		E70E5C931354CBB900BAA5B0 /* AtoZUIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtoZUIAppDelegate.m; sourceTree = "<group>"; };
 		E70E5C961354CBB900BAA5B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E73CD0C51354CE5F006D4D89 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = ../build/Debug/BGHUDAppKit.framework; sourceTree = "<group>"; };
@@ -112,9 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8EEDA4164BEC6200710841 /* AtoZ.framework in Frameworks */,
 				7B47D4101649BEDD00F33110 /* Quartz.framework in Frameworks */,
 				7B47D4111649BEDD00F33110 /* QuartzCore.framework in Frameworks */,
-				7BDF422F164B6D98008B3240 /* AtoZAppKit.framework in Frameworks */,
 				7B47D32A164837DF00F33110 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,8 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B7ED9FC164B8F1900D8C6C6 /* AtoZ.framework in Frameworks */,
 				E70E5C811354CBB900BAA5B0 /* Cocoa.framework in Frameworks */,
-				7B47D40B1649BBCC00F33110 /* AtoZUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,18 +103,9 @@
 			path = AtoZUI;
 			sourceTree = "<group>";
 		};
-		7BDF4224164B6D67008B3240 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7BDF422B164B6D68008B3240 /* AtoZAppKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		E70E5C711354CBB800BAA5B0 = {
 			isa = PBXGroup;
 			children = (
-				7BDF4223164B6D67008B3240 /* AtoZAppKit.xcodeproj */,
 				7B47D332164837DF00F33110 /* AtoZUI.h */,
 				7B47D333164837DF00F33110 /* AtoZUI.m */,
 				7B47D4031649689600F33110 /* AtoZGridView.h */,
@@ -162,7 +114,7 @@
 				7BDF41F8164B0D63008B3240 /* AtoZColorWell.h */,
 				7BDF41F9164B0D63008B3240 /* AtoZColorWell.m */,
 				7B47D32C164837DF00F33110 /* Supporting Files */,
-				E70E5C861354CBB900BAA5B0 /* TEST */,
+				E70E5C861354CBB900BAA5B0 /* TestApp */,
 				E70E5C7F1354CBB900BAA5B0 /* Frameworks */,
 				E70E5C7D1354CBB900BAA5B0 /* Products */,
 			);
@@ -200,16 +152,17 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		E70E5C861354CBB900BAA5B0 /* TEST */ = {
+		E70E5C861354CBB900BAA5B0 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				7BDF4255164B76ED008B3240 /* main.m */,
 				E70E5C921354CBB900BAA5B0 /* AtoZUIAppDelegate.h */,
 				E70E5C931354CBB900BAA5B0 /* AtoZUIAppDelegate.m */,
 				E70E5C951354CBB900BAA5B0 /* MainMenu.xib */,
 				E70E5C871354CBB900BAA5B0 /* Supporting Files */,
 			);
-			name = TEST;
-			path = bghudtest;
+			name = TestApp;
+			path = AtoZUITestApp;
 			sourceTree = "<group>";
 		};
 		E70E5C871354CBB900BAA5B0 /* Supporting Files */ = {
@@ -218,9 +171,9 @@
 				E70E5C881354CBB900BAA5B0 /* AtoZUI-Info.plist */,
 				E70E5C891354CBB900BAA5B0 /* InfoPlist.strings */,
 				E70E5C8C1354CBB900BAA5B0 /* AtoZUI-Prefix.pch */,
-				E70E5C8D1354CBB900BAA5B0 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = AtoZUITestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +185,8 @@
 			files = (
 				7BDF41FA164B0D63008B3240 /* AtoZColorWell.h in Headers */,
 				7B47D33B1648383100F33110 /* AtoZUI.h in Headers */,
-				7B47D407164968AB00F33110 /* AtoZGridView.h in Headers */,
 				7B47D408164968AC00F33110 /* AtoZGridViewProtocols.h in Headers */,
+				7B47D407164968AB00F33110 /* AtoZGridView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +197,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B47D335164837DF00F33110 /* Build configuration list for PBXNativeTarget "AtoZUI" */;
 			buildPhases = (
-				7BDF422E164B6D83008B3240 /* CopyFiles */,
 				7B47D326164837DF00F33110 /* Headers */,
 				7B47D325164837DF00F33110 /* Frameworks */,
 				7B47D327164837DF00F33110 /* Resources */,
@@ -254,7 +206,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7BDF422D164B6D75008B3240 /* PBXTargetDependency */,
 			);
 			name = AtoZUI;
 			productName = AtoZUI;
@@ -273,7 +224,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7B47D40A1649BBC100F33110 /* PBXTargetDependency */,
 			);
 			name = AtoZUITestApp;
 			productName = bghudtest;
@@ -299,12 +249,6 @@
 			mainGroup = E70E5C711354CBB800BAA5B0;
 			productRefGroup = E70E5C7D1354CBB900BAA5B0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 7BDF4224164B6D67008B3240 /* Products */;
-					ProjectRef = 7BDF4223164B6D67008B3240 /* AtoZAppKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				E70E5C7B1354CBB900BAA5B0 /* AtoZUITestApp */,
@@ -312,16 +256,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		7BDF422B164B6D68008B3240 /* AtoZAppKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AtoZAppKit.framework;
-			remoteRef = 7BDF422A164B6D68008B3240 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7B47D327164837DF00F33110 /* Resources */ = {
@@ -336,8 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70E5C8B1354CBB900BAA5B0 /* InfoPlist.strings in Resources */,
-				E70E5C971354CBB900BAA5B0 /* MainMenu.xib in Resources */,
+				7BDF4251164B763C008B3240 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PRODUCT_PATH=\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\"\ncd \"${PRODUCT_PATH}\"\nln -sF Versions/Current/Frameworks Frameworks\n";
+			shellScript = "#PRODUCT_PATH=\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\"\n#cd \"${PRODUCT_PATH}\"\n#ln -sF Versions/Current/Frameworks Frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -374,25 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70E5C8E1354CBB900BAA5B0 /* main.m in Sources */,
-				E70E5C941354CBB900BAA5B0 /* AtoZUIAppDelegate.m in Sources */,
+				7BDF4257164B76F5008B3240 /* AtoZUIAppDelegate.m in Sources */,
+				7BDF4256164B76ED008B3240 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7B47D40A1649BBC100F33110 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7B47D328164837DF00F33110 /* AtoZUI */;
-			targetProxy = 7B47D4091649BBC100F33110 /* PBXContainerItemProxy */;
-		};
-		7BDF422D164B6D75008B3240 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AtoZAppKit;
-			targetProxy = 7BDF422C164B6D75008B3240 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7B47D32E164837DF00F33110 /* InfoPlist.strings */ = {
@@ -409,6 +329,7 @@
 				E70E5C8A1354CBB900BAA5B0 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = AtoZUITestApp;
 			sourceTree = "<group>";
 		};
 		E70E5C951354CBB900BAA5B0 /* MainMenu.xib */ = {
@@ -436,10 +357,8 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/localadmin/Library/Developer/Xcode/DerivedData/build/Products/Debug,
-				);
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -456,18 +375,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "AtoZUI/AtoZUI-Info.plist";
 				INSTALL_PATH = "@rpath";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-					"-sub_umbrella",
-					AtoZAppKit,
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = "";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "build/** $(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -487,10 +400,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/localadmin/Library/Developer/Xcode/DerivedData/build/Products/Debug,
-				);
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -502,18 +413,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "AtoZUI/AtoZUI-Info.plist";
 				INSTALL_PATH = "@rpath";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-					"-sub_umbrella",
-					AtoZAppKit,
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = "";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "build/** $(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -566,8 +471,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bghudtest/AtoZUI-Prefix.pch";
-				INFOPLIST_FILE = "bghudtest/AtoZUI-Info.plist";
+				GCC_PREFIX_HEADER = "AtoZUITestApp/AtoZUI-Prefix.pch";
+				INFOPLIST_FILE = "AtoZUITestApp/AtoZUI-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = AtoZUI;
@@ -592,8 +497,8 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bghudtest/AtoZUI-Prefix.pch";
-				INFOPLIST_FILE = "bghudtest/AtoZUI-Info.plist";
+				GCC_PREFIX_HEADER = "AtoZUITestApp/AtoZUI-Prefix.pch";
+				INFOPLIST_FILE = "AtoZUITestApp/AtoZUI-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = AtoZUI;

@@ -7,7 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <AtoZUI/AtoZUI.h>
+//#import <AtoZUI/AtoZUI.h>
+#import <AtoZ/AtoZ.h>
 
 @interface AtoZUIAppDelegate : NSObject <NSApplicationDelegate, AtoZGridViewDataSource, AtoZGridViewDelegate>
 
