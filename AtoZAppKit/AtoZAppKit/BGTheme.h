@@ -3,12 +3,16 @@
 
 
 @interface BGTheme : NSObject
+
 {
-	BOOL useAlpha;
+	NSColor *_baseColor;
 }
 
-//	General Theme
+@property (nonatomic, assign)	BOOL useAlpha;
 
+@property (nonatomic, retain) NSColor *baseColor;
+
+//	General Theme
 //	Alphas used only if you want certain colors to be draw with the same	alpha value.
 @property (readonly) CGFloat 	 gradientAngle, alphaValue, disabledAlphaValue;
 

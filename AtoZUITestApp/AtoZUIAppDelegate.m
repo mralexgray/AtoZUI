@@ -3,7 +3,6 @@
 //  Created by Timothy Davis on 4/12/11.
 
 #import "AtoZUIAppDelegate.h"
-static NSString *kContentTitleKey, *kContentImageKey, *kItemSizeSliderPositionKey;
 
 @interface  AtoZUIAppDelegate ()
 @property (assign, nonatomic) BOOL spinning;
@@ -12,6 +11,8 @@ static NSString *kContentTitleKey, *kContentImageKey, *kItemSizeSliderPositionKe
 @implementation AtoZUIAppDelegate
 
 @synthesize window, tabView;
+
+
 
 - (IBAction) doSegmentStuff: (id)sender
 {
@@ -39,13 +40,12 @@ static NSString *kContentTitleKey, *kContentImageKey, *kItemSizeSliderPositionKe
 	}];
 	_spinning = spinning;
 }
-
-+ (void)initialize
+- (IBAction)setViewColor:(id)sender
 {
-    kContentTitleKey = @"itemTitle";
-    kContentImageKey = @"itemImage";
-    kItemSizeSliderPositionKey = @"ItemSizeSliderPosition";
+	[self.windowView.theme setBaseColor:self.colorWell.color];
+	[[[self window] contentView]setNeedsDisplay:YES];
 }
+
 
 
 - (void) awakeFromNib //:(NSNotification*) aNotification
@@ -57,34 +57,10 @@ static NSString *kContentTitleKey, *kContentImageKey, *kItemSizeSliderPositionKe
 	//    self.gridView.itemBackgroundColor 	 = [[NSColor redColor] colorWithAlphaComponent:0.42];
 	//    self.gridView.itemBackgroundColor = [NSColor colorWithCalibratedRed:0.195 green:0.807 blue:0.807 alpha:1.000];
     /// insert some content
-	self.items = [NSMA array];
-	for (int i=0; i<500; i++) {
-        [self.items addObject:@{kContentImageKey: [NSImage imageNamed:NSImageNameComputer],
-			 kContentTitleKey: NSImageNameComputer}];
-        [self.items addObject:@{kContentImageKey: [NSImage imageNamed:NSImageNameNetwork],
-			 kContentTitleKey: NSImageNameNetwork}];
-        [self.items addObject:@{kContentImageKey: [NSImage imageNamed:NSImageNameDotMac],
-			 kContentTitleKey: NSImageNameDotMac}];
-        [self.items addObject:@{kContentImageKey: [NSImage imageNamed:NSImageNameFolderSmart],
-			 kContentTitleKey: NSImageNameFolderSmart}];
-        [self.items addObject:@{kContentImageKey: [NSImage imageNamed:NSImageNameBonjour],
-			 kContentTitleKey: NSImageNameBonjour}];
-        [self.items addObject:@{kContentImageKey: [NSImage imageNamed:NSImageNameFolderBurnable],
-			 kContentTitleKey: NSImageNameFolderBurnable}];
-    }
+	_items = [[NSImage icons]map:^id(id obj) {
+		return @{ kContentImageKey: obj, kContentTitleKey: [obj valueForKey:@"name"] ?: @"N/A"};
+		}].mutableCopy;
 
-//	_items = [[NSImage icons]map:^id(id obj) {
-//		return @{ kContentImageKey: obj, kContentTitleKey: [obj valueForKey:@"name"] ?: @"N/A"};
-//		}].mutableCopy;
-
-//	}[NSA arrayWithObjects: @{kContentImageKey: [NSImage imageNamed:NSImageNameComputer],
-//			 kContentTitleKey: NSImageNameComputer}, @{kContentImageKey: [NSImage imageNamed:NSImageNameNetwork],
-//			 kContentTitleKey: NSImageNameNetwork}, @{kContentImageKey: [NSImage imageNamed:NSImageNameDotMac],
-//			 kContentTitleKey: NSImageNameDotMac}, @{kContentImageKey: [NSImage imageNamed:NSImageNameFolderSmart],
-//			 kContentTitleKey: NSImageNameFolderSmart}, @{kContentImageKey: [NSImage imageNamed:NSImageNameBonjour],
-//			 kContentTitleKey: NSImageNameBonjour}, @{kContentImageKey: [NSImage imageNamed:NSImageNameFolderBurnable],
-//			 kContentTitleKey: NSImageNameFolderBurnable}, nil];
-//	NSLog(@"items: %@", _items);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults integerForKey:kItemSizeSliderPositionKey]) {
         self.itemSizeSlider.integerValue = [defaults integerForKey:kItemSizeSliderPositionKey];

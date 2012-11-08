@@ -1,27 +1,23 @@
-//
-//  BGGradientTheme.m
-//  BGHUDAppKit
-//
-//  Created by BinaryGod on 6/15/08.
-//
-
 
 #import "BGTheme.h"
 
 #define SELF_ALPHA colorWithAlphaComponent:[self alphaValue]
-
 #define GRADIENT_ANGLE 270
 
 @implementation AZFlatTheme
 
-
 #pragma mark General Theme
 
--(CGFloat)gradientAngle { return GRADIENT_ANGLE; }
+-(CGFloat) gradientAngle { return GRADIENT_ANGLE; }
+
+-(NSColor*) baseColor {
+	return  _baseColor ?: [NSColor redColor];
+}
 
 -(NSGradient *)normalGradient  //BACKGROUND OF VIEWS
 {
-	return [[ NSGradient alloc] initWithStartingColor: [[NSColor colorWithCalibratedRed:0.421 green:0.630 blue:0.254 alpha:1.000]SELF_ALPHA]
+	return [[ NSGradient alloc] initWithStartingColor: [self.baseColor SELF_ALPHA]
+	//[[NSColor colorWithCalibratedRed:0.421 green:0.630 blue:0.254 alpha:1.000]SELF_ALPHA]
 										  endingColor: [[NSColor colorWithCalibratedWhite:0   alpha:1]SELF_ALPHA]];
 //	return [[ NSGradient alloc] initWithStartingColor: [[NSColor colorWithCalibratedWhite:.35 alpha:1]SELF_ALPHA]
 //										  endingColor: [[NSColor colorWithCalibratedWhite:0   alpha:1]SELF_ALPHA]];

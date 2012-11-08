@@ -13,11 +13,8 @@
 
 #pragma mark Scroller Theme
 
--(id)init {
-	
-	self = [super init];
-	
-	return self;
+-(BOOL)useAlpha {
+	return  _useAlpha ?: YES;
 }
 
 -(NSColor *)scrollerStroke {

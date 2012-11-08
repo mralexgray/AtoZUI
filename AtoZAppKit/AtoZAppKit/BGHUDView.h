@@ -31,7 +31,7 @@
 	NSString *themeKey;
 	BOOL useTheme;
 }
-
+@property (strong) BGTheme *theme;
 @property BOOL flipGradient;
 @property BOOL drawTopBorder;
 @property BOOL drawBottomBorder;
@@ -42,12 +42,12 @@
 @property BOOL drawBottomShadow;
 @property BOOL drawLeftShadow;
 @property BOOL drawRightShadow;
-@property (strong) NSColor *shadowColor;
-@property (strong) NSGradient *customGradient;
-@property (strong) NSColor *color1;
-@property (strong) NSColor *color2;
+@property (strong) NSColor 		*shadowColor;
+@property (strong) NSGradient 	*customGradient;
+@property (strong) NSColor 		*color1;
+@property (strong) NSColor 		*color2;
 
-@property (strong) NSString *themeKey;
+@property (strong) NSString 		*themeKey;
 @property BOOL useTheme;
 
 @end

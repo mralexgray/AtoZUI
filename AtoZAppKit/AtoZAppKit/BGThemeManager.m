@@ -16,7 +16,7 @@ static BGThemeManager *sharedThemeManager = nil;
 + (BGThemeManager *)keyedManager;
 {
     if (sharedThemeManager == nil) { sharedThemeManager = [[super allocWithZone:NULL] init];
-													      [sharedThemeManager initDefaultThemes];
+		[sharedThemeManager initDefaultThemes];
     }
     return sharedThemeManager;
 }

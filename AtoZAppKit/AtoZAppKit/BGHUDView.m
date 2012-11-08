@@ -26,7 +26,7 @@
 		self.borderColor = [NSColor blackColor];
 		self.shadowColor = [NSColor blackColor];
 		self.color1 = [NSColor blackColor];
-		self.color2 = [NSColor redColor];
+		self.color2 = [NSColor colorWithCalibratedRed:0.804 green:0.426 blue:1.000 alpha:1.000];
 	}
 	
 	return self;
@@ -58,43 +58,32 @@
 		
 		self.themeKey = [aDecoder containsValueForKey: @"themeKey"] ? [aDecoder decodeObjectForKey: @"themeKey"]
 																	: @"gradientTheme";
-		self.useTheme = YES;//[aDecoder containsValueForKey:@"useTheme"]  ? [aDecoder decodeBoolForKey: @"useTheme"]
-							//										: YES;
-		self.useTheme = [aDecoder decodeBoolForKey: @"useTheme"];
-		self.flipGradient = [aDecoder decodeBoolForKey: @"flipGradient"];
-		self.drawTopBorder = [aDecoder decodeBoolForKey: @"drawTopBorder"];
-		self.drawBottomBorder = [aDecoder decodeBoolForKey: @"drawBottomBorder"];
-		self.drawLeftBorder = [aDecoder decodeBoolForKey: @"drawLeftBorder"];
-		self.drawRightBorder = [aDecoder decodeBoolForKey: @"drawRightBorder"];
+		self.useTheme 			= YES;
+		//[aDecoder containsValueForKey:@"useTheme"]  ? [aDecoder decodeBoolForKey: @"useTheme"]
+
+		self.useTheme 			= [aDecoder decodeBoolForKey: @"useTheme"];
+		self.flipGradient 		= [aDecoder decodeBoolForKey: @"flipGradient"];
+		self.drawTopBorder 		= [aDecoder decodeBoolForKey: @"drawTopBorder"];
+		self.drawBottomBorder 	= [aDecoder decodeBoolForKey: @"drawBottomBorder"];
+		self.drawLeftBorder 		= [aDecoder decodeBoolForKey: @"drawLeftBorder"];
+		self.drawRightBorder	 	= [aDecoder decodeBoolForKey: @"drawRightBorder"];
 		
-		if([aDecoder containsValueForKey: @"borderColor"]) {
-			self.borderColor = [aDecoder decodeObjectForKey: @"borderColor"];
-		} else {
-			self.borderColor = [NSColor blackColor];
-		}
+		self.borderColor = [aDecoder decodeObjectForKey: @"borderColor"] ?: [NSColor blackColor];
+
+		self.drawTopShadow 		= [aDecoder decodeBoolForKey: @"drawTopShadow"];
+		self.drawBottomShadow 	= [aDecoder decodeBoolForKey: @"drawBottomShadow"];
+		self.drawLeftShadow 		= [aDecoder decodeBoolForKey: @"drawLeftShadow"];
+		self.drawRightShadow 	= [aDecoder decodeBoolForKey: @"drawRightShadow"];
 		
-		self.drawTopShadow = [aDecoder decodeBoolForKey: @"drawTopShadow"];
-		self.drawBottomShadow = [aDecoder decodeBoolForKey: @"drawBottomShadow"];
-		self.drawLeftShadow = [aDecoder decodeBoolForKey: @"drawLeftShadow"];
-		self.drawRightShadow = [aDecoder decodeBoolForKey: @"drawRightShadow"];
+		self.shadowColor = [aDecoder containsValueForKey: @"shadowColor"] ?
+			[aDecoder decodeObjectForKey: @"shadowColor"] : [NSColor blackColor];
+
 		
-		if([aDecoder containsValueForKey: @"shadowColor"]) {
-			self.shadowColor = [aDecoder decodeObjectForKey: @"shadowColor"];
-		} else {
-			self.shadowColor = [NSColor blackColor];
-		}
-		
-		if([aDecoder containsValueForKey: @"color1"]) {
-			self.color1 = [aDecoder decodeObjectForKey: @"color1"];
-		} else {
-			self.color1 = [NSColor blackColor];
-		}
-		
-		if([aDecoder containsValueForKey: @"color2"]) {
-			self.color2 = [aDecoder decodeObjectForKey: @"color2"];
-		} else {
-			self.color2 = [NSColor colorWithCalibratedRed:0.851 green:0.723 blue:0.268 alpha:1.000];
-		}
+		self.color1 = [aDecoder containsValueForKey: @"color1"] ?
+			[aDecoder decodeObjectForKey: @"color1"] : [NSColor blackColor];
+		self.color2 = [aDecoder containsValueForKey: @"color2"] ?
+			[aDecoder decodeObjectForKey: @"color2"] :
+			[NSColor colorWithCalibratedRed:0.851 green:0.723 blue:0.268 alpha:1.000];
 	}
 	
 	return self;
@@ -104,21 +93,27 @@
 	
 	[super encodeWithCoder: aCoder];
 	
-	[aCoder encodeObject: self.themeKey forKey: @"themeKey"];
-	[aCoder encodeBool: self.useTheme forKey: @"useTheme"];
-	[aCoder encodeBool: self.flipGradient forKey: @"flipGradient"];
-	[aCoder encodeBool: self.drawTopBorder forKey: @"drawTopBorder"];
-	[aCoder encodeBool: self.drawBottomBorder forKey: @"drawBottomBorder"];
-	[aCoder encodeBool: self.drawLeftBorder forKey: @"drawLeftBorder"];
-	[aCoder encodeBool: self.drawRightBorder forKey: @"drawRightBorder"];
-	[aCoder encodeObject: self.borderColor forKey: @"borderColor"];
-	[aCoder encodeBool: self.drawTopShadow forKey: @"drawTopShadow"];
-	[aCoder encodeBool: self.drawBottomShadow forKey: @"drawBottomShadow"];
-	[aCoder encodeBool: self.drawLeftShadow forKey: @"drawLeftShadow"];
-	[aCoder encodeBool: self.drawRightShadow forKey: @"drawRightShadow"];
-	[aCoder encodeObject: self.shadowColor forKey: @"shadowColor"];
-	[aCoder encodeObject: self.color1 forKey: @"color1"];
-	[aCoder encodeObject: self.color2 forKey: @"color2"];
+	[aCoder encodeObject: 	self.themeKey 			forKey: @"themeKey"];
+	[aCoder encodeBool: 	self.useTheme 			forKey: @"useTheme"];
+	[aCoder encodeBool: 	self.flipGradient 		forKey: @"flipGradient"];
+	[aCoder encodeBool: 	self.drawTopBorder 		forKey: @"drawTopBorder"];
+	[aCoder encodeBool: 	self.drawBottomBorder 	forKey: @"drawBottomBorder"];
+	[aCoder encodeBool: 	self.drawLeftBorder 	forKey: @"drawLeftBorder"];
+	[aCoder encodeBool: 	self.drawRightBorder 	forKey: @"drawRightBorder"];
+	[aCoder encodeObject: 	self.borderColor 		forKey: @"borderColor"];
+	[aCoder encodeBool: 	self.drawTopShadow 		forKey: @"drawTopShadow"];
+	[aCoder encodeBool: 	self.drawBottomShadow 	forKey: @"drawBottomShadow"];
+	[aCoder encodeBool: 	self.drawLeftShadow 	forKey: @"drawLeftShadow"];
+	[aCoder encodeBool: 	self.drawRightShadow 	forKey: @"drawRightShadow"];
+	[aCoder encodeObject: 	self.shadowColor 		forKey: @"shadowColor"];
+	[aCoder encodeObject: 	self.color1 			forKey: @"color1"];
+	[aCoder encodeObject: 	self.color2 			forKey: @"color2"];
+}
+
+- (BGTheme*) theme
+
+{
+	return _theme = _theme ?: [[BGThemeManager keyedManager] themeForKey: self.themeKey] ?: [[BGThemeManager keyedManager]themeForKey:@"atoz"];
 }
 
 -(void)drawRect:(NSRect) rect {
@@ -126,9 +121,9 @@
 	rect = [self bounds];
 	
 //	if(self.useTheme) { NSLog(@"indeed using theme");
-		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] normalGradient] drawInRect: rect angle: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] gradientAngle]];
-		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
-		NSFrameRect(rect);
+	[self.theme.normalGradient drawInRect: rect angle:self.theme.gradientAngle];
+	[self.theme.strokeColor set];
+	NSFrameRect(rect);
 		
 /*	} else {
 		
