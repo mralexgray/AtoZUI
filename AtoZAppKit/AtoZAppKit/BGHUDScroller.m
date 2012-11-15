@@ -713,7 +713,6 @@
 }
 
 
-#pragma mark -
 #pragma mark Helper Methods
 //- (NSUsableScrollerParts)usableParts {
 //	if([self arrowsPosition] != NSScrollerArrowsNone) {
@@ -766,6 +765,5 @@
 	
 	return NO;
 }
-#pragma mark -
 
 @end

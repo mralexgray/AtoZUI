@@ -62,7 +62,6 @@
 }
 
 
-#pragma mark -
 #pragma mark Drawing Methods
 
 - (void)drawBarInside:(NSRect)aRect flipped:(BOOL)flipped {
@@ -629,7 +628,6 @@
 	
 }
 
-#pragma mark -
 #pragma mark Overridden Methods
 
 - (BOOL)_usesCustomTrackImage {
@@ -637,6 +635,5 @@
 	return YES;
 }
 
-#pragma mark -
 
 @end

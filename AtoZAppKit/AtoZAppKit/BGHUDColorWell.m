@@ -58,7 +58,6 @@
 }
 
 
-#pragma mark -
 #pragma mark Drawing Methods
 
 - (void)drawRect:(NSRect) rect {
@@ -122,7 +121,6 @@
 	NSRectFill(rect);
 }
 
-#pragma mark -
 #pragma mark Helper Methods
 
 - (BOOL)useTransparentWell {
@@ -137,6 +135,5 @@
 	[self drawRect: [self frame]];
 }
 
-#pragma mark -
 
 @end

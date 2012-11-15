@@ -31,23 +31,23 @@
 	NSString *themeKey;
 	BOOL useTheme;
 }
-@property (strong) BGTheme *theme;
+@property (nonatomic, strong) BGTheme *theme;
 @property BOOL flipGradient;
 @property BOOL drawTopBorder;
 @property BOOL drawBottomBorder;
 @property BOOL drawLeftBorder;
 @property BOOL drawRightBorder;
-@property (strong) NSColor *borderColor;
+@property (nonatomic, strong) NSColor *borderColor;
 @property BOOL drawTopShadow;
 @property BOOL drawBottomShadow;
 @property BOOL drawLeftShadow;
 @property BOOL drawRightShadow;
-@property (strong) NSColor 		*shadowColor;
-@property (strong) NSGradient 	*customGradient;
-@property (strong) NSColor 		*color1;
-@property (strong) NSColor 		*color2;
+@property (nonatomic, strong) NSColor 		*shadowColor;
+@property (nonatomic, strong) NSGradient 	*customGradient;
+@property (nonatomic, strong) NSColor 		*color1;
+@property (nonatomic, strong) NSColor 		*color2;
 
-@property (strong) NSString 		*themeKey;
+@property (nonatomic, strong) NSString 		*themeKey;
 @property BOOL useTheme;
 
 @end

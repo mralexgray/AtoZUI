@@ -124,10 +124,8 @@
 	frame.size.height -= 2;
 }
 
-#pragma mark -
 #pragma mark Helper Methods
 
 
-#pragma mark -
 
 @end

@@ -67,7 +67,6 @@
     return self;
 }
 
-#pragma mark -
 #pragma mark Memory
 
 -(void)dealloc {
@@ -76,7 +75,6 @@
 	[super dealloc];
 }
 
-#pragma mark -
 #pragma mark Drawing
 
 -(void)drawShadowInBounds:(NSRect)bounds {
@@ -211,7 +209,6 @@
 }
 
 
-#pragma mark -
 #pragma mark Actions
 
 -(void)startAnimation:(id)sender {
@@ -228,7 +225,6 @@
     [self setNeedsDisplay:YES];
 }
 
-#pragma mark -
 
 @end
 
@@ -465,7 +461,6 @@
 	}
 }
 
-#pragma mark -
 #pragma mark Helper Methods
 
 //-(void)dealloc {
@@ -475,7 +470,6 @@
 //	[super dealloc];
 //}
 
-#pragma mark -
 
 - (void)updateFrame:(NSTimer *)timer;
 {

@@ -152,10 +152,8 @@
 	[self setCornerView: [[BGHUDTableCornerView alloc] initWithThemeKey: self.themeKey]];
 }
 
-#pragma mark -
 #pragma mark Helper Methods
 
 
-#pragma mark -
 
 @end

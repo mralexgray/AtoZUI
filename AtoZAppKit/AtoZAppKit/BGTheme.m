@@ -51,7 +51,6 @@
 	return 0.5f;
 }
 
-#pragma mark -
 #pragma mark Slider Theme
 
 -(NSColor *)sliderTrackColor {
@@ -82,7 +81,6 @@
 										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]];
 }
 
-#pragma mark -
 #pragma mark Text Based Theme
 
 -(BOOL)isOverrideFillColor {
@@ -118,7 +116,6 @@
 	return [NSColor grayColor];
 }
 
-#pragma mark -
 #pragma mark Progress Theme
 
 -(NSGradient *)progressTrackGradient {
@@ -127,7 +124,6 @@
 										  endingColor: [NSColor colorWithCalibratedRed: 0.208f green: 0.208f blue: 0.208f alpha: 1.0f]];
 }
 
-#pragma mark -
 #pragma mark Token Theme
 
 -(NSColor *)tokenFillNormal {
@@ -150,7 +146,6 @@
 	return [NSColor whiteColor];
 }
 
-#pragma mark -
 #pragma mark Table Theme
 
 -(NSColor *)cellHighlightColor {
@@ -204,7 +199,6 @@
 										  endingColor: [NSColor colorWithDeviceRed: 0.518f green: 0.518f blue: 0.518f alpha: 1.0f]];
 }
 
-#pragma mark -
 #pragma mark General Theme
 
 -(CGFloat)gradientAngle {
@@ -345,7 +339,6 @@
 	return shadow;
 }
 
-#pragma mark -
 
 
 @end

@@ -1229,7 +1229,6 @@
 	}
 }
 
-#pragma mark -
 #pragma mark Helper Methods
 
 
@@ -1252,6 +1251,5 @@
 	[super setValue: value forKey: key];
 }
 
-#pragma mark -
 
 @end
