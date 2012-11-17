@@ -10,44 +10,19 @@
 #import <Cocoa/Cocoa.h>
 #import "BGThemeManager.h"
 
-@interface BGHUDView : NSView {
+@interface BGHUDView : NSView
 
-	BOOL flipGradient;
-	BOOL drawTopBorder;
-	BOOL drawBottomBorder;
-	BOOL drawLeftBorder;
-	BOOL drawRightBorder;
-	NSColor *borderColor;
-	BOOL drawTopShadow;
-	BOOL drawBottomShadow;
-	BOOL drawLeftShadow;
-	BOOL drawRightShadow;
-	NSColor *shadowColor;
-	NSGradient *customGradient;
-	
-	NSColor *color1;
-	NSColor *color2;
-	
-	NSString *themeKey;
-	BOOL useTheme;
-}
-@property (nonatomic, strong) BGTheme *theme;
-@property BOOL flipGradient;
-@property BOOL drawTopBorder;
-@property BOOL drawBottomBorder;
-@property BOOL drawLeftBorder;
-@property BOOL drawRightBorder;
-@property (nonatomic, strong) NSColor *borderColor;
-@property BOOL drawTopShadow;
-@property BOOL drawBottomShadow;
-@property BOOL drawLeftShadow;
-@property BOOL drawRightShadow;
-@property (nonatomic, strong) NSColor 		*shadowColor;
-@property (nonatomic, strong) NSGradient 	*customGradient;
-@property (nonatomic, strong) NSColor 		*color1;
-@property (nonatomic, strong) NSColor 		*color2;
-
+@property (nonatomic, assign) BOOL 			 useTheme;
 @property (nonatomic, strong) NSString 		*themeKey;
-@property BOOL useTheme;
+@property (nonatomic, strong) BGTheme 		*theme;
+
+@property (nonatomic, strong) NSColor		*shadowColor, *borderColor, *color1, *color2;
+
+@property (nonatomic, assign) BOOL 			 flipGradient;
+@property (nonatomic, strong) NSGradient 	*customGradient;
+
+@property (nonatomic, assign) BOOL drawTopBorder, drawBottomBorder, drawLeftBorder, drawRightBorder;
+@property (nonatomic, assign) BOOL drawTopShadow, drawBottomShadow, drawLeftShadow, drawRightShadow;
+
 
 @end

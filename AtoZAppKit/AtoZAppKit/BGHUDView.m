@@ -9,8 +9,30 @@
 
 #import "BGHUDView.h"
 
+static NSString * RedrawContext = @"RedrawContext";
 
 @implementation BGHUDView
+{
+
+	BOOL flipGradient;
+	BOOL drawTopBorder;
+	BOOL drawBottomBorder;
+	BOOL drawLeftBorder;
+	BOOL drawRightBorder;
+	NSColor *borderColor;
+	BOOL drawTopShadow;
+	BOOL drawBottomShadow;
+	BOOL drawLeftShadow;
+	BOOL drawRightShadow;
+	NSColor *shadowColor;
+	NSGradient *customGradient;
+
+	NSColor *color1;
+	NSColor *color2;
+
+	NSString *themeKey;
+	BOOL useTheme;
+}
 
 @synthesize flipGradient, drawTopBorder, drawBottomBorder, drawLeftBorder, drawRightBorder, borderColor, drawTopShadow, drawBottomShadow, drawLeftShadow, drawRightShadow, shadowColor, customGradient, themeKey, useTheme, color1, color2;
 
@@ -19,7 +41,6 @@
 	self = [super init];
 	
 	if(self) {
-		
 		self.themeKey = @"gradientTheme";
 		self.useTheme = YES;
 		self.flipGradient = YES;
@@ -37,7 +58,6 @@
 	self = [super initWithFrame: frame];
 	
 	if(self) {
-		
 		self.themeKey = @"gradientTheme";
 		self.useTheme = YES;
 		self.flipGradient = YES;
@@ -55,7 +75,7 @@
 	self = [super initWithCoder: aDecoder];
 	
 	if(self) { NSLog(@"initwithCoder");
-		
+
 		self.themeKey = [aDecoder containsValueForKey: @"themeKey"] ? [aDecoder decodeObjectForKey: @"themeKey"]
 																	: @"gradientTheme";
 		self.useTheme 			= YES;
@@ -110,10 +130,20 @@
 	[aCoder encodeObject: 	self.color2 			forKey: @"color2"];
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change
+                       context:(void *)context
+{
+//    if ([object isEqualTo:_theme]) //[keyPath isEqualToString:@"theme"]) //
+	if (context == &RedrawContext)
+        [self setNeedsDisplay:YES];
+}
+
 - (BGTheme*) theme
 
 {
-	return _theme = _theme ?: [[BGThemeManager keyedManager] themeForKey: self.themeKey] ?: [[BGThemeManager keyedManager]themeForKey:@"atoz"];
+	_theme = _theme ?: [[BGThemeManager keyedManager] themeForKey: self.themeKey] ?: [[BGThemeManager keyedManager]themeForKey:@"atoz"];
+	[_theme addObserver:self forKeyPath:@"baseColor" options:0 context:&RedrawContext];
+	return _theme;
 }
 
 -(void)drawRect:(NSRect) rect {
