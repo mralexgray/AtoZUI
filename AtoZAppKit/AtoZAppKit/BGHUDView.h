@@ -14,7 +14,7 @@
 
 @property (nonatomic, assign) BOOL 			 useTheme;
 @property (nonatomic, strong) NSString 		*themeKey;
-@property (nonatomic, strong) BGTheme 		*theme;
+//@property (nonatomic, strong) BGTheme 		*theme;
 
 @property (nonatomic, strong) NSColor		*shadowColor, *borderColor, *color1, *color2;
 

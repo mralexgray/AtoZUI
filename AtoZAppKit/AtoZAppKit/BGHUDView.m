@@ -130,29 +130,31 @@ static NSString * RedrawContext = @"RedrawContext";
 	[aCoder encodeObject: 	self.color2 			forKey: @"color2"];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change
-                       context:(void *)context
-{
-//    if ([object isEqualTo:_theme]) //[keyPath isEqualToString:@"theme"]) //
-	if (context == &RedrawContext)
-        [self setNeedsDisplay:YES];
-}
-
-- (BGTheme*) theme
-
-{
-	_theme = _theme ?: [[BGThemeManager keyedManager] themeForKey: self.themeKey] ?: [[BGThemeManager keyedManager]themeForKey:@"atoz"];
-	[_theme addObserver:self forKeyPath:@"baseColor" options:0 context:&RedrawContext];
-	return _theme;
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change
+//                       context:(void *)context
+//{
+////    if ([object isEqualTo:_theme])
+//	if [keyPath isEqualToString:@"theme"]) //
+//		if (context == &RedrawContext)
+//        	[self setNeedsDisplay:YES];
+//}
+//
+//- (BGTheme*) theme
+//
+//{
+//	_theme = _theme ?: [[BGThemeManager keyedManager] themeForKey: self.themeKey] ?: [[BGThemeManager keyedManager]themeForKey:@"atoz"];
+////	[_theme addObserver:self forKeyPath:@"baseColor" options:0 context:&RedrawContext];
+//	return _theme;
+//}
 
 -(void)drawRect:(NSRect) rect {
 	
 	rect = [self bounds];
 	
 //	if(self.useTheme) { NSLog(@"indeed using theme");
-	[self.theme.normalGradient drawInRect: rect angle:self.theme.gradientAngle];
-	[self.theme.strokeColor set];
+	[[[BGThemeManager keyedManager] themeForKey: self.themeKey].normalGradient drawInRect:rect angle:[[BGThemeManager keyedManager] themeForKey: self.themeKey].gradientAngle];
+//	[self.theme.normalGradient drawInRect: rect angle:self.theme.gradientAngle];
+	[[[BGThemeManager keyedManager] themeForKey: self.themeKey].strokeColor set];//self.theme.strokeColor set];
 	NSFrameRect(rect);
 		
 /*	} else {
