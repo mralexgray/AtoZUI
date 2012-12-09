@@ -648,7 +648,7 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "AtoZAppKitFramework-Info.plist";
-				INSTALL_PATH = "@rpath";
+				INSTALL_PATH = "@loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = AtoZAppKit;
@@ -680,7 +680,7 @@
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = "AtoZAppKitFramework-Info.plist";
-				INSTALL_PATH = "@rpath";
+				INSTALL_PATH = "@loader_path/Frameworks";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				OTHER_LDFLAGS = "";
