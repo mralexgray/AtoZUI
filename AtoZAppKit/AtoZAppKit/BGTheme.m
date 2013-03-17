@@ -1,15 +1,11 @@
-//
-//  BGThemeManager.m
-//  BGHUDAppKit
-//
-//  Created by BinaryGod on 6/15/08.
-//
 
 
 #import "BGTheme.h"
-
+//#import <AtoZ/AtoZ.h>
 
 @implementation BGTheme
+
+-(NSColor*) baseColor { return _baseColor = _baseColor ?: [NSColor colorWithCalibratedRed:0.207 green:0.195 blue:0.237 alpha:1.000];}//RANDOMCOLOR; }
 
 #pragma mark Scroller Theme
 
@@ -46,16 +42,13 @@
 										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self scrollerAlphaValue]]];
 }
 
--(CGFloat)scrollerAlphaValue {
-	
-	return 0.5f;
-}
+-(CGFloat)scrollerAlphaValue { return _scrollerAlphaValue != .5 ?  _scrollerAlphaValue : .5; }
 
 #pragma mark Slider Theme
 
 -(NSColor *)sliderTrackColor {
 	
-	return [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self alphaValue]];
+	return _sliderTrackColor ?: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self alphaValue]];
 }
 
 -(NSColor *)disabledSliderTrackColor {
@@ -65,7 +58,7 @@
 
 -(NSGradient *)knobColor {
 	
-	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
+	return [NSGradient.alloc initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
 										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]];
 }
 
@@ -77,7 +70,7 @@
 
 -(NSGradient *)disabledKnobColor {
 	
-	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
+	return _disabledKnobColor ?: [NSGradient.alloc initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
 										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]];
 }
 

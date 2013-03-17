@@ -9,6 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "BGThemeManager.h"
 
+
+NSImage *searchButtonImage(void);
+NSImage *cancelButtonImageUp(void);
+
 @interface BGHUDSearchFieldCell : NSSearchFieldCell {
 	
 	BOOL fillsBackground;

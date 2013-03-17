@@ -10,9 +10,6 @@
 
 -(CGFloat) gradientAngle { return GRADIENT_ANGLE; }
 
--(NSColor*) baseColor {
-	return  _baseColor ?: [NSColor redColor];
-}
 
 -(NSGradient *)normalGradient  //BACKGROUND OF VIEWS
 {

@@ -9,7 +9,7 @@
 
 #import "BGHUDView.h"
 
-static NSString * RedrawContext = @"RedrawContext";
+NSString * const RedrawContext = @"RedrawContext";
 
 @implementation BGHUDView
 {

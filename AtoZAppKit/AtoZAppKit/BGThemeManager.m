@@ -50,8 +50,7 @@ static BGThemeManager *sharedThemeManager = nil;
 
 - (BGTheme *)themeForKey:(NSString *)key {
 
-	//Make sure the key exists before we try to
-	//return it
+	//Make sure the key exists before we try to return it
 		return [self.themes objectForKey:key] ? self.themes[key] : self.themes[@"atoz"];
 	
 }

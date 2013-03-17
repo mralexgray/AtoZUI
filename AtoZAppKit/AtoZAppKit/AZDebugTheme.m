@@ -15,6 +15,8 @@
 @implementation AZDebugTheme
 
 
+//-(NSColor*) baseColor { _bas [self baseColor] = baseColor ?: RANDOMCOLOR; }
+
 #pragma mark General Theme
 
 -(CGFloat)gradientAngle { return GRADIENT_ANGLE; }
