@@ -70,19 +70,19 @@ NSString * const RedrawContext = @"RedrawContext";
 	return self;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder {
+-(id)initWithCoder:(NSCoder *)aDecoder {  // This occurs, for realsies when using bghud.
 	
 	self = [super initWithCoder: aDecoder];
 	
-	if(self) { NSLog(@"initwithCoder");
+	if(self) { //  NSLog(@"initwithCoder");
 
 		self.themeKey = [aDecoder containsValueForKey: @"themeKey"] ? [aDecoder decodeObjectForKey: @"themeKey"]
 																	: @"gradientTheme";
 		self.useTheme 			= YES;
 		//[aDecoder containsValueForKey:@"useTheme"]  ? [aDecoder decodeBoolForKey: @"useTheme"]
 
-		self.useTheme 			= [aDecoder decodeBoolForKey: @"useTheme"];
-		self.flipGradient 		= [aDecoder decodeBoolForKey: @"flipGradient"];
+		self.useTheme 			   = [aDecoder decodeBoolForKey: @"useTheme"];
+		self.flipGradient 		   = [aDecoder decodeBoolForKey: @"flipGradient"];
 		self.drawTopBorder 		= [aDecoder decodeBoolForKey: @"drawTopBorder"];
 		self.drawBottomBorder 	= [aDecoder decodeBoolForKey: @"drawBottomBorder"];
 		self.drawLeftBorder 		= [aDecoder decodeBoolForKey: @"drawLeftBorder"];
@@ -93,7 +93,7 @@ NSString * const RedrawContext = @"RedrawContext";
 		self.drawTopShadow 		= [aDecoder decodeBoolForKey: @"drawTopShadow"];
 		self.drawBottomShadow 	= [aDecoder decodeBoolForKey: @"drawBottomShadow"];
 		self.drawLeftShadow 		= [aDecoder decodeBoolForKey: @"drawLeftShadow"];
-		self.drawRightShadow 	= [aDecoder decodeBoolForKey: @"drawRightShadow"];
+		self.drawRightShadow 	   = [aDecoder decodeBoolForKey: @"drawRightShadow"];
 		
 		self.shadowColor = [aDecoder containsValueForKey: @"shadowColor"] ?
 			[aDecoder decodeObjectForKey: @"shadowColor"] : [NSColor blackColor];
