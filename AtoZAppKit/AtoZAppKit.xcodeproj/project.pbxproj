@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
+		7B5E022E171078730086AF70 /* NSButton+AtoZ.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B5E022C171078730086AF70 /* NSButton+AtoZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B5E022F171078730086AF70 /* NSButton+AtoZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5E022D171078730086AF70 /* NSButton+AtoZ.m */; };
 		7BFB9893163DCEAB00254DCF /* AZFlatTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */; };
 		7BFB98A1163DFB5800254DCF /* AZDebugTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB98A0163DFB5700254DCF /* AZDebugTheme.m */; };
 		E706FE7B0E12DE180017E470 /* BGHUDOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = E706FE790E12DE180017E470 /* BGHUDOutlineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,6 +79,8 @@
 		13F8B88A07B434F6008AE28D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		53DF68FD067E5B5A0090B5B0 /* AtoZAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AtoZAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DF68FE067E5B5A0090B5B0 /* AtoZAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AtoZAppKitFramework-Info.plist"; sourceTree = "<group>"; };
+		7B5E022C171078730086AF70 /* NSButton+AtoZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+AtoZ.h"; sourceTree = "<group>"; };
+		7B5E022D171078730086AF70 /* NSButton+AtoZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+AtoZ.m"; sourceTree = "<group>"; };
 		7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZFlatTheme.m; sourceTree = "<group>"; };
 		7BFB98A0163DFB5700254DCF /* AZDebugTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDebugTheme.m; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
@@ -217,6 +221,7 @@
 		54D33B2C06778E4400C9C163 /* AtoZAppKit */ = {
 			isa = PBXGroup;
 			children = (
+				7B5E022B171078450086AF70 /* Categories */,
 				E7CEE1C90F49D8DF00F5DABB /* BGHUDBox */,
 				E7E069620F48A6720000BDAB /* BGHUDView */,
 				F62F7C1F0EC7DB6800343989 /* BGHUDComboBoxCell */,
@@ -245,6 +250,16 @@
 				E758DF8E13F1EEF7006B3549 /* BGHUDCommon.m */,
 			);
 			path = AtoZAppKit;
+			sourceTree = "<group>";
+		};
+		7B5E022B171078450086AF70 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7B5E022C171078730086AF70 /* NSButton+AtoZ.h */,
+				7B5E022D171078730086AF70 /* NSButton+AtoZ.m */,
+			);
+			name = Categories;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C0894DA40C32F4C100401507 /* BGHUDButtonCell */ = {
@@ -480,6 +495,7 @@
 				E79C25D00E109BB500742AF4 /* BGHUDTextFieldCell.h in Headers */,
 				E7894D850E12978C00D28139 /* BGHUDPopUpButtonCell.h in Headers */,
 				E7894DC20E12A03300D28139 /* BGHUDSliderCell.h in Headers */,
+				E7981ED60E12D3460081E937 /* NSTokenAttachmentCell.h in Headers */,
 				E7894E300E12A7F100D28139 /* BGHUDScroller.h in Headers */,
 				E7894E3D0E12A9E700D28139 /* BGHUDScrollView.h in Headers */,
 				E7981E660E128FF90081E937 /* BGHUDProgressIndicator.h in Headers */,
@@ -487,7 +503,6 @@
 				E7981ECF0E12D3390081E937 /* BGHUDTokenAttachmentCell.h in Headers */,
 				E7981ED10E12D3390081E937 /* BGHUDTokenFieldCell.h in Headers */,
 				E7981ED50E12D3460081E937 /* NSTokenAttachment.h in Headers */,
-				E7981ED60E12D3460081E937 /* NSTokenAttachmentCell.h in Headers */,
 				E7981EF50E12D6AA0081E937 /* BGHUDTableView.h in Headers */,
 				E7981EF70E12D6AA0081E937 /* BGHUDTableViewHeaderCell.h in Headers */,
 				E706FE7B0E12DE180017E470 /* BGHUDOutlineView.h in Headers */,
@@ -505,6 +520,7 @@
 				E70CA2C20FB6FFBB0073E3DF /* BGHUDTabView.h in Headers */,
 				E71317DF0E10667D00885A23 /* BGHUDAppKit.h in Headers */,
 				E758DF8F13F1EEF7006B3549 /* BGHUDCommon.h in Headers */,
+				7B5E022E171078730086AF70 /* NSButton+AtoZ.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +608,7 @@
 				E758DF9013F1EEF7006B3549 /* BGHUDCommon.m in Sources */,
 				7BFB9893163DCEAB00254DCF /* AZFlatTheme.m in Sources */,
 				7BFB98A1163DFB5800254DCF /* AZDebugTheme.m in Sources */,
+				7B5E022F171078730086AF70 /* NSButton+AtoZ.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +672,7 @@
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(CONFIGURATION_BUILD_DIR)/**\"";
 			};
 			name = Debug;
 		};
@@ -691,6 +709,7 @@
 				SEPARATE_STRIP = YES;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(CONFIGURATION_BUILD_DIR)/**\"";
 			};
 			name = Release;
 		};
