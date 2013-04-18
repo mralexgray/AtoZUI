@@ -1,0 +1,3 @@
+[submodule "MTTokenField"]
+	path = MTTokenField
+	url = https://github.com/mralexgray/MTTokenField.git
