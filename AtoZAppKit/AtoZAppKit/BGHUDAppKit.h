@@ -31,6 +31,18 @@
 #import "BGHUDTabView.h"
 #import "BGHUDTabViewItem.h"
 
+#import "_MTTokenCompletionTableView.h"
+#import "_MTTokenCompletionWindow.h"
+#import "_MTTokenCompletionWindowController.h"
+#import "_MTTokenTextAttachment.h"
+#import "_MTTokenTextView.h"
+#import "MTTokenField+PrivateMethods.h"
+#import "MTTokenField.h"
+#import "MTTokenFieldCell.h"
+#import "MTTokenFieldDelegate.h"
+#import "NSAttributedString+MTTokenField.h"
 
+
+#import "BFColorPickerPopover.h"
 
 #import "NSButton+AtoZ.h"

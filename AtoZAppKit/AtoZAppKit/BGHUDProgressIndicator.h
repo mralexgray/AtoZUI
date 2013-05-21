@@ -15,6 +15,7 @@
     NSTimer* animator;
 }
 
+@property (strong) NSColor* color, *backgroundColor;
 @property (readwrite, strong) NSTimer* animator;
 @property (readwrite) double progressOffset;
 @property (strong) NSString *themeKey;

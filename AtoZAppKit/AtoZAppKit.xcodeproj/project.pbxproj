@@ -8,8 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
+		7B232FA51727EE6F00B111FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B232FA41727EE6F00B111FE /* QuartzCore.framework */; };
 		7B5E022E171078730086AF70 /* NSButton+AtoZ.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B5E022C171078730086AF70 /* NSButton+AtoZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B5E022F171078730086AF70 /* NSButton+AtoZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5E022D171078730086AF70 /* NSButton+AtoZ.m */; };
+		7BDC5F741724D4A8002C62E7 /* BFColorPickerPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BDC5F721724D4A8002C62E7 /* BFColorPickerPopover.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BDC5F751724D4A8002C62E7 /* BFColorPickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDC5F731724D4A8002C62E7 /* BFColorPickerPopover.m */; };
+		7BEA757C17203ABD000A7D84 /* MTTokenField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA757217203ABD000A7D84 /* MTTokenField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA757D17203ABD000A7D84 /* MTTokenFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA757317203ABD000A7D84 /* MTTokenFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA757E17203ABD000A7D84 /* MTTokenFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA757417203ABD000A7D84 /* MTTokenFieldDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA757F17203ABD000A7D84 /* NSAttributedString+MTTokenField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA757517203ABD000A7D84 /* NSAttributedString+MTTokenField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA7593172046AE000A7D84 /* _MTTokenCompletionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758017203B0E000A7D84 /* _MTTokenCompletionTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BEA7594172046AE000A7D84 /* _MTTokenCompletionWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758117203B0E000A7D84 /* _MTTokenCompletionWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BEA7595172046AE000A7D84 /* _MTTokenCompletionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758217203B0E000A7D84 /* _MTTokenCompletionWindowController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BEA7596172046AE000A7D84 /* _MTTokenTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758317203B0E000A7D84 /* _MTTokenTextAttachment.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BEA7597172046AE000A7D84 /* _MTTokenTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758417203B0E000A7D84 /* _MTTokenTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BEA7598172046AE000A7D84 /* MTTokenField+PrivateMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758517203B0E000A7D84 /* MTTokenField+PrivateMethods.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BEA7599172046AE000A7D84 /* MTTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758617203B0E000A7D84 /* MTTokenField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BEA759A172046AE000A7D84 /* MTTokenFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758717203B0E000A7D84 /* MTTokenFieldCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BEA759B172046AE000A7D84 /* NSAttributedString+MTTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA758817203B0E000A7D84 /* NSAttributedString+MTTokenField.m */; };
+		7BEA759D172092F7000A7D84 /* _MTTokenCompletionTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA756C17203ABD000A7D84 /* _MTTokenCompletionTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA759E172092F7000A7D84 /* _MTTokenCompletionWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA756D17203ABD000A7D84 /* _MTTokenCompletionWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA759F172092F7000A7D84 /* _MTTokenCompletionWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA756E17203ABD000A7D84 /* _MTTokenCompletionWindowController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA75A0172092F7000A7D84 /* _MTTokenTextAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA756F17203ABD000A7D84 /* _MTTokenTextAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA75A1172092F7000A7D84 /* _MTTokenTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA757017203ABD000A7D84 /* _MTTokenTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEA75A2172092F7000A7D84 /* MTTokenField+PrivateMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BEA757117203ABD000A7D84 /* MTTokenField+PrivateMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BFB9893163DCEAB00254DCF /* AZFlatTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */; };
 		7BFB98A1163DFB5800254DCF /* AZDebugTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB98A0163DFB5700254DCF /* AZDebugTheme.m */; };
 		E706FE7B0E12DE180017E470 /* BGHUDOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = E706FE790E12DE180017E470 /* BGHUDOutlineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,7 +50,7 @@
 		E71317E30E10667D00885A23 /* BGTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = E71317DA0E10667D00885A23 /* BGTheme.m */; };
 		E71317E40E10667D00885A23 /* BGThemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E71317DB0E10667D00885A23 /* BGThemeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E71317E50E10667D00885A23 /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E71317DC0E10667D00885A23 /* BGThemeManager.m */; };
-		E758DF8F13F1EEF7006B3549 /* BGHUDCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = E758DF8D13F1EEF7006B3549 /* BGHUDCommon.h */; };
+		E758DF8F13F1EEF7006B3549 /* BGHUDCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = E758DF8D13F1EEF7006B3549 /* BGHUDCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E758DF9013F1EEF7006B3549 /* BGHUDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = E758DF8E13F1EEF7006B3549 /* BGHUDCommon.m */; };
 		E7631D760E4DE6940092074F /* BGHUDColorWell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7631D740E4DE6940092074F /* BGHUDColorWell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7631D770E4DE6940092074F /* BGHUDColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7631D750E4DE6940092074F /* BGHUDColorWell.m */; };
@@ -79,8 +101,70 @@
 		13F8B88A07B434F6008AE28D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		53DF68FD067E5B5A0090B5B0 /* AtoZAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AtoZAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DF68FE067E5B5A0090B5B0 /* AtoZAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AtoZAppKitFramework-Info.plist"; sourceTree = "<group>"; };
+		7B232FA41727EE6F00B111FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../../../../../../../System/Library/Frameworks/QuartzCore.framework; sourceTree = "<group>"; };
+		7B4AC88B173BFB8E002CD411 /* CALayer+NBBControlAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+NBBControlAnimations.h"; sourceTree = "<group>"; };
+		7B4AC88C173BFB8E002CD411 /* CALayer+NBBControlAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+NBBControlAnimations.m"; sourceTree = "<group>"; };
+		7B4AC88E173BFB8E002CD411 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7B4AC88F173BFB8E002CD411 /* NBBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBButton.h; sourceTree = "<group>"; };
+		7B4AC890173BFB8E002CD411 /* NBBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBButton.m; sourceTree = "<group>"; };
+		7B4AC891173BFB8E002CD411 /* NBBCore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NBBCore-Info.plist"; sourceTree = "<group>"; };
+		7B4AC892173BFB8E002CD411 /* NBBCore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NBBCore-Prefix.pch"; sourceTree = "<group>"; };
+		7B4AC893173BFB8E002CD411 /* NBBCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBCore.h; sourceTree = "<group>"; };
+		7B4AC894173BFB8E002CD411 /* NBBDragAnimationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBDragAnimationWindow.h; sourceTree = "<group>"; };
+		7B4AC895173BFB8E002CD411 /* NBBDragAnimationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBDragAnimationWindow.m; sourceTree = "<group>"; };
+		7B4AC896173BFB8E002CD411 /* NBBKeyboardKeyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBKeyboardKeyCell.h; sourceTree = "<group>"; };
+		7B4AC897173BFB8E002CD411 /* NBBKeyboardKeyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBKeyboardKeyCell.m; sourceTree = "<group>"; };
+		7B4AC898173BFB8E002CD411 /* NBBLaunchPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBLaunchPad.h; sourceTree = "<group>"; };
+		7B4AC899173BFB8E002CD411 /* NBBLaunchPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBLaunchPad.m; sourceTree = "<group>"; };
+		7B4AC89A173BFB8E002CD411 /* NBBModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBModule.h; sourceTree = "<group>"; };
+		7B4AC89B173BFB8E002CD411 /* NBBModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBModule.m; sourceTree = "<group>"; };
+		7B4AC89C173BFB8E002CD411 /* NBBSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBSlider.h; sourceTree = "<group>"; };
+		7B4AC89D173BFB8E002CD411 /* NBBSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBSlider.m; sourceTree = "<group>"; };
+		7B4AC89E173BFB8E002CD411 /* NBBSwappableControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBSwappableControl.h; sourceTree = "<group>"; };
+		7B4AC89F173BFB8E002CD411 /* NBBTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBTableView.h; sourceTree = "<group>"; };
+		7B4AC8A0173BFB8E002CD411 /* NBBTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBTableView.m; sourceTree = "<group>"; };
+		7B4AC8A1173BFB8E002CD411 /* NBBTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBTextField.h; sourceTree = "<group>"; };
+		7B4AC8A2173BFB8E002CD411 /* NBBTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBTextField.m; sourceTree = "<group>"; };
+		7B4AC8A3173BFB8E002CD411 /* NBBThemable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBThemable.h; sourceTree = "<group>"; };
+		7B4AC8A4173BFB8E002CD411 /* NBBTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBTheme.h; sourceTree = "<group>"; };
+		7B4AC8A5173BFB8E002CD411 /* NBBTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBTheme.m; sourceTree = "<group>"; };
+		7B4AC8A6173BFB8E002CD411 /* NBBThemeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBThemeEngine.h; sourceTree = "<group>"; };
+		7B4AC8A7173BFB8E002CD411 /* NBBThemeEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBThemeEngine.m; sourceTree = "<group>"; };
+		7B4AC8A8173BFB8E002CD411 /* NBBVirtualKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBVirtualKeyboard.h; sourceTree = "<group>"; };
+		7B4AC8A9173BFB8E002CD411 /* NBBVirtualKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBVirtualKeyboard.m; sourceTree = "<group>"; };
+		7B4AC8AA173BFB8E002CD411 /* NBBWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBWindow.h; sourceTree = "<group>"; };
+		7B4AC8AB173BFB8E002CD411 /* NBBWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBWindow.m; sourceTree = "<group>"; };
+		7B4AC8AC173BFB8E002CD411 /* NBBWindowBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBBWindowBase.h; sourceTree = "<group>"; };
+		7B4AC8AD173BFB8E002CD411 /* NBBWindowBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBBWindowBase.m; sourceTree = "<group>"; };
+		7B4AC8AE173BFB8E002CD411 /* NSActionCell+NBBSwappable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSActionCell+NBBSwappable.h"; sourceTree = "<group>"; };
+		7B4AC8AF173BFB8E002CD411 /* NSActionCell+NBBSwappable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSActionCell+NBBSwappable.m"; sourceTree = "<group>"; };
+		7B4AC8B0173BFB8E002CD411 /* NSControl+NBBControlProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSControl+NBBControlProxy.h"; sourceTree = "<group>"; };
+		7B4AC8B1173BFB8E002CD411 /* NSControl+NBBControlProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSControl+NBBControlProxy.m"; sourceTree = "<group>"; };
+		7B4AC8B3173BFB8E002CD411 /* NSWindow+NBBWindowProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+NBBWindowProxy.h"; sourceTree = "<group>"; };
+		7B4AC8B4173BFB8E002CD411 /* NSWindow+NBBWindowProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+NBBWindowProxy.m"; sourceTree = "<group>"; };
 		7B5E022C171078730086AF70 /* NSButton+AtoZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+AtoZ.h"; sourceTree = "<group>"; };
 		7B5E022D171078730086AF70 /* NSButton+AtoZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+AtoZ.m"; sourceTree = "<group>"; };
+		7BDC5F721724D4A8002C62E7 /* BFColorPickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFColorPickerPopover.h; path = ../BFColorPickerPopover.h; sourceTree = "<group>"; };
+		7BDC5F731724D4A8002C62E7 /* BFColorPickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFColorPickerPopover.m; path = ../BFColorPickerPopover.m; sourceTree = "<group>"; };
+		7BEA756C17203ABD000A7D84 /* _MTTokenCompletionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MTTokenCompletionTableView.h; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenCompletionTableView.h; sourceTree = "<group>"; };
+		7BEA756D17203ABD000A7D84 /* _MTTokenCompletionWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MTTokenCompletionWindow.h; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenCompletionWindow.h; sourceTree = "<group>"; };
+		7BEA756E17203ABD000A7D84 /* _MTTokenCompletionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MTTokenCompletionWindowController.h; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenCompletionWindowController.h; sourceTree = "<group>"; };
+		7BEA756F17203ABD000A7D84 /* _MTTokenTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MTTokenTextAttachment.h; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenTextAttachment.h; sourceTree = "<group>"; };
+		7BEA757017203ABD000A7D84 /* _MTTokenTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MTTokenTextView.h; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenTextView.h; sourceTree = "<group>"; };
+		7BEA757117203ABD000A7D84 /* MTTokenField+PrivateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MTTokenField+PrivateMethods.h"; path = "../MTTokenField/TokenField/MTTokenField/MTTokenField+PrivateMethods.h"; sourceTree = "<group>"; };
+		7BEA757217203ABD000A7D84 /* MTTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTTokenField.h; path = ../MTTokenField/TokenField/MTTokenField/MTTokenField.h; sourceTree = "<group>"; };
+		7BEA757317203ABD000A7D84 /* MTTokenFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTTokenFieldCell.h; path = ../MTTokenField/TokenField/MTTokenField/MTTokenFieldCell.h; sourceTree = "<group>"; };
+		7BEA757417203ABD000A7D84 /* MTTokenFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTTokenFieldDelegate.h; path = ../MTTokenField/TokenField/MTTokenField/MTTokenFieldDelegate.h; sourceTree = "<group>"; };
+		7BEA757517203ABD000A7D84 /* NSAttributedString+MTTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+MTTokenField.h"; path = "../MTTokenField/TokenField/MTTokenField/NSAttributedString+MTTokenField.h"; sourceTree = "<group>"; };
+		7BEA758017203B0E000A7D84 /* _MTTokenCompletionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MTTokenCompletionTableView.m; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenCompletionTableView.m; sourceTree = SOURCE_ROOT; };
+		7BEA758117203B0E000A7D84 /* _MTTokenCompletionWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MTTokenCompletionWindow.m; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenCompletionWindow.m; sourceTree = SOURCE_ROOT; };
+		7BEA758217203B0E000A7D84 /* _MTTokenCompletionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MTTokenCompletionWindowController.m; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenCompletionWindowController.m; sourceTree = SOURCE_ROOT; };
+		7BEA758317203B0E000A7D84 /* _MTTokenTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MTTokenTextAttachment.m; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenTextAttachment.m; sourceTree = SOURCE_ROOT; };
+		7BEA758417203B0E000A7D84 /* _MTTokenTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MTTokenTextView.m; path = ../MTTokenField/TokenField/MTTokenField/_MTTokenTextView.m; sourceTree = SOURCE_ROOT; };
+		7BEA758517203B0E000A7D84 /* MTTokenField+PrivateMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MTTokenField+PrivateMethods.m"; path = "../MTTokenField/TokenField/MTTokenField/MTTokenField+PrivateMethods.m"; sourceTree = SOURCE_ROOT; };
+		7BEA758617203B0E000A7D84 /* MTTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTTokenField.m; path = ../MTTokenField/TokenField/MTTokenField/MTTokenField.m; sourceTree = SOURCE_ROOT; };
+		7BEA758717203B0E000A7D84 /* MTTokenFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTTokenFieldCell.m; path = ../MTTokenField/TokenField/MTTokenField/MTTokenFieldCell.m; sourceTree = SOURCE_ROOT; };
+		7BEA758817203B0E000A7D84 /* NSAttributedString+MTTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+MTTokenField.m"; path = "../MTTokenField/TokenField/MTTokenField/NSAttributedString+MTTokenField.m"; sourceTree = SOURCE_ROOT; };
 		7BFB9892163DCEAB00254DCF /* AZFlatTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZFlatTheme.m; sourceTree = "<group>"; };
 		7BFB98A0163DFB5700254DCF /* AZDebugTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDebugTheme.m; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
@@ -154,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B232FA51727EE6F00B111FE /* QuartzCore.framework in Frameworks */,
 				13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +249,11 @@
 		0259C574FE90428111CA0C5A /* BGHUDAppKit */ = {
 			isa = PBXGroup;
 			children = (
+				7B4AC88A173BFB8E002CD411 /* NBBCore */,
+				7B232FA41727EE6F00B111FE /* QuartzCore.framework */,
+				7BDC5F721724D4A8002C62E7 /* BFColorPickerPopover.h */,
+				7BDC5F731724D4A8002C62E7 /* BFColorPickerPopover.m */,
+				7BEA759217203B30000A7D84 /* TokenField */,
 				54D33B2C06778E4400C9C163 /* AtoZAppKit */,
 				0259C582FE90428111CA0C5A /* Resources */,
 				1ED78706FE9D4A0611CA0C5A /* Products */,
@@ -252,6 +342,62 @@
 			path = AtoZAppKit;
 			sourceTree = "<group>";
 		};
+		7B4AC88A173BFB8E002CD411 /* NBBCore */ = {
+			isa = PBXGroup;
+			children = (
+				7B4AC88B173BFB8E002CD411 /* CALayer+NBBControlAnimations.h */,
+				7B4AC88C173BFB8E002CD411 /* CALayer+NBBControlAnimations.m */,
+				7B4AC88D173BFB8E002CD411 /* InfoPlist.strings */,
+				7B4AC88F173BFB8E002CD411 /* NBBButton.h */,
+				7B4AC890173BFB8E002CD411 /* NBBButton.m */,
+				7B4AC891173BFB8E002CD411 /* NBBCore-Info.plist */,
+				7B4AC892173BFB8E002CD411 /* NBBCore-Prefix.pch */,
+				7B4AC893173BFB8E002CD411 /* NBBCore.h */,
+				7B4AC894173BFB8E002CD411 /* NBBDragAnimationWindow.h */,
+				7B4AC895173BFB8E002CD411 /* NBBDragAnimationWindow.m */,
+				7B4AC896173BFB8E002CD411 /* NBBKeyboardKeyCell.h */,
+				7B4AC897173BFB8E002CD411 /* NBBKeyboardKeyCell.m */,
+				7B4AC898173BFB8E002CD411 /* NBBLaunchPad.h */,
+				7B4AC899173BFB8E002CD411 /* NBBLaunchPad.m */,
+				7B4AC89A173BFB8E002CD411 /* NBBModule.h */,
+				7B4AC89B173BFB8E002CD411 /* NBBModule.m */,
+				7B4AC89C173BFB8E002CD411 /* NBBSlider.h */,
+				7B4AC89D173BFB8E002CD411 /* NBBSlider.m */,
+				7B4AC89E173BFB8E002CD411 /* NBBSwappableControl.h */,
+				7B4AC89F173BFB8E002CD411 /* NBBTableView.h */,
+				7B4AC8A0173BFB8E002CD411 /* NBBTableView.m */,
+				7B4AC8A1173BFB8E002CD411 /* NBBTextField.h */,
+				7B4AC8A2173BFB8E002CD411 /* NBBTextField.m */,
+				7B4AC8A3173BFB8E002CD411 /* NBBThemable.h */,
+				7B4AC8A4173BFB8E002CD411 /* NBBTheme.h */,
+				7B4AC8A5173BFB8E002CD411 /* NBBTheme.m */,
+				7B4AC8A6173BFB8E002CD411 /* NBBThemeEngine.h */,
+				7B4AC8A7173BFB8E002CD411 /* NBBThemeEngine.m */,
+				7B4AC8A8173BFB8E002CD411 /* NBBVirtualKeyboard.h */,
+				7B4AC8A9173BFB8E002CD411 /* NBBVirtualKeyboard.m */,
+				7B4AC8AA173BFB8E002CD411 /* NBBWindow.h */,
+				7B4AC8AB173BFB8E002CD411 /* NBBWindow.m */,
+				7B4AC8AC173BFB8E002CD411 /* NBBWindowBase.h */,
+				7B4AC8AD173BFB8E002CD411 /* NBBWindowBase.m */,
+				7B4AC8AE173BFB8E002CD411 /* NSActionCell+NBBSwappable.h */,
+				7B4AC8AF173BFB8E002CD411 /* NSActionCell+NBBSwappable.m */,
+				7B4AC8B0173BFB8E002CD411 /* NSControl+NBBControlProxy.h */,
+				7B4AC8B1173BFB8E002CD411 /* NSControl+NBBControlProxy.m */,
+				7B4AC8B2173BFB8E002CD411 /* ProxyCategories */,
+			);
+			name = NBBCore;
+			path = ../NBBCore;
+			sourceTree = "<group>";
+		};
+		7B4AC8B2173BFB8E002CD411 /* ProxyCategories */ = {
+			isa = PBXGroup;
+			children = (
+				7B4AC8B3173BFB8E002CD411 /* NSWindow+NBBWindowProxy.h */,
+				7B4AC8B4173BFB8E002CD411 /* NSWindow+NBBWindowProxy.m */,
+			);
+			path = ProxyCategories;
+			sourceTree = "<group>";
+		};
 		7B5E022B171078450086AF70 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +406,32 @@
 			);
 			name = Categories;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		7BEA759217203B30000A7D84 /* TokenField */ = {
+			isa = PBXGroup;
+			children = (
+				7BEA756C17203ABD000A7D84 /* _MTTokenCompletionTableView.h */,
+				7BEA756D17203ABD000A7D84 /* _MTTokenCompletionWindow.h */,
+				7BEA756E17203ABD000A7D84 /* _MTTokenCompletionWindowController.h */,
+				7BEA756F17203ABD000A7D84 /* _MTTokenTextAttachment.h */,
+				7BEA757017203ABD000A7D84 /* _MTTokenTextView.h */,
+				7BEA757117203ABD000A7D84 /* MTTokenField+PrivateMethods.h */,
+				7BEA757217203ABD000A7D84 /* MTTokenField.h */,
+				7BEA757317203ABD000A7D84 /* MTTokenFieldCell.h */,
+				7BEA757417203ABD000A7D84 /* MTTokenFieldDelegate.h */,
+				7BEA757517203ABD000A7D84 /* NSAttributedString+MTTokenField.h */,
+				7BEA758017203B0E000A7D84 /* _MTTokenCompletionTableView.m */,
+				7BEA758117203B0E000A7D84 /* _MTTokenCompletionWindow.m */,
+				7BEA758217203B0E000A7D84 /* _MTTokenCompletionWindowController.m */,
+				7BEA758317203B0E000A7D84 /* _MTTokenTextAttachment.m */,
+				7BEA758417203B0E000A7D84 /* _MTTokenTextView.m */,
+				7BEA758517203B0E000A7D84 /* MTTokenField+PrivateMethods.m */,
+				7BEA758617203B0E000A7D84 /* MTTokenField.m */,
+				7BEA758717203B0E000A7D84 /* MTTokenFieldCell.m */,
+				7BEA758817203B0E000A7D84 /* NSAttributedString+MTTokenField.m */,
+			);
+			name = TokenField;
 			sourceTree = "<group>";
 		};
 		C0894DA40C32F4C100401507 /* BGHUDButtonCell */ = {
@@ -489,6 +661,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDC5F741724D4A8002C62E7 /* BFColorPickerPopover.h in Headers */,
+				E758DF8F13F1EEF7006B3549 /* BGHUDCommon.h in Headers */,
+				7BEA759D172092F7000A7D84 /* _MTTokenCompletionTableView.h in Headers */,
+				7BEA759E172092F7000A7D84 /* _MTTokenCompletionWindow.h in Headers */,
+				7BEA759F172092F7000A7D84 /* _MTTokenCompletionWindowController.h in Headers */,
+				7BEA75A0172092F7000A7D84 /* _MTTokenTextAttachment.h in Headers */,
+				7BEA75A1172092F7000A7D84 /* _MTTokenTextView.h in Headers */,
+				7BEA75A2172092F7000A7D84 /* MTTokenField+PrivateMethods.h in Headers */,
+				7BEA757C17203ABD000A7D84 /* MTTokenField.h in Headers */,
+				7BEA757D17203ABD000A7D84 /* MTTokenFieldCell.h in Headers */,
+				7BEA757E17203ABD000A7D84 /* MTTokenFieldDelegate.h in Headers */,
+				7BEA757F17203ABD000A7D84 /* NSAttributedString+MTTokenField.h in Headers */,
 				E71317E00E10667D00885A23 /* BGHUDButtonCell.h in Headers */,
 				E71317E20E10667D00885A23 /* BGTheme.h in Headers */,
 				E71317E40E10667D00885A23 /* BGThemeManager.h in Headers */,
@@ -519,7 +703,6 @@
 				E70CA2BD0FB6F89D0073E3DF /* BGHUDTabViewItem.h in Headers */,
 				E70CA2C20FB6FFBB0073E3DF /* BGHUDTabView.h in Headers */,
 				E71317DF0E10667D00885A23 /* BGHUDAppKit.h in Headers */,
-				E758DF8F13F1EEF7006B3549 /* BGHUDCommon.h in Headers */,
 				7B5E022E171078730086AF70 /* NSButton+AtoZ.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,9 +714,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C056397F08A954F8003078D8 /* Build configuration list for PBXNativeTarget "AtoZAppKit" */;
 			buildPhases = (
-				53DF68F8067E5B5A0090B5B0 /* Headers */,
+				7B02A2C0172A826500973A80 /* ShellScript */,
 				53DF68FA067E5B5A0090B5B0 /* Sources */,
 				53DF68FB067E5B5A0090B5B0 /* Frameworks */,
+				53DF68F8067E5B5A0090B5B0 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -551,7 +735,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AZ;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = mrgray.com;
 			};
 			buildConfigurationList = C056398B08A954F8003078D8 /* Build configuration list for PBXProject "AtoZAppKit" */;
@@ -563,6 +747,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 0259C574FE90428111CA0C5A /* BGHUDAppKit */;
 			projectDirPath = "";
@@ -573,11 +758,36 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B02A2C0172A826500973A80 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "logger  \"ZZZZZZZZZZZZZZZZZZZZZ  :   ${BUILT_PRODUCTS_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		53DF68FA067E5B5A0090B5B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BEA7593172046AE000A7D84 /* _MTTokenCompletionTableView.m in Sources */,
+				7BEA7594172046AE000A7D84 /* _MTTokenCompletionWindow.m in Sources */,
+				7BEA7595172046AE000A7D84 /* _MTTokenCompletionWindowController.m in Sources */,
+				7BEA7596172046AE000A7D84 /* _MTTokenTextAttachment.m in Sources */,
+				7BEA7597172046AE000A7D84 /* _MTTokenTextView.m in Sources */,
+				7BEA7598172046AE000A7D84 /* MTTokenField+PrivateMethods.m in Sources */,
+				7BEA7599172046AE000A7D84 /* MTTokenField.m in Sources */,
+				7BEA759A172046AE000A7D84 /* MTTokenFieldCell.m in Sources */,
+				7BEA759B172046AE000A7D84 /* NSAttributedString+MTTokenField.m in Sources */,
 				E71317DE0E10667D00885A23 /* BGGradientTheme.m in Sources */,
 				E71317E10E10667D00885A23 /* BGHUDButtonCell.m in Sources */,
 				E71317E30E10667D00885A23 /* BGTheme.m in Sources */,
@@ -609,12 +819,21 @@
 				7BFB9893163DCEAB00254DCF /* AZFlatTheme.m in Sources */,
 				7BFB98A1163DFB5800254DCF /* AZDebugTheme.m in Sources */,
 				7B5E022F171078730086AF70 /* NSButton+AtoZ.m in Sources */,
+				7BDC5F751724D4A8002C62E7 /* BFColorPickerPopover.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		7B4AC88D173BFB8E002CD411 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B4AC88E173BFB8E002CD411 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		8D1AC97F0486D23B00FE50C9 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -642,10 +861,9 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
-				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = NO;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = NO;
 				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
@@ -655,11 +873,11 @@
 				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = NO;
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
-				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = NO;
 				GCC_WARN_PEDANTIC = NO;
 				GCC_WARN_PROTOTYPE_CONVERSION = NO;
-				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_SIGN_COMPARE = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
@@ -672,7 +890,7 @@
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "\"$(CONFIGURATION_BUILD_DIR)/**\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../**\"/** \"$(BUILT_PRODUCTS_DIR)/AtoZ.framework/Headers/\"";
 			};
 			name = Debug;
 		};
@@ -691,14 +909,14 @@
 				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
-				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = NO;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SIGN_COMPARE = NO;
 				INFOPLIST_FILE = "AtoZAppKitFramework-Info.plist";
 				INSTALL_PATH = "@loader_path/Frameworks";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
@@ -709,20 +927,22 @@
 				SEPARATE_STRIP = YES;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
-				USER_HEADER_SEARCH_PATHS = "\"$(CONFIGURATION_BUILD_DIR)/**\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../**\"/** \"$(BUILT_PRODUCTS_DIR)/AtoZ.framework/Headers/\"";
 			};
 			name = Release;
 		};
 		C056398C08A954F8003078D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				GCC_ENABLE_OBJC_GC = supported;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = "";
+				GCC_PREPROCESSOR_DEFINITIONS = PARTOF_AtoZ;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "@rpath";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -730,13 +950,15 @@
 		C056398D08A954F8003078D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				GCC_ENABLE_OBJC_GC = supported;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = "";
+				GCC_PREPROCESSOR_DEFINITIONS = PARTOF_AtoZ;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "@rpath";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Release;

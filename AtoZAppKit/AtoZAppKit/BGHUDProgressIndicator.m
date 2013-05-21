@@ -7,22 +7,29 @@
 //@property (nonatomic,assign) BOOL 			isAnimating;
 //
 //@end
-
-
-
-#define DEFAULT_radius 10
-#define DEFAULT_angle 30
-
-#define DEFAULT_inset 2
-#define DEFAULT_stripeWidth 7
-
-#define DEFAULT_barColor [NSColor colorWithCalibratedRed:25.0/255.0 green:29.0/255.0 blue:33.0/255.0 alpha:1.0]
-#define DEFAULT_lighterProgressColor [NSColor colorWithCalibratedRed:223.0/255.0 green:237.0/255.0 blue:180.0/255.0 alpha:1.0]
-#define DEFAULT_darkerProgressColor [NSColor colorWithCalibratedRed:156.0/255.0 green:200.0/255.0 blue:84.0/255.0 alpha:1.0]
-#define DEFAULT_lighterStripeColor [NSColor colorWithCalibratedRed:182.0/255.0 green:216.0/255.0 blue:86.0/255.0 alpha:1.0]
-#define DEFAULT_darkerStripeColor [NSColor colorWithCalibratedRed:126.0/255.0 green:187.0/255.0 blue:55.0/255.0 alpha:1.0]
-#define DEFAULT_shadowColor [NSColor colorWithCalibratedRed:223.0/255.0 green:238.0/255.0 blue:181.0/255.0 alpha:1.0]
 #import "BGHUDProgressIndicator.h"
+
+#define NSC NSColor
+@interface NSColor (stub)
++ (NSC*)r:(CGFloat)r g:(CGFloat)g b:(CGFloat)b a:(CGFloat)a;
+@end
+@implementation NSColor (stub)
++ (NSC*)r:(CGFloat)r g:(CGFloat)g b:(CGFloat)b a:(CGFloat)a { return [NSC colorWithDeviceRed:r green:g blue:b alpha:a]; }
+@end
+
+
+#define DEFAULT_radius 			10
+#define DEFAULT_angle 			30
+#define DEFAULT_inset 			2
+#define DEFAULT_stripeWidth 	7
+
+#define DEFAULT_barColor 				[NSC r: 25.0/255.0 g: 29.0/255.0 b: 33.0/255.0 a:1.0]
+#define DEFAULT_lighterProgressColor [NSC r:223.0/255.0 g:237.0/255.0 b:180.0/255.0 a:1.0]
+#define DEFAULT_darkerProgressColor [NSC r:156.0/255.0 g:200.0/255.0 b: 84.0/255.0 a:1.0]
+#define DEFAULT_lighterStripeColor	[NSC r:182.0/255.0 g:216.0/255.0 b: 86.0/255.0 a:1.0]
+#define DEFAULT_darkerStripeColor 	[NSC r:126.0/255.0 g:187.0/255.0 b: 55.0/255.0 a:1.0]
+#define DEFAULT_shadowColor 			[NSC r:223.0/255.0 g:238.0/255.0 b:181.0/255.0 a:1.0]
+
 
 @interface BGHUDProgressIndicator ()
 -(void)drawBezel;
@@ -145,7 +152,7 @@
     CGPathMoveToPoint(glow, NULL, DEFAULT_radius, 0);
     CGPathAddLineToPoint(glow, NULL, maxX-DEFAULT_radius, 0);
     
-    [[NSColor colorWithCalibratedRed:17.0/255.0 green:20.0/255.0 blue:23.0/255.0 alpha:1.0] set];
+    [[NSC r:17.0/255.0 g:20.0/255.0 b:23.0/255.0 a:1.0] set];
     CGContextAddPath(context, glow);
     CGContextDrawPath(context, kCGPathStroke);
     CGPathRelease(glow);
@@ -184,7 +191,29 @@
 
 - (void) drawSpinningStyleIndicator
 {
-	[[NSColor whiteColor] set];
+
+
+	if (!self.color) {
+		Class c = NSClassFromString(@"AtoZ");
+		[[NSBundle bundleForClass:c]load];
+		[c sharedInstance];
+
+//	SEL select = NSSelectorFromString(@"createImageFromView:")
+//	NSInvocation *i = [NSInvocation invocationWithMethodSignature:<#(NSMethodSignature *)#>]
+
+		self.color =   [(NSObject*)NSClassFromString(@"NSColor") performSelector:NSSelectorFromString(@"randomColor")];
+//	redColor] performSelector:NSSelectorFromString(@"classProxy")] valueForKey:@"NSColor"] performSelector:NSSelectorFromString(@"randomColor")];
+//	NSColor* colore =  [[[[NSColor redColor] performSelector:NSSelectorFromString(@"classProxy")] valueForKey:@"NSColor"] performSelector:NSSelectorFromString(@"randomColor")];
+	//[RANDOMCOLOR;
+//	NSImage *o = [[[self performSelector:NSSelectorFromString(@"classProxy")] valueForKey:@"NSImage"] performSelector:NSSelectorFromString(@"createImageFromView:") withObject:[self superview]];
+//	o = [o croppedImage:self.frame];
+//	NSC *backgorund = [o performSelector:NSSelectorFromString(@"quantized")];
+	NSLog(@"Background color is %@",[_color performSelector:NSSelectorFromString(@"nameOfColor")]);
+	}
+//	[[@"Background color is" withString:backgorund.nameOfColor]log];
+// ?:[NSColor whiteColor];// ? backgorund.contrastingForegroundColor : [NSColor whiteColor];
+
+	[self.backgroundColor ?: [NSColor whiteColor] set];
 
 	NSRect progressRect, rect; CGFloat radius;  NSBezierPath *bz;
 
@@ -212,12 +241,14 @@
 #pragma mark Actions
 
 -(void)startAnimation:(id)sender {
-    if (!self.animator) {
+	if (self.isHidden) [self setHidden:NO];
+	if (!self.animator) {
         self.animator = [NSTimer scheduledTimerWithTimeInterval:1.0/30 target:self selector:@selector(activateAnimation:) userInfo:nil repeats:YES];
     }
 }
 
 -(void)stopAnimation:(id)sender {
+	if (!self.isDisplayedWhenStopped) [self setHidden:YES];
     self.animator = nil;
 }
 
