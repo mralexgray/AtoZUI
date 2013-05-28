@@ -11,18 +11,19 @@
 #import "BGThemeManager.h"
 
 @interface BGHUDView : NSView
-
-@property (nonatomic, assign) BOOL 			useTheme;
-@property (nonatomic, strong) IBOutlet NSString 		*themeKey;
-@property (nonatomic, strong) BGTheme 		*theme;
-
-@property (nonatomic, strong) NSColor		*shadowColor, *borderColor, *color1, *color2;
-
-@property (nonatomic, assign) BOOL 			 flipGradient;
-@property (nonatomic, strong) NSGradient 	*customGradient;
-
-@property (nonatomic, assign) BOOL drawTopBorder, drawBottomBorder, drawLeftBorder, drawRightBorder;
-@property (nonatomic, assign) BOOL drawTopShadow, drawBottomShadow, drawLeftShadow, drawRightShadow;
-
-
+//{
+//			BOOL flipGradient, drawTopBorder, drawBottomBorder, drawLeftBorder, drawRightBorder, drawTopShadow, drawBottomShadow, drawLeftShadow, drawRightShadow;
+//	NSGradient *customGradient;
+//		NSColor *borderColor, *shadowColor, *color1, *color2;
+//			BOOL useTheme;
+//	NSString *themeKey;
+//}
+@property (nonatomic,strong) NSString *themeKey;
+@property (weak, readonly) BGTheme 				*theme;
+@property (nonatomic,assign) BOOL					useTheme;
+@property (nonatomic, assign) BOOL 			 		flipGradient;
+@property (nonatomic, strong) NSGradient 			*customGradient;
+@property (nonatomic, strong) NSColor				*shadowColor, *borderColor, *color1, *color2;
+@property (nonatomic, assign) BOOL 					drawTopBorder, drawBottomBorder, drawLeftBorder, drawRightBorder,
+																drawTopShadow, drawBottomShadow, drawLeftShadow, drawRightShadow;
 @end

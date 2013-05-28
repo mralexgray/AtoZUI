@@ -14,34 +14,34 @@
 
 #pragma mark Drawing Functions
 
--(id)init {
-	
-	self = [super init];
-	
-	if(self) {
-		
-		self.themeKey = @"gradientTheme";
-	}
-	
-	return self;
-}
+//-(id)init {
+//	
+//	self = [super init];
+//	
+//	if(self) {
+//		
+//		self.themeKey = @"gradientTheme";
+//	}
+//	
+//	return self;
+//}
 
--(id)initWithCoder:(NSCoder *)aDecoder {
-	
-	self = [super initWithCoder: aDecoder];
-	
-	if(self) {
-		
-		if([aDecoder containsValueForKey: @"themeKey"]) {
-			
-			self.themeKey = [aDecoder decodeObjectForKey: @"themeKey"];
-		} else {
-			self.themeKey = @"gradientTheme";
-		}
-	}
-	
-	return self;
-}
+//-(id)initWithCoder:(NSCoder *)aDecoder {
+//	
+//	self = [super initWithCoder: aDecoder];
+//	
+//	if(self) {
+//		
+//		if([aDecoder containsValueForKey: @"themeKey"]) {
+//			
+//			self.themeKey = [aDecoder decodeObjectForKey: @"themeKey"];
+//		} else {
+//			self.themeKey = @"gradientTheme";
+//		}
+//	}
+//	
+//	return self;
+//}
 
 -(void)encodeWithCoder: (NSCoder *)coder {
 	
@@ -101,23 +101,25 @@
 		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: frame
 															 xRadius: 4
 															 yRadius: 4];
-		
+
 		[NSGraphicsContext saveGraphicsState];
-		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] dropShadow] set];
-		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] darkStrokeColor] set];
+		[[THEME(self) dropShadow] set];
+//		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] dropShadow] set];
+//		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] darkStrokeColor] set];
+		[[THEME(self) darkStrokeColor] set];
 		[path stroke];
 		[NSGraphicsContext restoreGraphicsState];
 		
 		if([self isEnabled]) {
-			
-			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] normalGradient] drawInBezierPath: path angle: 90];
-			
-			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
+			[[THEME(self) normalGradient] drawInBezierPath: path angle: 90];
+//			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] normalGradient] drawInBezierPath: path angle: 90];
+			[[THEME(self) strokeColor]set];
+//			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
 		} else {
-			
-			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledNormalGradient] drawInBezierPath: path angle: 90];
-			
-			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledStrokeColor] set];
+			[[THEME(self) disabledNormalGradient]drawInBezierPath:path angle:90];
+//			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledNormalGradient] drawInBezierPath: path angle: 90];
+			[[THEME(self) disabledStrokeColor]set];
+//			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledStrokeColor] set];
 		}
 		
 		[path setLineWidth: 1.0f ];
@@ -441,19 +443,19 @@
 				
 				if([[[self controlView] window] isKeyWindow])
 				{
-					
-					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextActiveColor] set];
+					[[THEME(self) selectionTextActiveColor]set];
+//					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextActiveColor] set];
 				} else {
-					
-					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextInActiveColor] set];
+					[[THEME(self) selectionTextInActiveColor] set];
+//					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextInActiveColor] set];
 				}
 			} else {
-				
-				[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor] set];
+				[[THEME(self)  textColor]set];
+//				[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor] set];
 			}
 		} else {
-			
-			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledTextColor] set];
+			[[THEME(self) disabledTextColor] set];
+//			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledTextColor] set];
 		}
 		
 		[arrow fill];
@@ -477,19 +479,19 @@
 				
 				if([[[self controlView] window] isKeyWindow])
 				{
-					
-					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextActiveColor] set];
+					[[THEME(self)  selectionTextActiveColor]set];
+//					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextActiveColor] set];
 				} else {
-					
-					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextInActiveColor] set];
+					[[THEME(self)  selectionTextInActiveColor]set];
+//					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextInActiveColor] set];
 				}
 			} else {
-				
-				[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor] set];
+				[[THEME(self)  textColor]set];
+//				[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor] set];
 			}
 		} else {
-			
-			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledTextColor] set];
+			[[THEME(self)  disabledTextColor]set];
+//			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledTextColor] set];
 		}
 		[topArrow fill];
 		
@@ -509,19 +511,19 @@
 				
 				if([[[self controlView] window] isKeyWindow])
 				{
-					
-					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextActiveColor] set];
+					[[THEME(self)  selectionTextActiveColor] set];
+//					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextActiveColor] set];
 				} else {
-					
-					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextInActiveColor] set];
+					[[THEME(self)  selectionTextInActiveColor]set];
+//					[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] selectionTextInActiveColor] set];
 				}
 			} else {
-				
-				[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor] set];
+				[[THEME(self)  textColor]set];
+//				[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor] set];
 			}
 		} else {
-			
-			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledTextColor] set];
+			[[THEME(self)  disabledTextColor]set];
+//			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledTextColor] set];
 		}
 		[bottomArrow fill];
 		

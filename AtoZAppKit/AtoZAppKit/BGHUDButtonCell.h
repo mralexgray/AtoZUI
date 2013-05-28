@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BGThemeManager.h"
-#import "BGHUDGeometry.h"
+#import "AtoZAppKit.h"
 
 @interface BGHUDButtonCell : NSButtonCell {
 	NSString *themeKey;
@@ -17,12 +17,12 @@
 
 @property (strong) NSString *themeKey;
 
--(void)drawCheckInFrame:(NSRect)frame isRadio:(BOOL)radio;
--(void)drawTexturedRoundedButtonInFrame:(NSRect)frame;
--(void)drawRoundRectButtonInFrame:(NSRect)frame;
--(void)drawSmallSquareButtonInFrame:(NSRect)frame;
--(void)drawRoundedButtonInFrame:(NSRect)frame;
--(void)drawRecessedButtonInFrame:(NSRect)frame;
--(void)drawTexturedSquareButtonInFrame:(NSRect)frame;
+-(void) drawCheckInFrame:						(NSRect)frame isRadio:(BOOL)radio;
+-(void) drawTexturedRoundedButtonInFrame:	(NSRect)frame;
+-(void) drawRoundRectButtonInFrame:			(NSRect)frame;
+-(void) drawSmallSquareButtonInFrame:		(NSRect)frame;
+-(void) drawRoundedButtonInFrame:			(NSRect)frame;
+-(void) drawRecessedButtonInFrame:			(NSRect)frame;
+-(void) drawTexturedSquareButtonInFrame:	(NSRect)frame;
 
 @end

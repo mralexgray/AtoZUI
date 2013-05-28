@@ -7,6 +7,7 @@
 
 
 #import "BGHUDButtonCell.h"
+#import "AtoZAppKit.h"
 
 
 @implementation BGHUDButtonCell

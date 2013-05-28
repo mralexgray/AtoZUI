@@ -6,27 +6,51 @@
 //
 
 
+
+
 #import "BGThemeManager.h"
 
+BGTheme * _themeKey (BGHUDView * _self) { 	BGThemeManager *b = BGThemeManager.keyedManager;		 				
+	NSString *_themeKey = [_self valueForKey:@"themeKey"] ?: nil;		 					
+	return   _themeKey ? [b themeForKey:_themeKey] : b.activeTheme;
+}
 
 @implementation BGThemeManager
+@synthesize activeTheme = _activeTheme;
 
-static BGThemeManager *sharedThemeManager = nil;
 
-+ (BGThemeManager *)keyedManager;
-{
-    if (sharedThemeManager == nil) { sharedThemeManager = [[super allocWithZone:NULL] init];
-		[sharedThemeManager initDefaultThemes];
-    }
-    return sharedThemeManager;
+//- (NSArray*) themeArray { return [[self.class.sharedManager themes]valueForKeyPath:@"themeKey"];}
+- (BGTheme *)themeForKey:(NSString *)key {
+	static BGTheme * chosenTheme = nil;
+	//Make sure the key exists before we try to return it
+	if ([chosenTheme.themeKey isEqualToString:key]) return chosenTheme;
+	[_themes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		if ([key isEqualToString:[obj themeKey]]) {
+			chosenTheme = obj;
+			NSLog(@"*** used NEW theme for key:%@ ... %@ ***", key, chosenTheme);
+			*stop = YES;
+		}
+	}];
+	return chosenTheme;
 }
-
-+ (id)allocWithZone:(NSZone *)zone;
-{
-    return [self keyedManager];
+- (void) setActiveTheme:(BGTheme *)activeTheme {
+	_activeTheme = activeTheme; 
+	[NSNotificationCenter.defaultCenter postNotificationName:AZThemeDidUpdateNotification object:self userInfo:@{@"themeKey": _activeTheme.themeKey, @"baseColor":_activeTheme.baseColor}];
 }
+- (BGTheme*)activeTheme {  return _activeTheme = _activeTheme ?: [self themeForKey:@"AZFlatTheme"]; }
 
--(void)initDefaultThemes {
++ (instancetype) sharedManager 	{ return  self.keyedManager; }
++ (instancetype) keyedManager		{
+	static BGThemeManager *sharedThemeManager = nil;
+   return sharedThemeManager = sharedThemeManager ?: ^{
+	 	sharedThemeManager = [super allocWithZone:NULL].init;
+		sharedThemeManager.themes = @[AZFlatTheme.new, BGGradientTheme.new, BGTheme.new, AZDebugTheme.new];
+		return sharedThemeManager;
+    }();
+}
+- (id)copyWithZone:	(NSZone*)zone	{    return self;						}
++ (id)allocWithZone:	(NSZone*)zone	{    return [self keyedManager];	}
+//-(void)initDefaultThemes {
 	
 	//Init our Dictionary for 2 defaults
 //	self.themes = [NSMutableDictionary dictionary];
@@ -35,33 +59,24 @@ static BGThemeManager *sharedThemeManager = nil;
 //	[themes setObject: [[BGTheme alloc] init] forKey: @"flatTheme"];
 //	[themes setObject: [[BGTheme alloc] init] forKey: @"azFlatTheme"];
 //	[themes setObject: [[BGTheme alloc] init] forKey: @"gradientTheme"];
-
-	BGTheme *atoz = [AZFlatTheme new];
-	BGTheme *grad = [BGGradientTheme new];
-	BGTheme *flat = [BGTheme new];
-	self. themes = @{ @"flat":flat, @"atoz":atoz, @"grad":grad}.mutableCopy;
+	
+//	BGTheme *atoz = [AZFlatTheme 		new];
+//	BGTheme *grad = [BGGradientTheme new];
+//	BGTheme *flat = [BGTheme 			new];
+//	self. themes = @{ @"flat":flat, @"atoz":atoz, @"gradientTheme":grad}.mutableCopy;
 	//themes setObject: [[AZFlatTheme alloc] init] forKey: @"azFlatTheme"];
 //	themes setObject:  forKey: @"gradientTheme"];
 
 //	[themes setObject: [[BGGradientTheme alloc] init] forKey: @"gradientTheme"];
 //	[themes setObject: [[BGGradientTheme alloc] init] forKey: @"gradientTheme"];
 //	[themes setObject: [[BGGradientTheme alloc] init] forKey: @"flatTheme"];
-}
+//}
 
-- (BGTheme *)themeForKey:(NSString *)key {
 
-	//Make sure the key exists before we try to return it
-		return [self.themes objectForKey:key] ? self.themes[key] : self.themes[@"atoz"];
-	
-}
+//- (void)setTheme:(BGTheme*)theme forKey:(NSString *)key {
+//	[self.themes setObject:theme forKey:key];
+//}
 
-- (void)setTheme:(BGTheme*)theme forKey:(NSString *)key {
-	[self.themes setObject:theme forKey:key];
-}
-
-- (id)copyWithZone:(NSZone*)zone; {
-    return self;
-}
 
 //- (id)retain; {
 //    return self;

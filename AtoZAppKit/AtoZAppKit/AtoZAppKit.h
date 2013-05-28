@@ -42,7 +42,7 @@
 #import "MTTokenFieldDelegate.h"
 #import "NSAttributedString+MTTokenField.h"
 
-
+#import "RMSuggestionPanel.h"
 #import "BFColorPickerPopover.h"
 
 #import "NSButton+AtoZ.h"

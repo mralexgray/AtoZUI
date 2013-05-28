@@ -7,6 +7,7 @@
 
 
 #import "BGHUDSegmentedCell.h"
+#import "AtoZAppKit.h"
 
 @interface NSSegmentedCell (private)
 -(NSRect)rectForSegment:(NSInteger)segment inFrame:(NSRect)frame;

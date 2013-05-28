@@ -12,7 +12,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BGThemeManager.h"
-#import "BGHUDGeometry.h"
+#import "AtoZAppKit.h"
 
 @interface BGHUDScroller : NSScroller {
 	

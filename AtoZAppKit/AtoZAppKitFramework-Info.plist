@@ -17,6 +17,6 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>NSPrincipalClass</key>
-	<string>BGHUDAppKit</string>
+	<string>AtoZAppKit</string>
 </dict>
 </plist>

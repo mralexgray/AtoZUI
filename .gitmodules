@@ -1,3 +1,6 @@
 [submodule "MTTokenField"]
 	path = MTTokenField
 	url = https://github.com/mralexgray/MTTokenField.git
+[submodule "submodules/RMSuggestionPanel"]
+	path = submodules/RMSuggestionPanel
+	url = https://github.com/mralexgray/RMSuggestionPanel.git

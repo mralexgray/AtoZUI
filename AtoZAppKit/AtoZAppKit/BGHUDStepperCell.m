@@ -10,7 +10,7 @@
 
 
 #import "BGHUDStepperCell.h"
-#import "BGHUDGeometry.h"
+#import "AtoZAppKit.h"
 
 @interface BGHUDStepperCell (Private)
 -(void)drawRoundRectButtonInFrame:(NSRect)frame;
