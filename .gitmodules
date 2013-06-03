@@ -1,5 +1,5 @@
 [submodule "MTTokenField"]
-	path = MTTokenField
+	path = submodules/MTTokenField
 	url = https://github.com/mralexgray/MTTokenField.git
 	ignore = dirty
 [submodule "submodules/RMSuggestionPanel"]
