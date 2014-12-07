@@ -4,7 +4,7 @@
 
  */
 
-#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
 
 @interface NBBModule : NSWindowController
 @property(nonatomic, copy) NSString* identifier;

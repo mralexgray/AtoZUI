@@ -1,5 +1,5 @@
 
-#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
 
 extern NSString * const AZThemeDidUpdateNotification;
 @protocol BGThemeProtocol <NSObject>
@@ -63,6 +63,4 @@ extern NSString * const AZThemeDidUpdateNotification;
 @property (nonatomic,strong) NSGradient	*tableHeaderCellPushedFill;		//	Gradient used to draw   pushed column header
 @property (nonatomic,strong) NSGradient	*tableHeaderCellSelectedFill;		//	Gradient used to draw selected column header
 @end
-
-
 

@@ -9,7 +9,7 @@
 //
 
 
-#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
 #import "BGThemeManager.h"
 
 @interface BGHUDStepperCell : NSStepperCell {
