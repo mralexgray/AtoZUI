@@ -1,40 +1,18 @@
-//
-//  BGHUDButtonCell.m
-//  BGHUDAppKit
-//
-//  Created by BinaryGod on 5/25/08.
-//
-
 
 #import "BGHUDButtonCell.h"
 #import "AtoZAppKit.h"
 
-
 @implementation BGHUDButtonCell
-
-#pragma mark Draw Functions
-
 @synthesize themeKey;
 
--(id)init {
+-(id)init { if (!(self = [super init])) return nil;
 	
-	self = [super init];
-	
-	if(self) {
-		
-		self.themeKey = @"gradientTheme";
-		buttonType = 0;
-		
-		if ([self bezelStyle] == NSRecessedBezelStyle) {
-			if (([self highlightsBy] & NSChangeBackgroundCellMask)) {
-				[self setHighlightsBy:([self highlightsBy] - NSChangeBackgroundCellMask)];
-			}
-			if (([self showsStateBy] & NSChangeBackgroundCellMask)) {
-				[self setShowsStateBy:([self showsStateBy] - NSChangeBackgroundCellMask)];
-			}
-		}
-	}
-	
+  self.themeKey = @"gradientTheme"; buttonType = 0;
+  
+  self.bezelStyle == NSRecessedBezelStyle && self.highlightsBy &NSChangeBackgroundCellMask ?
+    [self setHighlightsBy:(self.highlightsBy - NSChangeBackgroundCellMask)] :
+  [self showsStateBy] & NSChangeBackgroundCellMask ?
+     [self setShowsStateBy:([self showsStateBy] - NSChangeBackgroundCellMask)] : nil;
 	return self;
 }
 
@@ -145,6 +123,8 @@
 
 -(NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView {
 	
+  if (!title || !title.length) return frame;
+
 	NSRect textRect = frame;
 	
 	// Adjust Text Rect based on control type and size
@@ -155,7 +135,7 @@
 		textRect.size.height -= 2;
 	}
 	
-	NSMutableAttributedString *newTitle = [title mutableCopy];
+	NSMutableAttributedString *newTitle = title.mutableCopy;
 	
 	//If button is set to show alternate title then
 	//display alternate title
@@ -195,18 +175,14 @@
 		 range: NSMakeRange(0, [newTitle length])];*/
 		
 		//Set text color based on button enabled state.
-		if([self isEnabled]) {
-			
-			[newTitle addAttribute: NSForegroundColorAttributeName
-							 value: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor]
-							 range: NSMakeRange(0, [newTitle length])];
-		} else {
-			
-			[newTitle addAttribute: NSForegroundColorAttributeName
-							 value: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledTextColor]
-							 range: NSMakeRange(0, [newTitle length])];
-		}
-		
+    BGThemeManager *m = [BGThemeManager keyedManager];
+    NSRange  x = (NSRange){0, [newTitle length]};
+    id themeVal, gotten; 
+    if ((themeVal = [m themeForKey:self.themeKey]) && 
+        (  gotten = [themeVal valueForKey:(id)(self.isEnabled ? @"textColor" : @"disabledTextColor")] ?: NSColor.redColor)) 
+      [newTitle addAttribute:NSForegroundColorAttributeName value:gotten range:x];
+
+	
 		[newTitle endEditing];
 		
 		//Make the super class do the drawing

@@ -9,3 +9,4 @@ bghudtest/bghudtest.xcodeproj/project.xcworkspace/
 BGHUDAppKit.xcodeproj/project.xcworkspace/xcuserdata/binarygod.xcuserdatad/
 AtoZUI.superceeded.zip
 *.xcscheme
+.gitignore
